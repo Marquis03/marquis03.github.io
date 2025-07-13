@@ -26,7 +26,7 @@ favicon_dark: ./assets/img/xmu-logo.svg
 
 # 页脚注释
 # 可以使用此选项禁用页脚的 “由 Jekyll 和 Minimal Light 主题提供支持” 注释
-enable_footnote: false
+enable_footnote: true
 
 # 自动暗色模式
 # 可以使用此选项禁用自动暗色主题
