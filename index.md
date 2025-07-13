@@ -4,16 +4,17 @@ layout: homepage
 
 ## About Me
 
-I am a master student at ...
+I am currently a master student at [Xiamen University](https://www.xmu.edu.cn/), where I am advised by [Prof. Jinsong Su](https://scholar.google.com/citations?user=w6qCk3sAAAAJ). I received the bachelor's degree from [Southwestern University of Finance and Economics](https://www.swufe.edu.cn/) in 2025.
 
 ## Research Interests
 
-- **Computer Vision:** image recognition, image generation, video captioning
-- **Machine Learning:** meta-learning, incremental learning, transfer learning
+- **LLM**: Multimodal LLM, Reasoning LLM
+- **AI4S**: Molecular Property Prediction
 
 ## News
 
-- **[Feb. 2020]** Our paper about incremental learning is accepted to CVPR 2020.
-- **[Feb. 2020]** We will host the ACM Multimedia Asia 2020 conference in Singapore!
-- **[Sept. 2019]** Our paper about few-shot learning is accepted to NeurIPS 2019.
-- **[Mar. 2019]** Our paper about few-shot learning is accepted to CVPR 2019.
+- **[Jun. 2025]** Our paper about **structure-activity relationships extraction** is preprinted on [arXiv](https://arxiv.org/abs/2506.21625).
+- **[Jun. 2025]** Our paper about **multimodal reranker** is preprinted on [arXiv](https://arxiv.org/abs/2506.12364).
+
+<!-- - **[Sep. 2019]** Our paper about few-shot learning is accepted to NeurIPS 2019.
+- **[Mar. 2019]** Our paper about few-shot learning is accepted to CVPR 2019. -->

@@ -1,51 +1,50 @@
-# Basic Information
-title: Your Name
+# 基本信息
+title: Jue Hou
 position: Master Student
-affiliation: Your Affiliation
-affiliation_link: https://marquis03.github.io/minimal-light
-email: yourname (at) example.edu
+affiliation: Xiamen University
+affiliation_link: https://www.xmu.edu.cn/
+email: marquis128@foxmail.com
 
-# Search Engine Optimization (SEO)
-# The following information is used to improve the website traffic from search engines, e.g., Google.
-keywords: minimal light
-description: The Minimal Light is a simple and elegant jekyll theme for academic personal homepage.
-canonical: https://marquis03.github.io/minimal-light
+# 搜索引擎优化（SEO）
+# 以下信息用于提高网站来自搜索引擎（例如谷歌）的流量
+keywords: Jue Hou, 侯爵
+description: The Jue Hou's personal academic homepage.
+canonical: https://marquis03.github.io/
 
-# Links
-# If you don't need one of them, you may delete the corresponding line.
-google_scholar: https://scholar.google.com/
-cv_link: assets/files/curriculum_vitae.pdf
-github_link: https://github.com/
-linkedin: https://www.linkedin.com/
-twitter: https://twitter.com/
+# 链接
+google_scholar: https://scholar.google.com/citations?user=GoceuAsAAAAJ
+# cv_link: assets/files/curriculum_vitae.pdf
+github_link: https://github.com/Marquis03
+# linkedin: https://www.linkedin.com/
+# twitter: https://twitter.com/
 
-# Images (e.g., your profile picture and your website's favicon)
-# "favicon" and "favicon_dark" are used for the light and dark modes, respectively.
-avatar: ./assets/img/avatar.png
-favicon: ./assets/img/favicon.svg
-favicon_dark: ./assets/img/favicon.svg
+# 图片（例如，您的个人头像和网站的图标）
+# "favicon"和"favicon_dark"分别用于亮色模式和暗色模式
+avatar: ./assets/img/avatar.jpg
+favicon: ./assets/img/xmu-logo.svg
+favicon_dark: ./assets/img/xmu-logo.svg
 
-# Footnote
-# You may use the option to disable the footnote, "Powered by Jekyll and Minimal Light theme."
-enable_footnote: true
+# 页脚注释
+# 可以使用此选项禁用页脚的 “由 Jekyll 和 Minimal Light 主题提供支持” 注释
+enable_footnote: false
 
-# Auto Dark Mode
-# You may use the option to disable the automatic dark theme
+# 自动暗色模式
+# 可以使用此选项禁用自动暗色主题
 auto_dark_mode: true
 
-# Font
-# You can use this option to choose between Serif or Sans Serif fonts.
-font: "Serif" # or "Sans Serif"
+# 字体
+# 可以使用此选项在衬线字体（"Serif"）和无衬线字体（"Sans Serif"）之间选择
+font: "Serif"
 
 # Google Analytics ID
-# Please remove this if you don't use Google Analytics
-google_analytics: UA-111540567-4
+# 如果不使用 Google Analytics，请删除此项
+# google_analytics:
 
-# Use this project as a remote theme for GitHub Pages
-# See the guide here: https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/adding-a-theme-to-your-github-pages-site-using-jekyll
+# 将此项目用作 GitHub Pages 的远程主题
+# 参考指南：https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/adding-a-theme-to-your-github-pages-site-using-jekyll
 remote_theme: Marquis03/minimal-light
 
-# The following files will be removed from the generated website.
+# 以下文件将从生成的网站中移除
 exclude:
   - Gemfile
   - Gemfile.lock
