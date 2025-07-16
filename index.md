@@ -15,3 +15,9 @@ My name is **Jue Hou** (侯爵), which means **"Marquis"** in English. I am curr
 
 - **[Jun. 2025]** Our paper about **structure-activity relationships extraction** is preprinted on [arXiv](https://arxiv.org/abs/2506.21625).
 - **[Jun. 2025]** Our paper about **multimodal reranker** is preprinted on [arXiv](https://arxiv.org/abs/2506.12364).
+
+{% include publications.html %}
+
+{% include services.html %}
+
+{% include competitions.html %}

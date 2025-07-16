@@ -13,10 +13,10 @@ canonical: https://marquis03.github.io/
 
 # 链接
 google_scholar: https://scholar.google.com/citations?user=GoceuAsAAAAJ
-# cv_link: assets/files/curriculum_vitae.pdf
+cv_link:
 github_link: https://github.com/Marquis03
-# linkedin: https://www.linkedin.com/
-# twitter: https://twitter.com/
+linkedin:
+twitter:
 
 # 图片（例如，您的个人头像和网站的图标）
 # "favicon"和"favicon_dark"分别用于亮色模式和暗色模式
@@ -38,7 +38,7 @@ font: "Serif"
 
 # Google Analytics ID
 # 如果不使用 Google Analytics，请删除此项
-# google_analytics:
+google_analytics:
 
 # 将此项目用作 GitHub Pages 的远程主题
 # 参考指南：https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/adding-a-theme-to-your-github-pages-site-using-jekyll
