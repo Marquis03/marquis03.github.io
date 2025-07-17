@@ -8,8 +8,8 @@ My name is **Jue Hou** (侯爵), which means **"Marquis"** in English. I am curr
 
 ## Research Interests
 
-- **LLM**: Multimodal LLM, Reasoning LLM
-- **AI4S**: Molecular Property Prediction
+- **LLM**: MLLM, RL, RAG
+- **NLP**: Continual Relation Extraction
 
 ## News
 
