@@ -9,7 +9,7 @@ My name is **Jue Hou** (侯爵), which means **"Marquis"** in English. I am curr
 ## Research Interests
 
 - **LLM**: MLLM, RL, RAG
-- **NLP**: Continual Relation Extraction
+- **Continual Learning**: Continual Relation Extraction
 
 ## News
 
