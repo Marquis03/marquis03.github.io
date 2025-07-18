@@ -4,7 +4,7 @@ layout: homepage
 
 ## About Me
 
-My name is **Jue Hou** (侯爵), which means **"Marquis"** in English. I am currently a master student at [Xiamen University](https://www.xmu.edu.cn/), where I am advised by [Prof. Jinsong Su](https://scholar.google.com/citations?user=w6qCk3sAAAAJ). I received the bachelor's degree from [Southwestern University of Finance and Economics](https://www.swufe.edu.cn/) in 2025.
+My name is **Jue Hou** (侯爵), which means "**Marquis**" in English. I am currently a master student at [Xiamen University](https://www.xmu.edu.cn/), where I am advised by [Prof. Jinsong Su](https://scholar.google.com/citations?user=w6qCk3sAAAAJ). I received the bachelor's degree from [Southwestern University of Finance and Economics](https://www.swufe.edu.cn/) in 2025.
 
 ## Research Interests
 
