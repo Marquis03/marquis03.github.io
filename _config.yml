@@ -36,6 +36,10 @@ auto_dark_mode: true
 # 可以使用此选项在衬线字体（"Serif"）和无衬线字体（"Sans Serif"）之间选择
 font: "Serif"
 
+# Baidu Analytics ID
+# 如果不使用 Baidu Analytics，请删除此项
+baidu_analytics: 368c140290209ced69f65d67bf17e5fd
+
 # Google Analytics ID
 # 如果不使用 Google Analytics，请删除此项
 google_analytics:
