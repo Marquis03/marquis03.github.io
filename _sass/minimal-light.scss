@@ -3,6 +3,11 @@
   align-items: center;
 }
 
+.social-icons {
+  display: flex;
+  justify-content: space-between;
+}
+
 .social-icons a {
   display: inline-block;
   background-color: transparent;
@@ -10,7 +15,6 @@
   border-radius: 100%;
   text-align: center;
   font-size: 1.15rem;
-  margin-right: 1rem
 }
 
 @media (prefers-color-scheme: dark) {
