@@ -26,11 +26,11 @@ author:
   bio:
   location:
   employer: "Xiamen University"
-  pubmed:
   googlescholar: "https://scholar.google.com/citations?user=GoceuAsAAAAJ"
   email: "marquis03@qq.com"
-  researchgate: # e.g., "https://www.researchgate.net/profile/yourprofile"
   uri:
+  pubmed:
+  researchgate: # e.g., "https://www.researchgate.net/profile/yourprofile"
   bitbucket:
   codepen:
   dribbble:
