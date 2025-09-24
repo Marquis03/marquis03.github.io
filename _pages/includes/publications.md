@@ -11,7 +11,7 @@
 
 <p>* Equal contribution, † Corresponding author</p>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">arXiv 2506</div><img src='images/pub/MM-R5.png' alt="sym" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">arXiv 2506</div><img src='images/pub/MM-R5.png' alt="MM-R5" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [MM-R5: MultiModal Reasoning-Enhanced ReRanker via Reinforcement Learning for Document Retrieval](https://arxiv.org/pdf/2506.12364)

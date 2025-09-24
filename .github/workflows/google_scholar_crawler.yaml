@@ -36,6 +36,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "Updated Citation Data: $(date -u +'%Y-%m-%d %H:%M UTC')"
+            git commit -m "Updated Citation Data: $(TZ=UTC-8 date +'%Y-%m-%d %H:%M:%S UTC+8')"
             git push "${remote_repo}" HEAD:google-scholar-stats --force
           fi
