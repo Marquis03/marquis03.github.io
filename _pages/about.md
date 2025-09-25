@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-<span class='anchor' id='top'></span>
+<p class='anchor' id='top'></p>
 
 {% include_relative includes/introduction.md %}
 
