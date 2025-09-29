@@ -26,38 +26,23 @@ author:
   bio:
   location:
   employer: "Xiamen University"
-  googlescholar: "https://scholar.google.com/citations?user=GoceuAsAAAAJ"
   email: "marquis03@qq.com"
   uri:
-  pubmed:
-  researchgate: # e.g., "https://www.researchgate.net/profile/yourprofile"
-  bitbucket:
-  codepen:
-  dribbble:
-  flickr:
-  facebook:
-  foursquare:
-  github: Marquis03 # e.g., "github username"
-  google_plus:
-  keybase:
-  instagram:
-  impactstory: # e.g., "https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
-  lastfm:
-  linkedin: # e.g., "linkedin username"
-  dblp: https://dblp.org/pid/84/8116-3.html # e.g., "https://dblp.org/pid/xx/xxxx.html"
-  orcid: https://orcid.org/0009-0009-0738-3503 # e.g., "https://orcid.org/xxxx"
-  pinterest:
-  soundcloud:
-  stackoverflow: # http://stackoverflow.com/users/123456/username
-  steam:
-  tumblr:
-  twitter:
-  vine:
-  weibo:
-  xing:
-  youtube:
+  github: https://github.com/Marquis03
+  googlescholar: "https://scholar.google.com/citations?user=GoceuAsAAAAJ"
+  dblp: https://dblp.org/pid/84/8116-3.html
+  orcid: https://orcid.org/0009-0009-0738-3503
   wikipedia:
-  kaggle: Marquis03 # e.g., "kaggle username"
+  linkedin:
+  semanticscholar: https://www.semanticscholar.org/author/Jue-Hou/2367598435
+  researchgate:
+  kaggle:
+  weibo:
+  X:
+  facebook:
+  instagram:
+  youtube:
+  steam:
 
 # Reading Files
 include:
