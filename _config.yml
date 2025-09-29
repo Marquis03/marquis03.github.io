@@ -44,7 +44,7 @@ author:
   impactstory: # e.g., "https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm:
   linkedin: # e.g., "linkedin username"
-  dblp: # e.g., "https://dblp.org/pid/xx/xxxx.html"
+  dblp: https://dblp.org/pid/84/8116-3.html # e.g., "https://dblp.org/pid/xx/xxxx.html"
   orcid: https://orcid.org/0009-0009-0738-3503 # e.g., "https://orcid.org/xxxx"
   pinterest:
   soundcloud:
