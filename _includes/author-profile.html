@@ -160,11 +160,9 @@ endif %}
         ><i class="ai ai-google-scholar ai-fw"></i
       ></a>
       {% endif %} {% if author.semanticscholar %}
-      <li>
-        <a href="{{ author.semanticscholar }}"
-          ><i class="ai ai-semantic-scholar ai-fw" aria-hidden="true"></i
-        ></a>
-      </li>
+      <a href="{{ author.semanticscholar }}"
+        ><i class="ai ai-semantic-scholar ai-fw" aria-hidden="true"></i
+      ></a>
       {% endif %} {% if author.dblp %}
       <a href="{{ author.dblp }}"
         ><i class="ai ai-dblp ai-fw" aria-hidden="true"></i
