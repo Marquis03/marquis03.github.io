@@ -5,4 +5,4 @@
 - *2023.12*, [2023 Global Intelligent Vehicle AI Challenge — Intelligent Driving Vehicle Virtual Simulation Video Data Understanding](https://tianchi.aliyun.com/competition/entrance/532155), 🏅**Merit Award (7/1843, ￥5,000)**.
 - *2023.12*, [The CFFF Prize: Material Sciences Track — The Prediction of the Synthesis Conditions of Metal-Organic Framework (MOF) Materials](https://tianchi.aliyun.com/competition/entrance/532116), 🏅**Honorable Mention (10/2117, ￥2,500)**.
 - *2023.11*, [Contemporary Undergraduate Mathematical Contest in Modeling](https://www.mcm.edu.cn/html_cn/node/495b16715673eaee3a770d99aaf9d857.html), 🥈**Second Prize in the Undergraduate Group**.
-- *2023.10*, [The 2023 ICPC Asia Xi'an Regional Contest](https://icpc.global/ICPCID/59CGNZKLL5TD), 🥉**Bronze Medal**.
+- *2023.10*, [The 2023 ICPC Asia Xi'an Regional Contest](images/competitions/2023_ICPC_Regional_Bronze.pdf), 🥉**Bronze Medal**.
