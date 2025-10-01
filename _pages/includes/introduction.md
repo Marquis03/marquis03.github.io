@@ -1,6 +1,6 @@
 # 🌟 About Me
 
-My name is **Jue Hou (侯爵)**, which means "**Marquis**" in English.
+My name is **Jue Hou (侯爵)**. Literally, it refers to a type of noble title in ancient China, which is equivalent to "**marquis**" in English.
 
 I graduated from <a href='https://www.swufe.edu.cn/'>Southwestern University of Finance and Economics <img src='./images/title/SWUFE.png' alt="Southwestern University of Finance and Economics" style="height: 1em;"></a> with a bachelor’s degree in 2025.
 
