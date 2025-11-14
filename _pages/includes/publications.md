@@ -1,13 +1,4 @@
-{% if site.google_scholar_stats_use_cdn %}
-{% assign gsDataBaseUrl = "<https://cdn.jsdelivr.net/gh/>" | append: site.repository | append: "@" %}
-{% else %}
-{% assign gsDataBaseUrl = "<https://raw.githubusercontent.com/>" | append: site.repository | append: "/" %}
-{% endif %}
-{% assign url = gsDataBaseUrl | append: "google-scholar-stats/gs_data_shieldsio.json" %}
-
 # 📚 Publications
-
-<!-- <a href='https://scholar.google.com/citations?user=GoceuAsAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=googlescholar&labelColor=F5F5F5&color=4D90FE&label=Citations"></a> -->
 
 <p>* Equal contribution, † Corresponding author</p>
 
