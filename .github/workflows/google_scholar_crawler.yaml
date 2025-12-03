@@ -1,0 +1,41 @@
+name: Get Citation Data
+
+on:
+  page_build:
+  schedule:
+    - cron: "0 16 * * *"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install Requirements
+        run: |
+          sudo apt-get install python3-setuptools
+          pip3 install --upgrade pip
+          cd ./google_scholar_crawler
+          pip3 install -r requirements.txt
+
+      - name: Run Crawler
+        run: |
+          cd ./google_scholar_crawler
+          python3 main.py
+        env:
+          GOOGLE_SCHOLAR_ID: ${{ secrets.GOOGLE_SCHOLAR_ID }}
+
+      - name: Commit and Push Results
+        run: |
+          cd ./google_scholar_crawler/results
+          git init
+          git config --local user.name "${GITHUB_ACTOR}"
+          git config --local user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+          export remote_repo="https://${GITHUB_ACTOR}:${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git"
+          git add *.json
+
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Updated Citation Data: $(TZ=UTC-8 date +'%Y-%m-%d %H:%M:%S UTC+8')"
+            git push "${remote_repo}" HEAD:google-scholar-stats --force
+          fi

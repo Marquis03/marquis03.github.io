@@ -1,0 +1,142 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your entire site, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# `jekyll serve`. If you change this file, please restart the server process.
+
+# Site Settings
+title: "Jue Hou (侯爵)"
+description: ""
+repository: "Marquis03/marquis03.github.io"
+google_scholar_stats_use_cdn: false
+
+# google analytics
+google_analytics_id: # https://analytics.google.com/analytics/
+
+# SEO Related
+google_site_verification: 0MpA9KoL71BW5YFerAv_P29zlATKZEWZtyI6ICK2XJg # https://search.google.com/search-console/about
+bing_site_verification: 390C5F1424AB7444F1B8E05DA02232BF # https://www.bing.com/webmasters/about
+baidu_site_verification: # https://ziyuan.baidu.com/login/index?u=/site/index
+
+# Site Author
+author:
+  name: "Jue Hou (侯爵)"
+  avatar: "images/avatar.jpg"
+  bio:
+  location:
+  employer: "Xiamen University"
+  email: "marquis03@qq.com"
+  uri:
+  github: https://github.com/Marquis03
+  googlescholar: "https://scholar.google.com/citations?user=GoceuAsAAAAJ"
+  semanticscholar: https://www.semanticscholar.org/author/Jue-Hou/2367598435
+  dblp: https://dblp.org/pid/84/8116-3.html
+  orcid: https://orcid.org/0009-0009-0738-3503
+  wikipedia:
+  linkedin:
+  researchgate:
+  kaggle:
+  weibo:
+  X:
+  facebook:
+  instagram:
+  youtube:
+  steam:
+
+# Reading Files
+include:
+  - .htaccess
+  - _pages
+  - files
+exclude:
+  - docs
+  - google_scholar_crawler
+  - "*.sublime-project"
+  - "*.sublime-workspace"
+  - .asset-cache
+  - .bundle
+  - .jekyll-assets-cache
+  - .sass-cache
+  - .github
+  - CHANGELOG
+  - Capfile
+  - Gemfile
+  - Gruntfile.js
+  - LICENSE
+  - README
+  - Rakefile
+  - assets/js/_main.js
+  - assets/js/plugins
+  - assets/js/vendor
+  - config
+  - gulpfile.js
+  - log
+  - node_modules
+  - package.json
+  - tmp
+  - vendor
+keep_files:
+  - .git
+  - .svn
+encoding: "utf-8"
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+
+# Conversion
+markdown: kramdown
+highlighter: rouge
+lsi: false
+excerpt_separator: "\n\n"
+incremental: false
+
+# Markdown Processing
+kramdown:
+  input: GFM
+  hard_wrap: false
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  enable_coderay: false
+
+# Defaults
+defaults:
+  # _pages
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: default
+      author_profile: true
+
+# Sass/SCSS
+sass:
+  sass_dir: _sass
+  style: compressed # http://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
+
+# Outputting
+permalink: /:categories/:title/
+timezone: Asia/Shanghai # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+
+# Plugins
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jekyll-redirect-from
+# mimic GitHub Pages with --safe
+whitelist:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jemoji
+
+# HTML Compression
+# - http://jch.penibelst.de/
+compress_html:
+  clippings: all
+  ignore:
+    envs: development
