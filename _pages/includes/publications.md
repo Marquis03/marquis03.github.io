@@ -1,6 +1,6 @@
 # 📚 Publications
 
-<p>* Equal contribution, † Corresponding author</p>
+<!-- <p>* Equal contribution, † Corresponding author</p> -->
 
 Paper coming soon...
 
