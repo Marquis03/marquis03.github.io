@@ -7,3 +7,4 @@
 - *2023.12*, [The CFFF Prize: Material Sciences Track — The Prediction of the Synthesis Conditions of Metal-Organic Framework (MOF) Materials](https://tianchi.aliyun.com/competition/entrance/532116), 🏅**Honorable Mention (10/2117, ￥2,500)**.
 - *2023.11*, [Contemporary Undergraduate Mathematical Contest in Modeling](https://www.mcm.edu.cn/html_cn/node/495b16715673eaee3a770d99aaf9d857.html), 🥈**Second Prize in the Undergraduate Group**.
 - *2023.10*, [The 2023 ICPC Asia Xi'an Regional Contest](images/competitions/2023_ICPC_Regional_Bronze.pdf), 🥉**Bronze Medal**.
+- *2023.05*, [China Collegiate Computing Contest — Group Programming Ladder Tournament](images/competitions/CCCC2023GPLT05374.pdf), 🥉**Third Individual Prize in the National Finals**.
