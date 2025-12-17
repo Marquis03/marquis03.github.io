@@ -2,8 +2,6 @@
 
 <!-- <p>* Equal contribution, † Corresponding author</p> -->
 
-Paper coming soon...
-
 <!-- <div class='paper-box'><div class='paper-box-image'><div><div class="badge">arXiv 2510</div><img src='images/publications/MPPReasoner.png' alt="MPPReasoner" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
@@ -29,3 +27,5 @@ Mingjun Xu\*, Jinhan Dong\*, <strong>Jue Hou\*</strong>, Zehui Wang, Sihang Li, 
 </div> -->
 
 <!-- - ``arXiv 2506`` [Doc2SAR: A Synergistic Framework for High-Fidelity Extraction of Structure-Activity Relationships from Scientific Documents](https://arxiv.org/pdf/2506.21625). Jiaxi Zhuang\*, Kangning Li\*, <strong>Jue Hou</strong>, Mingjun Xu, Zhifeng Gao, Hengxing Cai†. [![arXiv](https://img.shields.io/badge/arXiv-B31B1B?logo=arxiv)](https://arxiv.org/abs/2506.21625) [![GitHub](https://img.shields.io/badge/GitHub-1F2328?logo=github)](https://github.com/Jesse-zjx/Doc2SAR) -->
+
+Paper coming soon...
