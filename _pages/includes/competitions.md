@@ -1,5 +1,7 @@
 # 🏆 Competitions
 
+I am interested in participating in AI competitions and would love to collaborate with others! Please feel free to reach out to me if you are also interested in such collaborations.
+
 - *2025.11*, [2025 iFLYTEK AI Developer Competition — Domain Term Translation Challenge](https://challenge.xfyun.cn/topic/info?type=domain-term-translation)<br/>🥈**Second Place** \| Rank: 2/120 (Top 1.7%) \| Bonus: 3,000 CNY
 - *2025.08*, [AFAC2025 Challenge Group — Compression of Long Chain-of-Thought in the Financial Field](https://tianchi.aliyun.com/competition/entrance/532353)<br/>🏅**Rookie Award** \| Rank: 8/1056 (Top 0.76%) \| Bonus: 5,000 CNY
 - *2024.11*, [The 2nd World AI4S Prize: Social Sciences Track — Market Game and Price Prediction](http://competition.sais.com.cn/competitionDetail/532232/format)<br/>🏅**Honorable Mention** \| Rank: 8/2551 (Top 0.31%) \| Bonus: 2,500 CNY
