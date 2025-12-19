@@ -1,10 +1,23 @@
 # 🏆 Competitions
 
-- *2025.11*, [2025 iFLYTEK AI Developer Competition — Domain Term Translation Challenge](https://challenge.xfyun.cn/topic/info?type=domain-term-translation), 🥈**Second Place**. ![Rank: 2/120 (Top 1.7%)](https://img.shields.io/badge/Rank-2/120_(Top_1.7%25)-blue) ![Bonus: 3,000 CNY](https://img.shields.io/badge/Bonus-3,000_CNY-yellow)
-- *2025.08*, [AFAC2025 Challenge Group — Compression of Long Chain-of-Thought in the Financial Field](https://tianchi.aliyun.com/competition/entrance/532353), 🏅**Rookie Award**. ![Rank: 8/1056 (Top 0.76%)](https://img.shields.io/badge/Rank-8/1056_(Top_0.76%25)-blue) ![Bonus: 5,000 CNY](https://img.shields.io/badge/Bonus-5,000_CNY-yellow)
-- *2024.11*, [The 2nd World AI4S Prize: Social Sciences Track — Market Game and Price Prediction](http://competition.sais.com.cn/competitionDetail/532232/format), 🏅**Honorable Mention**. ![Rank: 8/2551 (Top 0.31%)](https://img.shields.io/badge/Rank-8/2551_(Top_0.31%25)-blue) ![Bonus: 2,500 CNY](https://img.shields.io/badge/Bonus-2,500_CNY-yellow)
-- *2023.12*, [2023 Global Intelligent Vehicle AI Challenge — Intelligent Driving Vehicle Virtual Simulation Video Data Understanding](https://tianchi.aliyun.com/competition/entrance/532155), 🏅**Merit Award**. ![Rank: 7/1843 (Top 0.38%)](https://img.shields.io/badge/Rank-7/1843_(Top_0.38%25)-blue) ![Bonus: 5,000 CNY](https://img.shields.io/badge/Bonus-5,000_CNY-yellow)
-- *2023.12*, [The CFFF Prize: Material Sciences Track — The Prediction of the Synthesis Conditions of Metal-Organic Framework (MOF) Materials](https://tianchi.aliyun.com/competition/entrance/532116), 🏅**Honorable Mention**. ![Rank: 10/2117 (Top 0.47%)](https://img.shields.io/badge/Rank-10/2117_(Top_0.47%25)-blue) ![Bonus: 2,500 CNY](https://img.shields.io/badge/Bonus-2,500_CNY-yellow)
-- *2023.11*, [Contemporary Undergraduate Mathematical Contest in Modeling](https://www.mcm.edu.cn/html_cn/node/495b16715673eaee3a770d99aaf9d857.html), 🥈**Second Prize in the Undergraduate Group**.
-- *2023.10*, [The 2023 ICPC Asia Xi'an Regional Contest](images/competitions/2023_ICPC_Regional_Bronze.pdf), 🥉**Bronze Medal**.
-- *2023.05*, [China Collegiate Computing Contest — Group Programming Ladder Tournament](images/competitions/CCCC2023GPLT05374.pdf), 🥉**Third Individual Prize in the National Finals**.
+- *2025.11*, [2025 iFLYTEK AI Developer Competition — Domain Term Translation Challenge](https://challenge.xfyun.cn/topic/info?type=domain-term-translation)
+  - 🥈**Second Place**
+  - ![Rank: 2/120 (Top 1.7%)](https://img.shields.io/badge/Rank-2/120_(Top_1.7%25)-blue) ![Bonus: 3,000 CNY](https://img.shields.io/badge/Bonus-3,000_CNY-yellow)
+- *2025.08*, [AFAC2025 Challenge Group — Compression of Long Chain-of-Thought in the Financial Field](https://tianchi.aliyun.com/competition/entrance/532353)
+  - 🏅**Rookie Award**
+  - ![Rank: 8/1056 (Top 0.76%)](https://img.shields.io/badge/Rank-8/1056_(Top_0.76%25)-blue) ![Bonus: 5,000 CNY](https://img.shields.io/badge/Bonus-5,000_CNY-yellow)
+- *2024.11*, [The 2nd World AI4S Prize: Social Sciences Track — Market Game and Price Prediction](http://competition.sais.com.cn/competitionDetail/532232/format)
+  - 🏅**Honorable Mention**
+  - ![Rank: 8/2551 (Top 0.31%)](https://img.shields.io/badge/Rank-8/2551_(Top_0.31%25)-blue) ![Bonus: 2,500 CNY](https://img.shields.io/badge/Bonus-2,500_CNY-yellow)
+- *2023.12*, [2023 Global Intelligent Vehicle AI Challenge — Intelligent Driving Vehicle Virtual Simulation Video Data Understanding](https://tianchi.aliyun.com/competition/entrance/532155)
+  - 🏅**Merit Award**
+  - ![Rank: 7/1843 (Top 0.38%)](https://img.shields.io/badge/Rank-7/1843_(Top_0.38%25)-blue) ![Bonus: 5,000 CNY](https://img.shields.io/badge/Bonus-5,000_CNY-yellow)
+- *2023.12*, [The CFFF Prize: Material Sciences Track — The Prediction of the Synthesis Conditions of Metal-Organic Framework (MOF) Materials](https://tianchi.aliyun.com/competition/entrance/532116)
+  - 🏅**Honorable Mention**
+  - ![Rank: 10/2117 (Top 0.47%)](https://img.shields.io/badge/Rank-10/2117_(Top_0.47%25)-blue) ![Bonus: 2,500 CNY](https://img.shields.io/badge/Bonus-2,500_CNY-yellow)
+- *2023.11*, [Contemporary Undergraduate Mathematical Contest in Modeling](https://www.mcm.edu.cn/html_cn/node/495b16715673eaee3a770d99aaf9d857.html)
+  - 🥈**Second Prize in the Undergraduate Group**
+- *2023.10*, [The 2023 ICPC Asia Xi'an Regional Contest](images/competitions/2023_ICPC_Regional_Bronze.pdf)
+  - 🥉**Bronze Medal**
+- *2023.05*, [China Collegiate Computing Contest — Group Programming Ladder Tournament](images/competitions/CCCC2023GPLT05374.pdf)
+  - 🥉**Third Individual Prize in the National Finals**
