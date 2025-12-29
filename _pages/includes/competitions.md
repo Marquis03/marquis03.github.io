@@ -1,6 +1,8 @@
 # 🏆 Competitions
 
-I am interested in participating in AI competitions and would love to collaborate with others! Please feel free to reach out to me if you are also interested in such collaborations.
+I am interested in participating in AI competitions and would love to collaborate with others!
+
+Please feel free to reach out to me if you are also interested in such collaborations.
 
 - *2025.11*, [2025 iFLYTEK AI Developer Competition — Domain Term Translation Challenge](https://challenge.xfyun.cn/topic/info?type=domain-term-translation)<br/>🥈**Second Place** - ![Rank: 2/120 (Top 1.7%)](https://img.shields.io/badge/📈_Rank-2/120_(Top_1.7%25)-blue?style=flat-square) ![Bonus: 3,000 CNY](https://img.shields.io/badge/💰_Bonus-3,000_CNY-DAA520?style=flat-square)
 - *2025.08*, [AFAC2025 Challenge Group — Compression of Long Chain-of-Thought in the Financial Field](https://tianchi.aliyun.com/competition/entrance/532353)<br/>🏅**Rookie Award** - ![Rank: 8/1056 (Top 0.76%)](https://img.shields.io/badge/📈_Rank-8/1056_(Top_0.76%25)-blue?style=flat-square) ![Bonus: 5,000 CNY](https://img.shields.io/badge/💰_Bonus-5,000_CNY-DAA520?style=flat-square)
