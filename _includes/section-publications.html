@@ -1,0 +1,50 @@
+<!-- Publications Section -->
+<section id="publications" class="section-card publications-section">
+  {% include section-title.html anchor="#publications" label="Publications" %}
+
+  {% if site.data.publications.note %}
+  <p class="section-note">{{ site.data.publications.note }}</p>
+  {% endif %}
+
+  {% for pub in site.data.publications.entries %}
+  <div class="publication-item">
+    {% if pub.image %}
+    <div class="pub-image">
+      <img src="{{ pub.image | relative_url }}" alt="{{ pub.title }}" loading="lazy">
+    </div>
+    {% endif %}
+    <div class="pub-info">
+      <h3 class="pub-title">
+        {% if pub.venue %}<span class="pub-venue">{{ pub.venue }}</span>{% endif %}
+        {% if pub.url %}
+        <a href="{{ pub.url }}" class="record-title" target="_blank">{{ pub.title }}</a>
+        {% else %}
+        <span class="record-title">{{ pub.title }}</span>
+        {% endif %}
+      </h3>
+      <p class="pub-authors">
+        {% for author in pub.authors %}{% if forloop.index > 1 %}, {% endif %}{% if author.mine %}<span class="author-name">{{ author.name }}{% if author.equal_contrib %}*{% endif %}{% if author.corresponding %}†{% endif %}</span>{% else %}<span>{{ author.name }}{% if author.equal_contrib %}*{% endif %}{% if author.corresponding %}†{% endif %}</span>{% endif %}{% endfor %}
+      </p>
+      {% if pub.image %}
+      <div class="pub-image-mobile">
+        <img src="{{ pub.image | relative_url }}" alt="{{ pub.title }}" loading="lazy">
+      </div>
+      {% endif %}
+      {% if pub.links %}
+      <div class="pub-links">
+        {% for link in pub.links %}
+        <a href="{{ link.url }}" class="pub-link-btn" target="_blank">
+          {% if link.type == 'pdf' %}<i class="fas fa-file-pdf"></i>
+          {% elsif link.type == 'github' %}<i class="fab fa-github"></i>
+          {% elsif link.type == 'hf' %}<i class="fab fa-hugging-face"></i>
+          {% elsif link.type == 'arxiv' %}<i class="ai ai-arxiv"></i>
+          {% else %}<i class="fas fa-link"></i>{% endif %}
+          {{ link.label }}
+        </a>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+  </div>
+  {% endfor %}
+</section>

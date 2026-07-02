@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.data.profile.name }} - Homepage{% endif %}</title>
+  <meta name="description" content="{{ site.description }}">
+  <meta name="author" content="{{ site.author }}">
+  {% assign seo_image = site.seo.image %}
+  <link rel="canonical" href="{{ site.url }}{{ page.url | replace: "index.html", "" }}">
+
+  <!-- Open Graph -->
+  <meta property="og:locale" content="en">
+  <meta property="og:site_name" content="{{ site.data.profile.name }}">
+  <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.data.profile.name }} - Homepage{% endif %}">
+  <meta property="og:description" content="{{ site.description }}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ site.url }}{{ page.url | replace: "index.html", "" }}">
+  <meta property="og:image" content="{{ site.url }}{{ seo_image }}">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@{{ site.seo.twitter }}">
+  <meta name="twitter:url" content="{{ site.url }}{{ page.url | replace: "index.html", "" }}">
+  <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.data.profile.name }} - Homepage{% endif %}">
+  <meta name="twitter:description" content="{{ site.description }}">
+  <meta name="twitter:image" content="{{ site.url }}{{ seo_image }}">
+  <meta name="twitter:image:alt" content="{{ site.data.profile.name }}">
+
+  {% capture person_url %}{{ site.url }}{{ site.baseurl }}/{% endcapture %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": {{ site.data.profile.name | jsonify }},
+    "url": {{ person_url | jsonify }},
+    "image": {{ site.url | append: seo_image | jsonify }},
+    "jobTitle": {{ site.data.profile.bio | jsonify }},
+    "description": {{ site.description | jsonify }},
+    "affiliation": {
+      "@type": "Organization",
+      "name": {{ site.data.profile.affiliation | jsonify }}
+    },
+    "sameAs": [
+      {%- assign same_as_sep = "" -%}
+      {%- for pair in site.data.profile.links -%}
+      {%- if pair[0] != "email" -%}
+      {{ same_as_sep }}{{ pair[1] | jsonify }}
+      {%- assign same_as_sep = "," -%}
+      {%- endif -%}
+      {%- endfor -%}
+    ]
+  }
+  </script>
+
+  {% if site.seo.google_site_verification %}
+  <meta name="google-site-verification" content="{{ site.seo.google_site_verification }}">
+  {% endif %}
+  {% if site.seo.bing_site_verification %}
+  <meta name="msvalidate.01" content="{{ site.seo.bing_site_verification }}">
+  {% endif %}
+  {% if site.seo.baidu_site_verification %}
+  <meta name="baidu-site-verification" content="{{ site.seo.baidu_site_verification }}">
+  {% endif %}
+
+  <link rel="icon" href="{{ '/images/favicon.ico' | relative_url }}" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ '/images/favicon-32x32.png' | relative_url }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ '/images/favicon-16x16.png' | relative_url }}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ '/images/apple-touch-icon.png' | relative_url }}">
+  <link rel="manifest" href="{{ '/images/site.webmanifest' | relative_url }}">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="stylesheet" href="{{ "/css/vendor/inter.css" | relative_url }}">
+  <link rel="stylesheet" href="{{ "/css/vendor/fontawesome.css" | relative_url }}">
+  <link rel="stylesheet" href="{{ "/css/vendor/academicons.css" | relative_url }}">
+  <link rel="stylesheet" href="{{ "/css/main.css" | relative_url }}">
+</head>
+<body>
+  {% include nav.html %}
+
+  <div class="container">
+    {% include sidebar.html %}
+
+    <main class="content">
+      {{ content }}
+    </main>
+  </div>
+
+  {% include footer.html %}
+
+  <script>
+    (function () {
+      var topNav = document.querySelector('.top-nav');
+      var navMenu = document.querySelector('.nav-menu');
+      var navToggle = document.querySelector('.nav-toggle');
+      if (!navMenu) return;
+
+      function updateNavOnScroll() {
+        if (topNav) {
+          topNav.classList.toggle('scrolled', window.scrollY > 8);
+        }
+      }
+
+      window.addEventListener('scroll', updateNavOnScroll, { passive: true });
+      updateNavOnScroll();
+
+      function setMenuOpen(isOpen) {
+        navMenu.classList.toggle('active', isOpen);
+        if (navToggle) {
+          navToggle.classList.toggle('active', isOpen);
+          navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        }
+      }
+
+      if (navToggle) {
+        navToggle.addEventListener('click', function () {
+          setMenuOpen(!navMenu.classList.contains('active'));
+        });
+      }
+
+      var navLinks = Array.prototype.slice.call(navMenu.querySelectorAll('a[href^="#"]'));
+      var sections = navLinks.map(function (link) {
+        return document.getElementById(link.getAttribute('href').slice(1));
+      }).filter(Boolean);
+
+      function setActiveLink(id) {
+        navLinks.forEach(function (link) {
+          link.classList.toggle('active', link.getAttribute('href') === '#' + id);
+        });
+      }
+
+      navLinks.forEach(function (link) {
+        link.addEventListener('click', function () {
+          setMenuOpen(false);
+        });
+      });
+
+      if (!sections.length) return;
+
+      if ('IntersectionObserver' in window) {
+        var navHeight = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-height'), 10) || 64;
+        var intersecting = new Map();
+
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              intersecting.set(entry.target.id, entry.boundingClientRect.top);
+            } else {
+              intersecting.delete(entry.target.id);
+            }
+          });
+
+          if (intersecting.size === 0) return;
+
+          var activeId = Array.from(intersecting.entries())
+            .sort(function (a, b) { return a[1] - b[1]; })[0][0];
+          setActiveLink(activeId);
+        }, {
+          rootMargin: '-' + navHeight + 'px 0px -55% 0px',
+          threshold: 0
+        });
+
+        sections.forEach(function (section) {
+          observer.observe(section);
+        });
+      }
+
+      if (window.scrollY < 100 && sections.length) {
+        setActiveLink(sections[0].id);
+      }
+    })();
+
+    (function () {
+      document.querySelectorAll('a[href^="http://"], a[href^="https://"]').forEach(function (link) {
+        if (link.target === '_blank') return;
+        try {
+          if (new URL(link.href).origin !== window.location.origin) {
+            link.target = '_blank';
+            link.rel = 'noopener noreferrer';
+          }
+        } catch (e) {}
+      });
+    })();
+  </script>
+</body>
+</html>

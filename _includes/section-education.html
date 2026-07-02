@@ -1,0 +1,30 @@
+<!-- Educations Section -->
+<section id="educations" class="section-card educations-section">
+  {% include section-title.html anchor="#educations" label="Educations" %}
+
+  {% if site.data.education.note %}
+  <p class="section-note">{{ site.data.education.note }}</p>
+  {% endif %}
+
+  {% for edu in site.data.education.entries %}
+  <div class="education-item">
+    {% if edu.logo %}
+    <div class="record-logo">
+      <img src="{{ edu.logo | relative_url }}" alt="{{ edu.school }}" loading="lazy">
+    </div>
+    {% endif %}
+    <div class="edu-details">
+      <p class="record-header">{%- if edu.website -%}
+        <a href="{{ edu.website }}" class="record-title" target="_blank">{{ edu.school }}</a>{%- else -%}
+        <span class="record-title">{{ edu.school }}</span>{%- endif -%}
+      </p>
+      <p class="record-subtitle">{{ edu.degree }}</p>
+      <p class="record-meta">{%- if edu.location -%}
+        <span class="record-location">{{ edu.location }}</span>{%- endif -%}{%- if edu.location and edu.period -%}
+        <span class="record-meta-sep"> · </span>{%- endif -%}{%- if edu.period -%}
+        <span class="record-period">{{ edu.period }}</span>{%- endif -%}
+      </p>
+    </div>
+  </div>
+  {% endfor %}
+</section>

@@ -1,0 +1,30 @@
+# News section
+# note: Optional note shown below the section title
+# visible_count: Number of news items shown before folding the rest (default: 3)
+# entries: Each entry should have date, content (supports HTML)
+#   Inline logo example:
+#     <img src='/images/title/Unisound.png' alt='Unisound' class='inline-img' loading='lazy'>
+
+note:
+visible_count: 3
+entries:
+  - date: "2026.05"
+    content: "Started my internship at <a href='https://www.unisound.com/' target='_blank'>Unisound <img src='/images/title/Unisound.png' alt='Unisound' class='inline-img' loading='lazy'></a> in Xiamen, working on Code Agent optimization."
+  - date: "2025.11"
+    content: "Won <strong>Second Place</strong> in the <a href='https://challenge.xfyun.cn/topic/info?type=domain-term-translation' target='_blank'>iFLYTEK AI Developer Competition — Domain Term Translation Challenge</a>."
+  - date: "2025.09"
+    content: "Started my master's program in Artificial Intelligence at <a href='https://www.xmu.edu.cn/' target='_blank'>Xiamen University <img src='/images/title/XMU.png' alt='Xiamen University' class='inline-img' loading='lazy'></a>."
+  - date: "2025.08"
+    content: "Received the <strong>Rookie Award</strong> in <a href='https://tianchi.aliyun.com/competition/entrance/532353' target='_blank'>AFAC2025 — Financial Long Chain-of-Thought Compression</a>."
+  - date: "2025.06"
+    content: "Graduated from <a href='https://www.swufe.edu.cn/' target='_blank'>Southwestern University of Finance and Economics <img src='/images/title/SWUFE.png' alt='SWUFE' class='inline-img' loading='lazy'></a> with a B.E. in Artificial Intelligence."
+  - date: "2025.02"
+    content: "Started my internship as an LLM Algorithm Intern at <a href='https://www.dp.tech/' target='_blank'>DP Technology <img src='/images/title/DPTechnology.png' alt='DP Technology' class='inline-img' loading='lazy'></a>."
+  - date: "2024.11"
+    content: "Received <strong>Honorable Mention</strong> in the 2nd World AI4S Prize (Social Sciences Track — Market Game and Price Prediction)."
+  - date: "2023.12"
+    content: "Received <strong>Honorable Mention</strong> in the <a href='https://tianchi.aliyun.com/competition/entrance/532116' target='_blank'>CFFF Prize (Material Sciences Track — MOF Synthesis Conditions Prediction)</a>."
+  - date: "2023.12"
+    content: "Received the <strong>Merit Award</strong> in the <a href='https://tianchi.aliyun.com/competition/entrance/532155' target='_blank'>2023 Global Intelligent Vehicle AI Challenge</a>."
+  - date: "2023.10"
+    content: "Won the <strong>Bronze Medal</strong> in the <a href='/images/competitions/2023_ICPC_Regional_Bronze.pdf' target='_blank'>2023 ICPC Asia Xi'an Regional Contest</a>."

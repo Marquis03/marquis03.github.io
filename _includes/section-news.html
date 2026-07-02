@@ -1,0 +1,42 @@
+<!-- News Section -->
+<section id="news" class="section-card news-section">
+  {% include section-title.html anchor="#news" label="News" %}
+  {% if site.data.news.note %}
+  <p class="section-note">{{ site.data.news.note }}</p>
+  {% endif %}
+
+  {% assign news_visible_count = site.data.news.visible_count | default: 3 %}
+  {% assign news_entries = site.data.news.entries %}
+  {% assign news_hidden_count = news_entries.size | minus: news_visible_count %}
+
+  <ul class="news-list{% if news_hidden_count > 0 %} news-list--preview{% endif %}">
+    {% for item in news_entries limit: news_visible_count %}
+    {% include news-item.html date=item.date content=item.content %}
+    {% endfor %}
+  </ul>
+
+  {% if news_hidden_count > 0 %}
+  {% if news_hidden_count == 1 %}
+    {% capture news_more_label %}Show 1 older update{% endcapture %}
+  {% else %}
+    {% capture news_more_label %}Show {{ news_hidden_count }} older updates{% endcapture %}
+  {% endif %}
+  <details class="news-more">
+    <summary class="news-more-toggle">
+      <span class="news-more-label news-more-label--collapsed">
+        <i class="fas fa-chevron-down news-more-icon" aria-hidden="true"></i>
+        {{ news_more_label }}
+      </span>
+      <span class="news-more-label news-more-label--expanded">
+        <i class="fas fa-chevron-down news-more-icon" aria-hidden="true"></i>
+        Show less
+      </span>
+    </summary>
+    <ul class="news-list news-list--more">
+      {% for item in news_entries offset: news_visible_count %}
+      {% include news-item.html date=item.date content=item.content %}
+      {% endfor %}
+    </ul>
+  </details>
+  {% endif %}
+</section>

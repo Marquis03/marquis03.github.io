@@ -1,0 +1,28 @@
+<!-- Experiences Section -->
+<section id="experiences" class="section-card experiences-section">
+  {% include section-title.html anchor="#experiences" label="Experiences" %}
+
+  {% if site.data.experience.note %}
+  <p class="section-note">{{ site.data.experience.note }}</p>
+  {% endif %}
+
+  {% for exp in site.data.experience.entries %}
+  <div class="experience-item">
+    <div class="record-logo">
+      <img src="{{ exp.logo | relative_url }}" alt="{{ exp.company }}" loading="lazy">
+    </div>
+    <div class="exp-details">
+      <p class="record-header">{%- if exp.website -%}
+        <a href="{{ exp.website }}" class="record-title" target="_blank">{{ exp.company }}</a>{%- else -%}
+        <span class="record-title">{{ exp.company }}</span>{%- endif -%}
+      </p>
+      <p class="record-subtitle">{{ exp.position }}</p>
+      <p class="record-meta">{%- if exp.location -%}
+        <span class="record-location">{{ exp.location }}</span>{%- endif -%}{%- if exp.location and exp.period -%}
+        <span class="record-meta-sep"> · </span>{%- endif -%}{%- if exp.period -%}
+        <span class="record-period">{{ exp.period }}</span>{%- endif -%}
+      </p>
+    </div>
+  </div>
+  {% endfor %}
+</section>

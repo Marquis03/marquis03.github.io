@@ -1,0 +1,26 @@
+# Navigation links
+# Each entry should have: label, href (full URL or anchor), icon (emoji)
+
+- label: "About Me"
+  href: "#about"
+  icon: "🌟"
+
+- label: "News"
+  href: "#news"
+  icon: "🎉"
+
+- label: "Publications"
+  href: "#publications"
+  icon: "📚"
+
+- label: "Competitions"
+  href: "#competitions"
+  icon: "🏆"
+
+- label: "Educations"
+  href: "#educations"
+  icon: "🎓"
+
+- label: "Experiences"
+  href: "#experiences"
+  icon: "💼"

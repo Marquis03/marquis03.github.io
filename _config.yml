@@ -1,0 +1,25 @@
+author: "Jue Hou"
+description: ""
+baseurl: ""
+url: "https://marquis03.github.io"
+permalink: /:title/
+
+github:
+  username: Marquis03
+
+# Build settings
+markdown: kramdown
+future: true
+show_drafts: false
+
+# SEO
+seo:
+  image: "/images/avatar.jpg"
+  twitter: "Marquis03"
+  google_site_verification: "0MpA9KoL71BW5YFerAv_P29zlATKZEWZtyI6ICK2XJg"
+  bing_site_verification: "390C5F1424AB7444F1B8E05DA02232BF"
+  baidu_site_verification:
+
+# Reading Files
+exclude:
+  - run_server.sh

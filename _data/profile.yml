@@ -1,0 +1,19 @@
+# Profile data
+# name: Your name
+# bio: Short bio
+# avatar: Path from site root (e.g. /images/avatar.jpg)
+# links: Social/academic links (full URLs)
+
+name: "Jue Hou"
+bio: "Master Student @ XMU · LLM Reasoning & Agentic RL"
+avatar: "/images/avatar.jpg"
+location: "Xiamen, China"
+affiliation: "Xiamen University"
+
+links:
+  email: "mailto:marquis03@qq.com"
+  github: "https://github.com/Marquis03"
+  google_scholar: "https://scholar.google.com/citations?user=GoceuAsAAAAJ"
+  semantic_scholar: "https://www.semanticscholar.org/author/Jue-Hou/2367598435"
+  dblp: "https://dblp.org/pid/84/8116-3.html"
+  orcid: "https://orcid.org/0009-0009-0738-3503"

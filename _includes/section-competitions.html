@@ -1,0 +1,43 @@
+<!-- Competitions Section -->
+<section id="competitions" class="section-card competitions-section">
+  {% include section-title.html anchor="#competitions" label="Competitions" %}
+  {% if site.data.competitions.note %}
+  <p class="section-note">{{ site.data.competitions.note }}</p>
+  {% endif %}
+
+  {% for comp in site.data.competitions.entries %}
+  {% assign award_badge = 'site-badge--merit' %}
+  {% if comp.medal == '🥇' %}
+    {% assign award_badge = 'site-badge--gold' %}
+  {% elsif comp.medal == '🥈' %}
+    {% assign award_badge = 'site-badge--silver' %}
+  {% elsif comp.medal == '🥉' %}
+    {% assign award_badge = 'site-badge--bronze' %}
+  {% endif %}
+  {% assign comp_logo = comp.logo | default: "/images/logo/XMU.png" %}
+  <div class="competition-item">
+    <div class="record-logo">
+      <img src="{{ comp_logo | relative_url }}" alt="{{ comp.name }}" loading="lazy">
+    </div>
+    <div class="competition-details">
+      {% if comp.url contains '://' %}
+      <a href="{{ comp.url }}" class="record-title" target="_blank">{{ comp.name }}</a>
+      {% elsif comp.url %}
+      <a href="{{ comp.url | relative_url }}" class="record-title" target="_blank">{{ comp.name }}</a>
+      {% else %}
+      <span class="record-title">{{ comp.name }}</span>
+      {% endif %}
+      <div class="competition-badges">
+        <span class="site-badge {{ award_badge }}">{{ comp.medal }} {{ comp.award }}</span>
+        {% if comp.rank %}
+        <span class="site-badge site-badge--rank">📈 {{ comp.rank }}</span>
+        {% endif %}
+        {% if comp.bonus %}
+        <span class="site-badge site-badge--bonus">💰 {{ comp.bonus }}</span>
+        {% endif %}
+        <span class="site-badge site-badge--date">📅 {{ comp.date }}</span>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</section>

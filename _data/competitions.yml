@@ -1,0 +1,57 @@
+# Competitions section
+# note: Optional note shown below the section title
+# entries: Each entry should have name, medal, award, date
+#   Optional: rank, bonus, url, logo (path from site root)
+
+note:
+entries:
+  - name: "2025 iFLYTEK AI Developer Competition — Domain Term Translation Challenge"
+    url: "https://challenge.xfyun.cn/topic/info?type=domain-term-translation"
+    logo: "/images/logo/科大讯飞.svg"
+    medal: "🥈"
+    award: "Second Place"
+    rank: "2/120 (Top 1.7%)"
+    bonus: "3,000 CNY"
+    date: "2025.11"
+
+  - name: "AFAC2025 Challenge Group — Compression of Long Chain-of-Thought in the Financial Field"
+    url: "https://tianchi.aliyun.com/competition/entrance/532353"
+    logo: "/images/logo/蚂蚁集团.svg"
+    medal: "🏅"
+    award: "Rookie Award"
+    rank: "8/1056 (Top 0.76%)"
+    bonus: "5,000 CNY"
+    date: "2025.08"
+
+  - name: "The 2nd World AI4S Prize: Social Sciences Track — Market Game and Price Prediction"
+    logo: "/images/logo/复旦大学.svg"
+    medal: "🏅"
+    award: "Honorable Mention"
+    rank: "8/2551 (Top 0.31%)"
+    bonus: "2,500 CNY"
+    date: "2024.11"
+
+  - name: "2023 Global Intelligent Vehicle AI Challenge — Intelligent Driving Vehicle Virtual Simulation Video Data Understanding"
+    url: "https://tianchi.aliyun.com/competition/entrance/532155"
+    logo: "/images/logo/吉利汽车集团.svg"
+    medal: "🏅"
+    award: "Merit Award"
+    rank: "7/1843 (Top 0.38%)"
+    bonus: "5,000 CNY"
+    date: "2023.12"
+
+  - name: "The CFFF Prize: Material Sciences Track — The Prediction of the Synthesis Conditions of Metal-Organic Framework (MOF) Materials"
+    url: "https://tianchi.aliyun.com/competition/entrance/532116"
+    logo: "/images/logo/复旦大学.svg"
+    medal: "🏅"
+    award: "Honorable Mention"
+    rank: "10/2117 (Top 0.47%)"
+    bonus: "2,500 CNY"
+    date: "2023.12"
+
+  - name: "The 2023 ICPC Asia Xi'an Regional Contest"
+    url: "/images/competitions/2023_ICPC_Regional_Bronze.pdf"
+    logo: "/images/logo/icpc_foundation.png"
+    medal: "🥉"
+    award: "Bronze Medal"
+    date: "2023.10"

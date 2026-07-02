@@ -1,0 +1,20 @@
+# Experience section
+# note: Optional note shown below the section title
+# entries: Each entry should have company, position, location, period
+#   Optional: logo (path from site root, e.g. /images/logo/foo.png), website
+
+note:
+entries:
+  - company: "Unisound"
+    position: "Model Optimization Intern (Code Agent)"
+    location: "Xiamen"
+    period: "2026.05 - present"
+    logo: "/images/logo/Unisound.png"
+    website: "https://www.unisound.com/"
+
+  - company: "DPTechnology"
+    position: "LLM Algorithm Intern"
+    location: "Beijing → Remote"
+    period: "2025.02 - 2026.05"
+    logo: "/images/logo/DPTechnology.png"
+    website: "https://www.dp.tech/"

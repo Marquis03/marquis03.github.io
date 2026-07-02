@@ -1,0 +1,14 @@
+<nav class="top-nav">
+  <div class="nav-container">
+    <a href="{{ '/' | relative_url }}" class="nav-brand">{{ site.data.profile.name }}</a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <i class="fas fa-bars nav-toggle-open" aria-hidden="true"></i>
+      <i class="fas fa-times nav-toggle-close" aria-hidden="true"></i>
+    </button>
+    <ul class="nav-menu">
+      {% for item in site.data.navigation %}
+      <li><a href="{{ item.href }}">{{ item.label }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+</nav>

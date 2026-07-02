@@ -1,0 +1,5 @@
+<!-- About Me Section -->
+<section id="about" class="section-card about-section">
+  {% include section-title.html anchor="#about" label="About Me" %}
+  {% capture about_content %}{% include about-content.md %}{% endcapture %}{{ about_content | markdownify }}
+</section>

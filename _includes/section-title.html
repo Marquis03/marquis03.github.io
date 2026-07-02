@@ -1,0 +1,10 @@
+{% assign section_icon = "" %}
+{% for nav in site.data.navigation %}
+  {% if nav.href == include.anchor %}
+    {% assign section_icon = nav.icon %}
+  {% endif %}
+{% endfor %}
+<h2 class="section-title">
+  <span class="section-title-icon" aria-hidden="true">{{ section_icon }}</span>
+  <span class="section-title-text">{{ include.label }}</span>
+</h2>

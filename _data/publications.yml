@@ -1,0 +1,89 @@
+# Publications section
+# note: Optional note shown below the section title
+# entries: Each entry should have title, venue, url, authors (array)
+#   For authors: name, mine (your name), equal_contrib (co-first author), corresponding
+#   Optional: image (path from site root), links
+
+note: "* Equal contribution, † Corresponding author"
+entries:
+  - title: "Reasoning-Enhanced Large Language Models for Molecular Property Prediction"
+    venue: "arXiv 2510"
+    url: "https://arxiv.org/pdf/2510.10248"
+    image: "/images/publications/MPPReasoner.svg"
+    authors:
+      - name: "Jiaxi Zhuang"
+        equal_contrib: true
+      - name: "Yaorui Shi"
+        equal_contrib: true
+      - name: "Jue Hou"
+        mine: true
+        equal_contrib: true
+      - name: "Yunong He"
+      - name: "Mingwei Ye"
+      - name: "Mingjun Xu"
+      - name: "Yuming Su"
+      - name: "Linfeng Zhang"
+      - name: "Ying Qian"
+      - name: "Linfeng Zhang"
+      - name: "Guolin Ke"
+      - name: "Hengxing Cai"
+        corresponding: true
+    links:
+      - type: "arxiv"
+        label: "arXiv"
+        url: "https://arxiv.org/abs/2510.10248"
+      - type: "github"
+        label: "GitHub"
+        url: "https://github.com/Jesse-zjx/MPPReasoner"
+
+  - title: "MM-R5: MultiModal Reasoning-Enhanced ReRanker via Reinforcement Learning for Document Retrieval"
+    venue: "arXiv 2506"
+    url: "https://arxiv.org/pdf/2506.12364"
+    image: "/images/publications/MM-R5.svg"
+    authors:
+      - name: "Mingjun Xu"
+        equal_contrib: true
+      - name: "Jinhan Dong"
+        equal_contrib: true
+      - name: "Jue Hou"
+        mine: true
+        equal_contrib: true
+      - name: "Zehui Wang"
+      - name: "Sihang Li"
+      - name: "Zhifeng Gao"
+      - name: "Renxin Zhong"
+      - name: "Hengxing Cai"
+        corresponding: true
+    links:
+      - type: "arxiv"
+        label: "arXiv"
+        url: "https://arxiv.org/abs/2506.12364"
+      - type: "github"
+        label: "GitHub"
+        url: "https://github.com/i2vec/MM-R5"
+      - type: "hf"
+        label: "Hugging Face"
+        url: "https://huggingface.co/i2vec/MM-R5"
+
+  - title: "Doc2SAR: A Synergistic Framework for High-Fidelity Extraction of Structure-Activity Relationships from Scientific Documents"
+    venue: "arXiv 2506"
+    url: "https://arxiv.org/pdf/2506.21625"
+    image: "/images/publications/Doc2SAR.svg"
+    authors:
+      - name: "Jiaxi Zhuang"
+        equal_contrib: true
+      - name: "Kangning Li"
+        equal_contrib: true
+      - name: "Jue Hou"
+        mine: true
+      - name: "Mingjun Xu"
+      - name: "Zhifeng Gao"
+      - name: "Hengxing Cai"
+        corresponding: true
+    links:
+      - type: "arxiv"
+        label: "arXiv"
+        url: "https://arxiv.org/abs/2506.21625"
+      - type: "github"
+        label: "GitHub"
+        url: "https://github.com/Jesse-zjx/Doc2SAR"

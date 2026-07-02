@@ -1,0 +1,64 @@
+<aside class="sidebar">
+  <div class="profile-card">
+    <div class="profile-header">
+      <div class="avatar">
+        <img src="{{ site.data.profile.avatar | relative_url }}" alt="{{ site.data.profile.name }}">
+      </div>
+      <div class="profile-info">
+        <h1 class="name">{{ site.data.profile.name }}</h1>
+        <p class="bio">{{ site.data.profile.bio }}</p>
+      </div>
+    </div>
+
+    <div class="contact-links">
+      {% if site.data.profile.location %}
+      <span class="contact-item contact-item-static">
+        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+        <span class="contact-label">{{ site.data.profile.location }}</span>
+      </span>
+      {% endif %}
+      {% if site.data.profile.affiliation %}
+      <span class="contact-item contact-item-static">
+        <i class="fas fa-building" aria-hidden="true"></i>
+        <span class="contact-label">{{ site.data.profile.affiliation }}</span>
+      </span>
+      {% endif %}
+      {% if site.data.profile.links.email %}
+      <a href="{{ site.data.profile.links.email }}" class="contact-item" aria-label="Email">
+        <i class="fas fa-envelope" aria-hidden="true"></i>
+        <span class="contact-label">{{ site.data.profile.links.email | remove: 'mailto:' }}</span>
+      </a>
+      {% endif %}
+      {% if site.data.profile.links.github %}
+      <a href="{{ site.data.profile.links.github }}" class="contact-item" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+        <i class="fab fa-github" aria-hidden="true"></i>
+        <span class="contact-label">GitHub</span>
+      </a>
+      {% endif %}
+      {% if site.data.profile.links.google_scholar %}
+      <a href="{{ site.data.profile.links.google_scholar }}" class="contact-item" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar">
+        <i class="ai ai-google-scholar" aria-hidden="true"></i>
+        <span class="contact-label">Google Scholar</span>
+      </a>
+      {% endif %}
+      {% if site.data.profile.links.semantic_scholar %}
+      <a href="{{ site.data.profile.links.semantic_scholar }}" class="contact-item" target="_blank" rel="noopener noreferrer" aria-label="Semantic Scholar">
+        <i class="ai ai-semantic-scholar" aria-hidden="true"></i>
+        <span class="contact-label">Semantic Scholar</span>
+      </a>
+      {% endif %}
+      {% if site.data.profile.links.dblp %}
+      <a href="{{ site.data.profile.links.dblp }}" class="contact-item" target="_blank" rel="noopener noreferrer" aria-label="DBLP">
+        <i class="ai ai-dblp" aria-hidden="true"></i>
+        <span class="contact-label">DBLP</span>
+      </a>
+      {% endif %}
+      {% if site.data.profile.links.orcid %}
+      <a href="{{ site.data.profile.links.orcid }}" class="contact-item" target="_blank" rel="noopener noreferrer" aria-label="ORCID">
+        <i class="ai ai-orcid" aria-hidden="true"></i>
+        <span class="contact-label">ORCID</span>
+      </a>
+      {% endif %}
+    </div>
+  </div>
+</aside>
