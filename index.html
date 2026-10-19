@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Jue Hou | 侯爵">
+  <meta name="description" content="Jue Hou — master's student in Electronic Information (Artificial Intelligence) at Xiamen University, researching LLM reasoning and agentic reinforcement learning.">
+  <meta name="theme-color" content="#ffffff">
+  <title>Jue Hou | 侯爵</title>
+  <link rel="canonical" href="https://marquis03.github.io/">
+  <link rel="icon" href="assets/images/favicon.ico">
+  <link rel="stylesheet" href="stylesheet.css">
+
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Jue Hou | 侯爵">
+  <meta property="og:description" content="Master's student in Electronic Information (Artificial Intelligence) at Xiamen University, researching LLM reasoning and agentic reinforcement learning.">
+  <meta property="og:url" content="https://marquis03.github.io/">
+  <meta property="og:image" content="https://marquis03.github.io/assets/images/avatar.jpg">
+  <meta property="og:image:alt" content="Portrait of Jue Hou">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Jue Hou | 侯爵">
+  <meta name="twitter:description" content="Master's student in Electronic Information (Artificial Intelligence) at Xiamen University, researching LLM reasoning and agentic reinforcement learning.">
+  <meta name="twitter:image" content="https://marquis03.github.io/assets/images/avatar.jpg">
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Jue Hou",
+      "alternateName": "侯爵",
+      "url": "https://marquis03.github.io/",
+      "image": "https://marquis03.github.io/assets/images/avatar.jpg",
+      "email": "mailto:marquis03@qq.com",
+      "jobTitle": "Master's Student in Electronic Information (Artificial Intelligence)",
+      "affiliation": {
+        "@type": "CollegeOrUniversity",
+        "name": "Xiamen University",
+        "url": "https://www.xmu.edu.cn/"
+      },
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "Southwestern University of Finance and Economics",
+        "url": "https://www.swufe.edu.cn/"
+      },
+      "sameAs": [
+        "https://github.com/Marquis03",
+        "https://scholar.google.com/citations?user=GoceuAsAAAAJ",
+        "https://www.semanticscholar.org/author/Jue-Hou/2367598435"
+      ]
+    }
+  </script>
+
+  <script src="data/profile.js" defer></script>
+  <script src="data/news.js" defer></script>
+  <script src="data/research.js" defer></script>
+  <script src="data/competitions.js" defer></script>
+  <script src="data/education.js" defer></script>
+  <script src="data/experience.js" defer></script>
+  <script src="render-content.js" defer></script>
+  <script src="navigation.js" defer></script>
+  <script src="interactions.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#about">Skip to content</a>
+
+  <aside class="section-nav">
+    <div class="section-nav__inner">
+      <a class="section-nav__label" href="#about">Index</a>
+      <div class="section-nav__track">
+        <span class="section-nav__indicator"></span>
+        <ol class="section-nav__list" id="section-nav-list">
+          <li><a class="section-nav__link" href="#about">About</a></li>
+          <li><a class="section-nav__link" href="#news">News</a></li>
+          <li><a class="section-nav__link" href="#research">Research</a></li>
+          <li><a class="section-nav__link" href="#education">Education</a></li>
+          <li><a class="section-nav__link" href="#experience">Experience</a></li>
+          <li><a class="section-nav__link" href="#competitions">Competition</a></li>
+        </ol>
+      </div>
+    </div>
+  </aside>
+
+  <main class="page-shell">
+    <section id="about" class="page-section profile" data-nav-section tabindex="-1"></section>
+
+    <section id="news" class="page-section news-section" data-nav-section tabindex="-1">
+      <header class="section-heading">
+        <h2 class="section-title">News</h2>
+      </header>
+      <ul class="news-list" id="news-list"></ul>
+      <details class="news-archive">
+        <summary id="news-more-label"></summary>
+        <ul class="news-list" id="news-more"></ul>
+      </details>
+    </section>
+
+    <section id="research" class="page-section" data-nav-section tabindex="-1">
+      <header class="section-heading research-heading">
+        <h2 class="section-title" id="research-heading">All Research</h2>
+        <button class="research-toggle" id="research-toggle" aria-controls="research-papers" hidden>All Research</button>
+      </header>
+      <p class="paper-meta-note">* Equal contribution &nbsp; † Corresponding author</p>
+      <p class="sr-only" id="research-status" role="status" aria-live="polite"></p>
+      <div id="research-papers"></div>
+    </section>
+
+    <section id="education" class="page-section" data-nav-section tabindex="-1">
+      <header class="section-heading">
+        <h2 class="section-title">Education</h2>
+      </header>
+      <div id="education-list"></div>
+    </section>
+
+    <section id="experience" class="page-section" data-nav-section tabindex="-1">
+      <header class="section-heading">
+        <h2 class="section-title">Experience</h2>
+      </header>
+      <div id="experience-list"></div>
+    </section>
+
+    <section id="competitions" class="page-section" data-nav-section tabindex="-1">
+      <header class="section-heading research-heading">
+        <h2 class="section-title" id="competition-heading">All Competition</h2>
+        <button class="research-toggle" id="competition-toggle" aria-controls="competition-list" hidden>All Competition</button>
+      </header>
+      <p class="sr-only" id="competition-status" role="status" aria-live="polite"></p>
+      <div id="competition-list"></div>
+    </section>
+
+    <footer class="site-footer">
+      <a class="back-top" href="#about" aria-label="Back to top">↑</a>
+    </footer>
+  </main>
+
+  <dialog id="figure-dialog" class="figure-dialog" aria-labelledby="figure-dialog-title" aria-describedby="figure-caption">
+    <h2 class="sr-only" id="figure-dialog-title">Research figure preview</h2>
+    <form method="dialog">
+      <button class="dialog-close" type="submit" aria-label="Close preview">×</button>
+    </form>
+    <figure>
+      <img id="figure-image" alt="">
+      <figcaption id="figure-caption"></figcaption>
+    </figure>
+  </dialog>
+</body>
+</html>
