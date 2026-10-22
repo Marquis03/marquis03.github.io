@@ -35,8 +35,6 @@ External paper, project, code, and profile links require an internet connection.
 The data files use plain JavaScript objects instead of fetched JSON so the site
 continues to work when `index.html` is opened directly from the filesystem.
 
-Local previews, unlinked manuscripts, and unused original photographs are not part of this publishing copy.
-
 ## Deployment
 
 Serve or publish the directory as a static website. No build command is required.

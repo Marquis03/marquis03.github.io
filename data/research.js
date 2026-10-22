@@ -9,9 +9,21 @@ window.HOMEPAGE_DATA.research = [
             'Chengyi Yang*, Renxu Bao*, <span class="author-self">Jue Hou</span>*, Zongpei Teng, Ziheng Wang, Yujie Lin, Chengsong Huang, Junnan Zhu, Delai Qiu, Yining Wang, Shengping Liu, Fei Long†, Jinsong Su†',
         venue: "arXiv preprint arXiv:2610.13395",
         links: [
-            { label: "arXiv", url: "https://arxiv.org/abs/2610.13395", icon: "arxiv.svg" },
-            { label: "Project", url: "https://programgym.github.io/", icon: "project.svg" },
-            { label: "Hugging Face", url: "https://huggingface.co/ProgramGym", icon: "huggingface.svg" },
+            {
+                label: "arXiv",
+                url: "https://arxiv.org/abs/2610.13395",
+                icon: "arxiv.svg",
+            },
+            {
+                label: "Project",
+                url: "https://programgym.github.io/",
+                icon: "project.svg",
+            },
+            {
+                label: "Hugging Face",
+                url: "https://huggingface.co/ProgramGym",
+                icon: "huggingface.svg",
+            },
         ],
         highlight: true,
     },
@@ -24,9 +36,21 @@ window.HOMEPAGE_DATA.research = [
             'Hengxing Cai*, Yijie Rao*, Ligang Huang, Zanyang Zhong, Jinhan Dong, Jingjun Tan, Changhao Nai, <span class="author-self">Jue Hou</span>, Wenhao Lu, Renxin Zhong†',
         venue: "arXiv preprint arXiv:2601.03707",
         links: [
-            { label: "arXiv", url: "https://arxiv.org/abs/2601.03707", icon: "arxiv.svg" },
-            { label: "GitHub", url: "https://github.com/nopride03/AirNav", icon: "github.svg" },
-            { label: "Hugging Face", url: "https://huggingface.co/datasets/dpairnav/AirNav", icon: "huggingface.svg" },
+            {
+                label: "arXiv",
+                url: "https://arxiv.org/abs/2601.03707",
+                icon: "arxiv.svg",
+            },
+            {
+                label: "GitHub",
+                url: "https://github.com/nopride03/AirNav",
+                icon: "github.svg",
+            },
+            {
+                label: "Hugging Face",
+                url: "https://huggingface.co/datasets/dpairnav/AirNav",
+                icon: "huggingface.svg",
+            },
         ],
         highlight: false,
     },
@@ -39,8 +63,16 @@ window.HOMEPAGE_DATA.research = [
             'Jiaxi Zhuang*, Yaorui Shi*, <span class="author-self">Jue Hou</span>*, Yunong He, Mingwei Ye, Mingjun Xu, Yuming Su, Linfeng Zhang, Ying Qian, Linfeng Zhang, Guolin Ke, Hengxing Cai†',
         venue: "arXiv preprint arXiv:2510.10248",
         links: [
-            { label: "arXiv", url: "https://arxiv.org/abs/2510.10248", icon: "arxiv.svg" },
-            { label: "GitHub", url: "https://github.com/Jesse-zjx/MPPReasoner", icon: "github.svg" },
+            {
+                label: "arXiv",
+                url: "https://arxiv.org/abs/2510.10248",
+                icon: "arxiv.svg",
+            },
+            {
+                label: "GitHub",
+                url: "https://github.com/Jesse-zjx/MPPReasoner",
+                icon: "github.svg",
+            },
         ],
         highlight: true,
     },
@@ -53,9 +85,21 @@ window.HOMEPAGE_DATA.research = [
             'Mingjun Xu*, Jinhan Dong*, <span class="author-self">Jue Hou</span>*, Zehui Wang, Sihang Li, Zhifeng Gao, Renxin Zhong, Hengxing Cai†',
         venue: "arXiv preprint arXiv:2506.12364",
         links: [
-            { label: "arXiv", url: "https://arxiv.org/abs/2506.12364", icon: "arxiv.svg" },
-            { label: "GitHub", url: "https://github.com/i2vec/MM-R5", icon: "github.svg" },
-            { label: "Hugging Face", url: "https://huggingface.co/i2vec/MM-R5", icon: "huggingface.svg" },
+            {
+                label: "arXiv",
+                url: "https://arxiv.org/abs/2506.12364",
+                icon: "arxiv.svg",
+            },
+            {
+                label: "GitHub",
+                url: "https://github.com/i2vec/MM-R5",
+                icon: "github.svg",
+            },
+            {
+                label: "Hugging Face",
+                url: "https://huggingface.co/i2vec/MM-R5",
+                icon: "huggingface.svg",
+            },
         ],
         highlight: true,
     },
@@ -68,8 +112,16 @@ window.HOMEPAGE_DATA.research = [
             'Jiaxi Zhuang*, Kangning Li*, <span class="author-self">Jue Hou</span>, Mingjun Xu, Zhifeng Gao, Hengxing Cai†',
         venue: "arXiv preprint arXiv:2506.21625",
         links: [
-            { label: "arXiv", url: "https://arxiv.org/abs/2506.21625", icon: "arxiv.svg" },
-            { label: "GitHub", url: "https://github.com/Jesse-zjx/Doc2SAR", icon: "github.svg" },
+            {
+                label: "arXiv",
+                url: "https://arxiv.org/abs/2506.21625",
+                icon: "arxiv.svg",
+            },
+            {
+                label: "GitHub",
+                url: "https://github.com/Jesse-zjx/Doc2SAR",
+                icon: "github.svg",
+            },
         ],
         highlight: false,
     },
