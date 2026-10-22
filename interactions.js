@@ -1,4 +1,6 @@
 (function initHighlightToggles() {
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
   function createToggle(config) {
     const button = document.getElementById(config.buttonId);
     const heading = document.getElementById(config.headingId);
@@ -8,9 +10,16 @@
 
     let showAll = false;
     function update(announce) {
+      const enteringItems = [];
       items.forEach(function (item) {
-        item.hidden = !showAll && item.dataset.highlight !== "true";
-        item.classList.remove("is-last-visible");
+        const wasHidden = item.hidden;
+        const shouldHide = !showAll && item.dataset.highlight !== "true";
+        item.hidden = shouldHide;
+        item.classList.remove("is-last-visible", "filter-item-enter");
+        item.style.removeProperty("--filter-enter-delay");
+        if (announce && showAll && wasHidden && !shouldHide && !reducedMotion.matches) {
+          enteringItems.push(item);
+        }
       });
       const visibleItems = items.filter(function (item) { return !item.hidden; });
       if (visibleItems.length) visibleItems[visibleItems.length - 1].classList.add("is-last-visible");
@@ -21,8 +30,15 @@
         const count = visibleItems.length;
         status.textContent = "Showing " + count + (showAll ? " total " : " highlighted ") + config.label.toLowerCase() + ".";
       }
+      enteringItems.forEach(function (item, index) {
+        item.style.setProperty("--filter-enter-delay", Math.min(index * 25, 125) + "ms");
+        item.classList.add("filter-item-enter");
+      });
     }
-    button.addEventListener("click", function () { showAll = !showAll; update(true); });
+    button.addEventListener("click", function () {
+      showAll = !showAll;
+      update(true);
+    });
     update(false);
     button.hidden = false;
   }
@@ -60,5 +76,64 @@
 
   dialog.addEventListener("close", function () {
     if (trigger) trigger.focus({ preventScroll: true });
+  });
+})();
+
+(function initScrollReveal() {
+  const items = Array.from(document.querySelectorAll("[data-reveal] [data-reveal-item]"))
+    .filter(function (item) { return !item.hidden && item.getClientRects().length > 0; });
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  if (items.length === 0 || reducedMotion.matches || !window.IntersectionObserver) return;
+
+  const initialItems = [];
+  const scrollItems = [];
+
+  items.forEach(function (item) {
+    const rect = item.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      initialItems.push(item);
+    } else {
+      item.classList.add("reveal-pending");
+      scrollItems.push(item);
+    }
+  });
+
+  initialItems.forEach(function (item, index) {
+    item.style.setProperty("--reveal-delay", Math.min(140 + index * 40, 300) + "ms");
+    item.classList.add("reveal-initial");
+    item.addEventListener("animationend", function finishInitialReveal(event) {
+      if (event.target !== item || event.animationName !== "reveal-item-enter") return;
+      item.classList.remove("reveal-initial");
+      item.style.removeProperty("--reveal-delay");
+      item.removeEventListener("animationend", finishInitialReveal);
+    });
+  });
+
+  const observer = new IntersectionObserver(function (entries) {
+    const entering = entries
+      .filter(function (entry) { return entry.isIntersecting; })
+      .sort(function (a, b) { return a.boundingClientRect.top - b.boundingClientRect.top; });
+
+    entering.forEach(function (entry, index) {
+      entry.target.style.setProperty("--reveal-delay", Math.min(index * 35, 105) + "ms");
+      entry.target.classList.add("is-visible");
+      observer.unobserve(entry.target);
+    });
+  }, {
+    threshold: 0.02,
+    rootMargin: "0px 0px -2% 0px"
+  });
+
+  scrollItems.forEach(function (item) {
+    observer.observe(item);
+  });
+
+  reducedMotion.addEventListener("change", function (event) {
+    if (!event.matches) return;
+    observer.disconnect();
+    items.forEach(function (item) {
+      item.classList.remove("reveal-pending", "reveal-initial");
+      item.style.removeProperty("--reveal-delay");
+    });
   });
 })();

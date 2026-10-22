@@ -7,6 +7,7 @@
   <meta name="description" content="Jue Hou — master's student in Electronic Information (Artificial Intelligence) at Xiamen University, researching LLM reasoning and agentic reinforcement learning.">
   <meta name="theme-color" content="#ffffff">
   <title>Jue Hou | 侯爵</title>
+  <script>document.documentElement.classList.add("js");</script>
   <link rel="canonical" href="https://marquis03.github.io/">
   <link rel="icon" href="assets/images/favicon.ico">
   <link rel="stylesheet" href="stylesheet.css">
@@ -76,7 +77,7 @@
           <li><a class="section-nav__link" href="#research">Research</a></li>
           <li><a class="section-nav__link" href="#education">Education</a></li>
           <li><a class="section-nav__link" href="#experience">Experience</a></li>
-          <li><a class="section-nav__link" href="#competitions">Competition</a></li>
+          <li><a class="section-nav__link" href="#competition">Competition</a></li>
         </ol>
       </div>
     </div>
@@ -123,61 +124,61 @@
       <!-- STATIC-CONTENT:about:END -->
     </section>
 
-    <section id="news" class="page-section news-section" data-nav-section tabindex="-1">
+    <section id="news" class="page-section news-section" data-nav-section data-reveal tabindex="-1">
       <!-- STATIC-CONTENT:news:START -->
-        <header class="section-heading">
+        <header class="section-heading" data-reveal-item>
           <h2 class="section-title">News</h2>
         </header>
         <ul class="news-list" id="news-list">
-        <li>
+        <li data-reveal-item>
           <time datetime="2026-05">2026.05</time>
           <p>Started my internship at <a href="https://www.unisound.com/">Unisound</a> in Xiamen, working on Code Agent optimization.</p>
         </li>
 
-        <li>
+        <li data-reveal-item>
           <time datetime="2025-11">2025.11</time>
           <p>Won <strong>Second Place</strong> in the <a href="https://challenge.xfyun.cn/topic/info?type=domain-term-translation">iFLYTEK AI Developer Competition — Domain Term Translation Challenge</a>.</p>
         </li>
 
-        <li>
+        <li data-reveal-item>
           <time datetime="2025-09">2025.09</time>
           <p>Started my master's program in Electronic Information, specializing in Artificial Intelligence, at <a href="https://www.xmu.edu.cn/">Xiamen University</a>.</p>
         </li>
       </ul>
-        <details class="news-archive">
+        <details class="news-archive" data-reveal-item>
           <summary id="news-more-label">More updates</summary>
           <ul class="news-list" id="news-more">
-        <li>
+        <li data-reveal-item>
           <time datetime="2025-08">2025.08</time>
           <p>Received the <strong>Rookie Award</strong> in <a href="https://tianchi.aliyun.com/competition/entrance/532353">AFAC2025 — Financial Long Chain-of-Thought Compression</a>.</p>
         </li>
 
-        <li>
+        <li data-reveal-item>
           <time datetime="2025-06">2025.06</time>
           <p>Graduated from <a href="https://www.swufe.edu.cn/">Southwestern University of Finance and Economics</a> with a B.E. in Artificial Intelligence.</p>
         </li>
 
-        <li>
+        <li data-reveal-item>
           <time datetime="2025-02">2025.02</time>
           <p>Started as an LLM Algorithm Intern at <a href="https://www.dp.tech/">DP Technology</a>.</p>
         </li>
 
-        <li>
+        <li data-reveal-item>
           <time datetime="2024-11">2024.11</time>
           <p>Received <strong>Honorable Mention</strong> in the <a href="https://competition.ai4s.com.cn/">2nd World AI4S Prize</a>.</p>
         </li>
 
-        <li>
+        <li data-reveal-item>
           <time datetime="2023-12">2023.12</time>
           <p>Received <strong>Honorable Mention</strong> in the <a href="https://tianchi.aliyun.com/competition/entrance/532116">CFFF Prize</a>.</p>
         </li>
 
-        <li>
+        <li data-reveal-item>
           <time datetime="2023-12">2023.12</time>
           <p>Received the <strong>Merit Award</strong> in the <a href="https://tianchi.aliyun.com/competition/entrance/532155">Global Intelligent Vehicle AI Challenge</a>.</p>
         </li>
 
-        <li>
+        <li data-reveal-item>
           <time datetime="2023-10">2023.10</time>
           <p>Won the <strong>Bronze Medal</strong> in the <a href="assets/certificates/2023_ICPC_Xian_Regional_Bronze.pdf">ICPC Asia Xi'an Regional Contest</a>.</p>
         </li>
@@ -186,18 +187,19 @@
       <!-- STATIC-CONTENT:news:END -->
     </section>
 
-    <section id="research" class="page-section" data-nav-section tabindex="-1">
+    <section id="research" class="page-section" data-nav-section data-reveal tabindex="-1">
       <!-- STATIC-CONTENT:research:START -->
-        <header class="section-heading research-heading">
+        <header class="section-heading research-heading" data-reveal-item>
           <h2 class="section-title" id="research-heading">All Research</h2>
           <button class="research-toggle" id="research-toggle" aria-controls="research-papers" hidden>All Research</button>
         </header>
-        <p class="paper-meta-note">* Equal contribution &nbsp; † Corresponding author</p>
+        <p class="paper-meta-note" data-reveal-item>* Equal contribution &nbsp; † Corresponding author</p>
         <p class="sr-only" id="research-status" role="status" aria-live="polite"></p>
         <div id="research-papers">
         <article
           class="paper-row highlight-paper"
           data-highlight="true"
+          data-reveal-item
 
         >
           <a class="paper-figure" href="assets/images/publications/PBAgent.png" data-figure data-caption="ProgramGym: Scaling Training Environments for Long-Horizon Program Reproduction Agents">
@@ -229,6 +231,7 @@
         <article
           class="paper-row "
           data-highlight="false"
+          data-reveal-item
 
         >
           <a class="paper-figure" href="assets/images/publications/AirVLN-R1.png" data-figure data-caption="AirNav: A Large-Scale UAV Vision-and-Language Navigation Dataset with Natural and Diverse Instructions">
@@ -260,6 +263,7 @@
         <article
           class="paper-row highlight-paper"
           data-highlight="true"
+          data-reveal-item
 
         >
           <a class="paper-figure" href="assets/images/publications/MPPReasoner.png" data-figure data-caption="Reasoning-Enhanced Large Language Models for Molecular Property Prediction">
@@ -286,6 +290,7 @@
         <article
           class="paper-row highlight-paper"
           data-highlight="true"
+          data-reveal-item
 
         >
           <a class="paper-figure" href="assets/images/publications/MM-R5.png" data-figure data-caption="MM-R5: MultiModal Reasoning-Enhanced ReRanker via Reinforcement Learning for Document Retrieval">
@@ -317,6 +322,7 @@
         <article
           class="paper-row "
           data-highlight="false"
+          data-reveal-item
 
         >
           <a class="paper-figure" href="assets/images/publications/Doc2SAR.png" data-figure data-caption="Doc2SAR: A Synergistic Framework for High-Fidelity Extraction of Structure-Activity Relationships from Scientific Documents">
@@ -343,13 +349,13 @@
       <!-- STATIC-CONTENT:research:END -->
     </section>
 
-    <section id="education" class="page-section" data-nav-section tabindex="-1">
+    <section id="education" class="page-section" data-nav-section data-reveal tabindex="-1">
       <!-- STATIC-CONTENT:education:START -->
-      <header class="section-heading">
+      <header class="section-heading" data-reveal-item>
         <h2 class="section-title">Education</h2>
       </header>
       <div id="education-list">
-        <div class="record-row">
+        <div class="record-row" data-reveal-item>
 
           <a class="record-logo" href="https://www.xmu.edu.cn/" aria-label="Xiamen University">
             <img src="assets/images/logos/XMU.png" alt="" loading="lazy">
@@ -367,7 +373,7 @@
           </div>
         </div>
 
-        <div class="record-row">
+        <div class="record-row" data-reveal-item>
 
           <a class="record-logo" href="https://www.swufe.edu.cn/" aria-label="Southwestern University of Finance and Economics">
             <img src="assets/images/logos/SWUFE.png" alt="" loading="lazy">
@@ -385,7 +391,7 @@
           </div>
         </div>
 
-        <div class="record-row">
+        <div class="record-row" data-reveal-item>
 
           <div class="record-logo">
             <img src="assets/images/logos/HZMHS.png" alt="Hunan Zixing Municipal High School" loading="lazy">
@@ -406,13 +412,13 @@
       <!-- STATIC-CONTENT:education:END -->
     </section>
 
-    <section id="experience" class="page-section" data-nav-section tabindex="-1">
+    <section id="experience" class="page-section" data-nav-section data-reveal tabindex="-1">
       <!-- STATIC-CONTENT:experience:START -->
-      <header class="section-heading">
+      <header class="section-heading" data-reveal-item>
         <h2 class="section-title">Experience</h2>
       </header>
       <div id="experience-list">
-        <div class="record-row">
+        <div class="record-row" data-reveal-item>
 
           <a class="record-logo" href="https://www.unisound.com/" aria-label="Unisound AI Technology Co., Ltd.">
             <img src="assets/images/logos/Unisound.png" alt="" loading="lazy">
@@ -430,7 +436,7 @@
           </div>
         </div>
 
-        <div class="record-row">
+        <div class="record-row" data-reveal-item>
 
           <a class="record-logo" href="https://www.dp.tech/" aria-label="DP Technology">
             <img src="assets/images/logos/DPTechnology.png" alt="" loading="lazy">
@@ -451,9 +457,9 @@
       <!-- STATIC-CONTENT:experience:END -->
     </section>
 
-    <section id="competitions" class="page-section" data-nav-section tabindex="-1">
+    <section id="competition" class="page-section" data-nav-section data-reveal tabindex="-1">
       <!-- STATIC-CONTENT:competitions:START -->
-        <header class="section-heading research-heading">
+        <header class="section-heading research-heading" data-reveal-item>
           <h2 class="section-title" id="competition-heading">All Competition</h2>
           <button class="research-toggle" id="competition-toggle" aria-controls="competition-list" hidden>All Competition</button>
         </header>
@@ -462,6 +468,7 @@
         <article
           class="record-row competition-row highlight-paper"
           data-highlight="true"
+          data-reveal-item
 
         >
           <a class="record-logo" href="https://challenge.xfyun.cn/topic/info?type=domain-term-translation" aria-label="iFLYTEK AI Developer Competition — Domain Term Translation Challenge">
@@ -483,6 +490,7 @@
         <article
           class="record-row competition-row highlight-paper"
           data-highlight="true"
+          data-reveal-item
 
         >
           <a class="record-logo" href="https://tianchi.aliyun.com/competition/entrance/532353" aria-label="AFAC2025 — Compression of Long Chain-of-Thought in the Financial Field">
@@ -504,6 +512,7 @@
         <article
           class="record-row competition-row "
           data-highlight="false"
+          data-reveal-item
 
         >
           <a class="record-logo" href="https://www.kaggle.com/competitions/ai-mathematical-olympiad-progress-prize-2" aria-label="AI Mathematical Olympiad — Progress Prize 2">
@@ -525,6 +534,7 @@
         <article
           class="record-row competition-row highlight-paper"
           data-highlight="true"
+          data-reveal-item
 
         >
           <a class="record-logo" href="https://competition.ai4s.com.cn/" aria-label="The 2nd World AI4S Prize — Market Game and Price Prediction">
@@ -546,6 +556,7 @@
         <article
           class="record-row competition-row highlight-paper"
           data-highlight="true"
+          data-reveal-item
 
         >
           <a class="record-logo" href="https://tianchi.aliyun.com/competition/entrance/532155" aria-label="Global Intelligent Vehicle AI Challenge — Intelligent Driving Vehicle Virtual Simulation Video Data Understanding">
@@ -567,6 +578,7 @@
         <article
           class="record-row competition-row highlight-paper"
           data-highlight="true"
+          data-reveal-item
 
         >
           <a class="record-logo" href="https://tianchi.aliyun.com/competition/entrance/532116" aria-label="CFFF Prize — Metal-Organic Framework Materials Synthesis Conditions Prediction">
@@ -588,6 +600,7 @@
         <article
           class="record-row competition-row "
           data-highlight="false"
+          data-reveal-item
 
         >
           <a class="record-logo" href="https://www.mcm.edu.cn/html_cn/node/495b16715673eaee3a770d99aaf9d857.html" aria-label="Contemporary Undergraduate Mathematical Contest in Modeling">
@@ -609,6 +622,7 @@
         <article
           class="record-row competition-row highlight-paper"
           data-highlight="true"
+          data-reveal-item
 
         >
           <a class="record-logo" href="assets/certificates/2023_ICPC_Xian_Regional_Bronze.pdf" aria-label="ICPC Asia Xi’an Regional Contest">
@@ -630,6 +644,7 @@
         <article
           class="record-row competition-row "
           data-highlight="false"
+          data-reveal-item
 
         >
           <a class="record-logo" href="assets/certificates/2023_ICPC_Sichuan_Provincial_Gold.png" aria-label="ICPC China Sichuan Provincial Programming Contest">
@@ -651,6 +666,7 @@
         <article
           class="record-row competition-row "
           data-highlight="false"
+          data-reveal-item
 
         >
           <a class="record-logo" href="assets/certificates/CCCC2023GPLT05374-个人三等奖-西南财经大学-西南财大1队-侯爵.pdf" aria-label="Group Programming Ladder Tournament">
@@ -672,6 +688,7 @@
         <article
           class="record-row competition-row "
           data-highlight="false"
+          data-reveal-item
 
         >
           <a class="record-logo" href="assets/certificates/2023_MCM_H.pdf" aria-label="Mathematical Contest in Modeling">
@@ -693,6 +710,7 @@
         <article
           class="record-row competition-row "
           data-highlight="false"
+          data-reveal-item
 
         >
           <a class="record-logo" href="https://ac.nowcoder.com/acm/contest/42105" aria-label="ICPC China Sichuan Provincial Programming Contest">

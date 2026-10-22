@@ -46,7 +46,7 @@
     renderSafely("research", "research", (entries) =>
         renderers.research(entries, { enhanced: true }),
     );
-    renderSafely("competitions", "competitions", (entries) =>
+    renderSafely("competition", "competitions", (entries) =>
         renderers.competitions(entries, { enhanced: true }),
     );
     renderSafely("education", "education", (entries) =>

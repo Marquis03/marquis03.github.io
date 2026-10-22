@@ -46,7 +46,7 @@
         return entries
             .map(
                 (item) => `
-      <li>
+      <li data-reveal-item>
         <time datetime="${dateTime(item.date)}">${item.date}</time>
         <p>${item.content}</p>
       </li>
@@ -60,11 +60,11 @@
         const archivedEntries = newsData.entries.slice(newsData.visibleCount);
 
         return `
-      <header class="section-heading">
+      <header class="section-heading" data-reveal-item>
         <h2 class="section-title">News</h2>
       </header>
       <ul class="news-list" id="news-list">${newsItems(visibleEntries)}</ul>
-      <details class="news-archive"${archivedEntries.length === 0 ? " hidden" : ""}>
+      <details class="news-archive" data-reveal-item${archivedEntries.length === 0 ? " hidden" : ""}>
         <summary id="news-more-label">More updates</summary>
         <ul class="news-list" id="news-more">${newsItems(archivedEntries)}</ul>
       </details>
@@ -96,6 +96,7 @@
       <article
         class="paper-row ${paper.highlight ? "highlight-paper" : ""}"
         data-highlight="${paper.highlight}"
+        data-reveal-item
         ${enhanced && !paper.highlight ? "hidden" : ""}
       >
         <a class="paper-figure" href="${paper.image}" data-figure data-caption="${paper.title}">
@@ -113,11 +114,11 @@
             .join("");
 
         return `
-      <header class="section-heading research-heading">
+      <header class="section-heading research-heading" data-reveal-item>
         <h2 class="section-title" id="research-heading">${enhanced ? "Highlight" : "All"} Research</h2>
         <button class="research-toggle" id="research-toggle" aria-controls="research-papers" hidden>All Research</button>
       </header>
-      <p class="paper-meta-note">* Equal contribution &nbsp; † Corresponding author</p>
+      <p class="paper-meta-note" data-reveal-item>* Equal contribution &nbsp; † Corresponding author</p>
       <p class="sr-only" id="research-status" role="status" aria-live="polite"></p>
       <div id="research-papers">${papers}</div>
     `;
@@ -148,6 +149,7 @@
       <article
         class="record-row competition-row ${item.highlight ? "highlight-paper" : ""}"
         data-highlight="${item.highlight}"
+        data-reveal-item
         ${enhanced && !item.highlight ? "hidden" : ""}
       >
         <a class="record-logo" href="${item.url}" aria-label="${item.name}">
@@ -170,7 +172,7 @@
             .join("");
 
         return `
-      <header class="section-heading research-heading">
+      <header class="section-heading research-heading" data-reveal-item>
         <h2 class="section-title" id="competition-heading">${enhanced ? "Highlight" : "All"} Competition</h2>
         <button class="research-toggle" id="competition-toggle" aria-controls="competition-list" hidden>All Competition</button>
       </header>
@@ -212,7 +214,7 @@
                     : item.institution;
 
                 return `
-        <div class="record-row">
+        <div class="record-row" data-reveal-item>
           ${logo}
           <div class="record-content">
             <div class="record-heading">
@@ -232,7 +234,7 @@
 
     function institutions(entries, title, listId) {
         return `
-      <header class="section-heading">
+      <header class="section-heading" data-reveal-item>
         <h2 class="section-title">${title}</h2>
       </header>
       <div id="${listId}">${institutionRows(entries)}</div>
