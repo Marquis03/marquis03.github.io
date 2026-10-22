@@ -50,7 +50,7 @@ window.HOMEPAGE_DATA.news = {
         {
             date: "2023.10",
             content:
-                'Won the <strong>Bronze Medal</strong> in the <a href="assets/files/competitions/2023_ICPC_Xian_Regional_Bronze.pdf">ICPC Asia Xi\'an Regional Contest</a>.',
+                'Won the <strong>Bronze Medal</strong> in the <a href="assets/certificates/2023_ICPC_Xian_Regional_Bronze.pdf">ICPC Asia Xi\'an Regional Contest</a>.',
         },
     ],
 };

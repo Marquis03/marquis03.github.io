@@ -57,6 +57,7 @@
   <script src="data/competitions.js" defer></script>
   <script src="data/education.js" defer></script>
   <script src="data/experience.js" defer></script>
+  <script src="render-templates.js" defer></script>
   <script src="render-content.js" defer></script>
   <script src="navigation.js" defer></script>
   <script src="interactions.js" defer></script>
@@ -82,50 +83,635 @@
   </aside>
 
   <main class="page-shell">
-    <section id="about" class="page-section profile" data-nav-section tabindex="-1"></section>
+    <section id="about" class="page-section profile" data-nav-section tabindex="-1">
+      <!-- STATIC-CONTENT:about:START -->
+      <div>
+        <h1 class="name">
+          Jue Hou
+          <span class="name-divider">/</span>
+          <span class="chinese-name" lang="zh-CN">侯爵</span>
+        </h1>
+        <p class="profile-intro">I am pursuing a master's degree in Electronic Information, specializing in Artificial Intelligence, at <a href="https://www.xmu.edu.cn/">Xiamen University</a> under the supervision of <a href="https://scholar.google.com/citations?user=w6qCk3sAAAAJ">Prof. Jinsong Su</a>.</p><p class="profile-intro">I received my B.E. in Artificial Intelligence from <a href="https://www.swufe.edu.cn/">Southwestern University of Finance and Economics</a> in 2025 as a member of the Intelligent Finance Guanghua Experimental Class.</p><p class="profile-intro">My research interests include <strong>LLM reasoning and agentic reinforcement learning</strong>. I welcome research collaborations and opportunities to work on challenging AI projects.</p>
+        <div class="profile-links">
+
+            <a class="profile-link" href="mailto:marquis03@qq.com">
+              <img class="profile-link-icon" src="assets/icons/email.svg" alt="" aria-hidden="true">
+              Email
+            </a>
+
+            <a class="profile-link" href="https://github.com/Marquis03">
+              <img class="profile-link-icon" src="assets/icons/github.svg" alt="" aria-hidden="true">
+              GitHub
+            </a>
+
+            <a class="profile-link" href="https://scholar.google.com/citations?user=GoceuAsAAAAJ">
+              <img class="profile-link-icon" src="assets/icons/google-scholar.svg" alt="" aria-hidden="true">
+              Google Scholar
+            </a>
+
+            <a class="profile-link" href="https://www.semanticscholar.org/author/Jue-Hou/2367598435">
+              <img class="profile-link-icon" src="assets/icons/semantic-scholar.svg" alt="" aria-hidden="true">
+              Semantic Scholar
+            </a>
+
+        </div>
+      </div>
+      <figure class="profile-portrait">
+        <img class="avatar" src="assets/images/avatar.jpg" alt="Portrait of Jue Hou" width="1080" height="1080">
+        <figcaption class="portrait-caption">Photographed in<br>Dujiangyan City, Sichuan, China</figcaption>
+      </figure>
+      <!-- STATIC-CONTENT:about:END -->
+    </section>
 
     <section id="news" class="page-section news-section" data-nav-section tabindex="-1">
-      <header class="section-heading">
-        <h2 class="section-title">News</h2>
-      </header>
-      <ul class="news-list" id="news-list"></ul>
-      <details class="news-archive">
-        <summary id="news-more-label"></summary>
-        <ul class="news-list" id="news-more"></ul>
-      </details>
+      <!-- STATIC-CONTENT:news:START -->
+        <header class="section-heading">
+          <h2 class="section-title">News</h2>
+        </header>
+        <ul class="news-list" id="news-list">
+        <li>
+          <time datetime="2026-05">2026.05</time>
+          <p>Started my internship at <a href="https://www.unisound.com/">Unisound</a> in Xiamen, working on Code Agent optimization.</p>
+        </li>
+
+        <li>
+          <time datetime="2025-11">2025.11</time>
+          <p>Won <strong>Second Place</strong> in the <a href="https://challenge.xfyun.cn/topic/info?type=domain-term-translation">iFLYTEK AI Developer Competition — Domain Term Translation Challenge</a>.</p>
+        </li>
+
+        <li>
+          <time datetime="2025-09">2025.09</time>
+          <p>Started my master's program in Electronic Information, specializing in Artificial Intelligence, at <a href="https://www.xmu.edu.cn/">Xiamen University</a>.</p>
+        </li>
+      </ul>
+        <details class="news-archive">
+          <summary id="news-more-label">More updates</summary>
+          <ul class="news-list" id="news-more">
+        <li>
+          <time datetime="2025-08">2025.08</time>
+          <p>Received the <strong>Rookie Award</strong> in <a href="https://tianchi.aliyun.com/competition/entrance/532353">AFAC2025 — Financial Long Chain-of-Thought Compression</a>.</p>
+        </li>
+
+        <li>
+          <time datetime="2025-06">2025.06</time>
+          <p>Graduated from <a href="https://www.swufe.edu.cn/">Southwestern University of Finance and Economics</a> with a B.E. in Artificial Intelligence.</p>
+        </li>
+
+        <li>
+          <time datetime="2025-02">2025.02</time>
+          <p>Started as an LLM Algorithm Intern at <a href="https://www.dp.tech/">DP Technology</a>.</p>
+        </li>
+
+        <li>
+          <time datetime="2024-11">2024.11</time>
+          <p>Received <strong>Honorable Mention</strong> in the <a href="https://competition.ai4s.com.cn/">2nd World AI4S Prize</a>.</p>
+        </li>
+
+        <li>
+          <time datetime="2023-12">2023.12</time>
+          <p>Received <strong>Honorable Mention</strong> in the <a href="https://tianchi.aliyun.com/competition/entrance/532116">CFFF Prize</a>.</p>
+        </li>
+
+        <li>
+          <time datetime="2023-12">2023.12</time>
+          <p>Received the <strong>Merit Award</strong> in the <a href="https://tianchi.aliyun.com/competition/entrance/532155">Global Intelligent Vehicle AI Challenge</a>.</p>
+        </li>
+
+        <li>
+          <time datetime="2023-10">2023.10</time>
+          <p>Won the <strong>Bronze Medal</strong> in the <a href="assets/certificates/2023_ICPC_Xian_Regional_Bronze.pdf">ICPC Asia Xi'an Regional Contest</a>.</p>
+        </li>
+      </ul>
+        </details>
+      <!-- STATIC-CONTENT:news:END -->
     </section>
 
     <section id="research" class="page-section" data-nav-section tabindex="-1">
-      <header class="section-heading research-heading">
-        <h2 class="section-title" id="research-heading">All Research</h2>
-        <button class="research-toggle" id="research-toggle" aria-controls="research-papers" hidden>All Research</button>
-      </header>
-      <p class="paper-meta-note">* Equal contribution &nbsp; † Corresponding author</p>
-      <p class="sr-only" id="research-status" role="status" aria-live="polite"></p>
-      <div id="research-papers"></div>
+      <!-- STATIC-CONTENT:research:START -->
+        <header class="section-heading research-heading">
+          <h2 class="section-title" id="research-heading">All Research</h2>
+          <button class="research-toggle" id="research-toggle" aria-controls="research-papers" hidden>All Research</button>
+        </header>
+        <p class="paper-meta-note">* Equal contribution &nbsp; † Corresponding author</p>
+        <p class="sr-only" id="research-status" role="status" aria-live="polite"></p>
+        <div id="research-papers">
+        <article
+          class="paper-row highlight-paper"
+          data-highlight="true"
+
+        >
+          <a class="paper-figure" href="assets/images/publications/PBAgent.png" data-figure data-caption="ProgramGym: Scaling Training Environments for Long-Horizon Program Reproduction Agents">
+            <img src="assets/images/publications/PBAgent.png" alt="ProgramGym: Scaling Training Environments for Long-Horizon Program Reproduction Agents" loading="lazy">
+          </a>
+          <div>
+            <h3 class="papertitle"><a href="https://arxiv.org/pdf/2610.13395">ProgramGym: Scaling Training Environments for Long-Horizon Program Reproduction Agents</a></h3>
+            <p class="authors">Chengyi Yang*, Renxu Bao*, <span class="author-self">Jue Hou</span>*, Zongpei Teng, Ziheng Wang, Yujie Lin, Chengsong Huang, Junnan Zhu, Delai Qiu, Yining Wang, Shengping Liu, Fei Long†, Jinsong Su†</p>
+            <p class="venue-full">arXiv preprint arXiv:2610.13395</p>
+            <div class="paper-links-group">
+        <a class="link-with-icon" href="https://arxiv.org/abs/2610.13395">
+          <img src="assets/icons/arxiv.svg" alt="" aria-hidden="true">
+          arXiv
+        </a>
+
+        <a class="link-with-icon" href="https://programgym.github.io/">
+          <img src="assets/icons/project.svg" alt="" aria-hidden="true">
+          Project
+        </a>
+
+        <a class="link-with-icon" href="https://huggingface.co/ProgramGym">
+          <img src="assets/icons/huggingface.svg" alt="" aria-hidden="true">
+          Hugging Face
+        </a>
+      </div>
+          </div>
+        </article>
+
+        <article
+          class="paper-row "
+          data-highlight="false"
+
+        >
+          <a class="paper-figure" href="assets/images/publications/AirVLN-R1.png" data-figure data-caption="AirNav: A Large-Scale UAV Vision-and-Language Navigation Dataset with Natural and Diverse Instructions">
+            <img src="assets/images/publications/AirVLN-R1.png" alt="AirNav: A Large-Scale UAV Vision-and-Language Navigation Dataset with Natural and Diverse Instructions" loading="lazy">
+          </a>
+          <div>
+            <h3 class="papertitle"><a href="https://arxiv.org/pdf/2601.03707">AirNav: A Large-Scale UAV Vision-and-Language Navigation Dataset with Natural and Diverse Instructions</a></h3>
+            <p class="authors">Hengxing Cai*, Yijie Rao*, Ligang Huang, Zanyang Zhong, Jinhan Dong, Jingjun Tan, Changhao Nai, <span class="author-self">Jue Hou</span>, Wenhao Lu, Renxin Zhong†</p>
+            <p class="venue-full">arXiv preprint arXiv:2601.03707</p>
+            <div class="paper-links-group">
+        <a class="link-with-icon" href="https://arxiv.org/abs/2601.03707">
+          <img src="assets/icons/arxiv.svg" alt="" aria-hidden="true">
+          arXiv
+        </a>
+
+        <a class="link-with-icon" href="https://github.com/nopride03/AirNav">
+          <img src="assets/icons/github.svg" alt="" aria-hidden="true">
+          GitHub
+        </a>
+
+        <a class="link-with-icon" href="https://huggingface.co/datasets/dpairnav/AirNav">
+          <img src="assets/icons/huggingface.svg" alt="" aria-hidden="true">
+          Hugging Face
+        </a>
+      </div>
+          </div>
+        </article>
+
+        <article
+          class="paper-row highlight-paper"
+          data-highlight="true"
+
+        >
+          <a class="paper-figure" href="assets/images/publications/MPPReasoner.png" data-figure data-caption="Reasoning-Enhanced Large Language Models for Molecular Property Prediction">
+            <img src="assets/images/publications/MPPReasoner.png" alt="Reasoning-Enhanced Large Language Models for Molecular Property Prediction" loading="lazy">
+          </a>
+          <div>
+            <h3 class="papertitle"><a href="https://arxiv.org/pdf/2510.10248">Reasoning-Enhanced Large Language Models for Molecular Property Prediction</a></h3>
+            <p class="authors">Jiaxi Zhuang*, Yaorui Shi*, <span class="author-self">Jue Hou</span>*, Yunong He, Mingwei Ye, Mingjun Xu, Yuming Su, Linfeng Zhang, Ying Qian, Linfeng Zhang, Guolin Ke, Hengxing Cai†</p>
+            <p class="venue-full">arXiv preprint arXiv:2510.10248</p>
+            <div class="paper-links-group">
+        <a class="link-with-icon" href="https://arxiv.org/abs/2510.10248">
+          <img src="assets/icons/arxiv.svg" alt="" aria-hidden="true">
+          arXiv
+        </a>
+
+        <a class="link-with-icon" href="https://github.com/Jesse-zjx/MPPReasoner">
+          <img src="assets/icons/github.svg" alt="" aria-hidden="true">
+          GitHub
+        </a>
+      </div>
+          </div>
+        </article>
+
+        <article
+          class="paper-row highlight-paper"
+          data-highlight="true"
+
+        >
+          <a class="paper-figure" href="assets/images/publications/MM-R5.png" data-figure data-caption="MM-R5: MultiModal Reasoning-Enhanced ReRanker via Reinforcement Learning for Document Retrieval">
+            <img src="assets/images/publications/MM-R5.png" alt="MM-R5: MultiModal Reasoning-Enhanced ReRanker via Reinforcement Learning for Document Retrieval" loading="lazy">
+          </a>
+          <div>
+            <h3 class="papertitle"><a href="https://arxiv.org/pdf/2506.12364">MM-R5: MultiModal Reasoning-Enhanced ReRanker via Reinforcement Learning for Document Retrieval</a></h3>
+            <p class="authors">Mingjun Xu*, Jinhan Dong*, <span class="author-self">Jue Hou</span>*, Zehui Wang, Sihang Li, Zhifeng Gao, Renxin Zhong, Hengxing Cai†</p>
+            <p class="venue-full">arXiv preprint arXiv:2506.12364</p>
+            <div class="paper-links-group">
+        <a class="link-with-icon" href="https://arxiv.org/abs/2506.12364">
+          <img src="assets/icons/arxiv.svg" alt="" aria-hidden="true">
+          arXiv
+        </a>
+
+        <a class="link-with-icon" href="https://github.com/i2vec/MM-R5">
+          <img src="assets/icons/github.svg" alt="" aria-hidden="true">
+          GitHub
+        </a>
+
+        <a class="link-with-icon" href="https://huggingface.co/i2vec/MM-R5">
+          <img src="assets/icons/huggingface.svg" alt="" aria-hidden="true">
+          Hugging Face
+        </a>
+      </div>
+          </div>
+        </article>
+
+        <article
+          class="paper-row "
+          data-highlight="false"
+
+        >
+          <a class="paper-figure" href="assets/images/publications/Doc2SAR.png" data-figure data-caption="Doc2SAR: A Synergistic Framework for High-Fidelity Extraction of Structure-Activity Relationships from Scientific Documents">
+            <img src="assets/images/publications/Doc2SAR.png" alt="Doc2SAR: A Synergistic Framework for High-Fidelity Extraction of Structure-Activity Relationships from Scientific Documents" loading="lazy">
+          </a>
+          <div>
+            <h3 class="papertitle"><a href="https://arxiv.org/pdf/2506.21625">Doc2SAR: A Synergistic Framework for High-Fidelity Extraction of Structure-Activity Relationships from Scientific Documents</a></h3>
+            <p class="authors">Jiaxi Zhuang*, Kangning Li*, <span class="author-self">Jue Hou</span>, Mingjun Xu, Zhifeng Gao, Hengxing Cai†</p>
+            <p class="venue-full">arXiv preprint arXiv:2506.21625</p>
+            <div class="paper-links-group">
+        <a class="link-with-icon" href="https://arxiv.org/abs/2506.21625">
+          <img src="assets/icons/arxiv.svg" alt="" aria-hidden="true">
+          arXiv
+        </a>
+
+        <a class="link-with-icon" href="https://github.com/Jesse-zjx/Doc2SAR">
+          <img src="assets/icons/github.svg" alt="" aria-hidden="true">
+          GitHub
+        </a>
+      </div>
+          </div>
+        </article>
+      </div>
+      <!-- STATIC-CONTENT:research:END -->
     </section>
 
     <section id="education" class="page-section" data-nav-section tabindex="-1">
+      <!-- STATIC-CONTENT:education:START -->
       <header class="section-heading">
         <h2 class="section-title">Education</h2>
       </header>
-      <div id="education-list"></div>
+      <div id="education-list">
+        <div class="record-row">
+
+          <a class="record-logo" href="https://www.xmu.edu.cn/" aria-label="Xiamen University">
+            <img src="assets/images/logos/XMU.png" alt="" loading="lazy">
+          </a>
+
+          <div class="record-content">
+            <div class="record-heading">
+              <h3 class="record-title"><a href="https://www.xmu.edu.cn/">Xiamen University</a></h3>
+              <p class="record-date"><time datetime="2025-09">2025.09</time> – Present</p>
+            </div>
+            <div class="record-meta">
+              <p class="record-details">Master of Electronic Information, Artificial Intelligence</p>
+              <p class="record-location">Xiamen</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="record-row">
+
+          <a class="record-logo" href="https://www.swufe.edu.cn/" aria-label="Southwestern University of Finance and Economics">
+            <img src="assets/images/logos/SWUFE.png" alt="" loading="lazy">
+          </a>
+
+          <div class="record-content">
+            <div class="record-heading">
+              <h3 class="record-title"><a href="https://www.swufe.edu.cn/">Southwestern University of Finance and Economics</a></h3>
+              <p class="record-date"><time datetime="2021-09">2021.09</time> – <time datetime="2025-06">2025.06</time></p>
+            </div>
+            <div class="record-meta">
+              <p class="record-details">B.E. in Artificial Intelligence, Intelligent Finance Guanghua Experimental Class</p>
+              <p class="record-location">Chengdu</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="record-row">
+
+          <div class="record-logo">
+            <img src="assets/images/logos/HZMHS.png" alt="Hunan Zixing Municipal High School" loading="lazy">
+          </div>
+
+          <div class="record-content">
+            <div class="record-heading">
+              <h3 class="record-title">Hunan Zixing Municipal High School</h3>
+              <p class="record-date"><time datetime="2018-09">2018.09</time> – <time datetime="2021-06">2021.06</time></p>
+            </div>
+            <div class="record-meta">
+              <p class="record-details">High School Diploma</p>
+              <p class="record-location">Chenzhou</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- STATIC-CONTENT:education:END -->
     </section>
 
     <section id="experience" class="page-section" data-nav-section tabindex="-1">
+      <!-- STATIC-CONTENT:experience:START -->
       <header class="section-heading">
         <h2 class="section-title">Experience</h2>
       </header>
-      <div id="experience-list"></div>
+      <div id="experience-list">
+        <div class="record-row">
+
+          <a class="record-logo" href="https://www.unisound.com/" aria-label="Unisound AI Technology Co., Ltd.">
+            <img src="assets/images/logos/Unisound.png" alt="" loading="lazy">
+          </a>
+
+          <div class="record-content">
+            <div class="record-heading">
+              <h3 class="record-title"><a href="https://www.unisound.com/">Unisound AI Technology Co., Ltd.</a></h3>
+              <p class="record-date"><time datetime="2026-05">2026.05</time> – Present</p>
+            </div>
+            <div class="record-meta">
+              <p class="record-details">Model Optimization Intern (Code Agent)</p>
+              <p class="record-location">Xiamen</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="record-row">
+
+          <a class="record-logo" href="https://www.dp.tech/" aria-label="DP Technology">
+            <img src="assets/images/logos/DPTechnology.png" alt="" loading="lazy">
+          </a>
+
+          <div class="record-content">
+            <div class="record-heading">
+              <h3 class="record-title"><a href="https://www.dp.tech/">DP Technology</a></h3>
+              <p class="record-date"><time datetime="2025-02">2025.02</time> – <time datetime="2026-05">2026.05</time></p>
+            </div>
+            <div class="record-meta">
+              <p class="record-details">LLM Algorithm Intern</p>
+              <p class="record-location">Beijing / Remote</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- STATIC-CONTENT:experience:END -->
     </section>
 
     <section id="competitions" class="page-section" data-nav-section tabindex="-1">
-      <header class="section-heading research-heading">
-        <h2 class="section-title" id="competition-heading">All Competition</h2>
-        <button class="research-toggle" id="competition-toggle" aria-controls="competition-list" hidden>All Competition</button>
-      </header>
-      <p class="sr-only" id="competition-status" role="status" aria-live="polite"></p>
-      <div id="competition-list"></div>
+      <!-- STATIC-CONTENT:competitions:START -->
+        <header class="section-heading research-heading">
+          <h2 class="section-title" id="competition-heading">All Competition</h2>
+          <button class="research-toggle" id="competition-toggle" aria-controls="competition-list" hidden>All Competition</button>
+        </header>
+        <p class="sr-only" id="competition-status" role="status" aria-live="polite"></p>
+        <div id="competition-list">
+        <article
+          class="record-row competition-row highlight-paper"
+          data-highlight="true"
+
+        >
+          <a class="record-logo" href="https://challenge.xfyun.cn/topic/info?type=domain-term-translation" aria-label="iFLYTEK AI Developer Competition — Domain Term Translation Challenge">
+            <img src="assets/images/logos/科大讯飞.svg" alt="" loading="lazy">
+          </a>
+          <div class="record-content">
+            <div class="record-heading">
+              <h3 class="record-title">
+                <a href="https://challenge.xfyun.cn/topic/info?type=domain-term-translation">iFLYTEK AI Developer Competition — Domain Term Translation Challenge</a>
+              </h3>
+              <time class="record-date" datetime="2025-11">2025.11</time>
+            </div>
+            <div class="record-meta">
+              <p class="record-details competition-details"><span><span aria-hidden="true">🥈</span>Second Place</span><span><span aria-hidden="true">📈</span>2nd of 120 · Top 1.7%</span><span><span aria-hidden="true">💰</span>CNY 3,000</span></p>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="record-row competition-row highlight-paper"
+          data-highlight="true"
+
+        >
+          <a class="record-logo" href="https://tianchi.aliyun.com/competition/entrance/532353" aria-label="AFAC2025 — Compression of Long Chain-of-Thought in the Financial Field">
+            <img src="assets/images/logos/蚂蚁集团.svg" alt="" loading="lazy">
+          </a>
+          <div class="record-content">
+            <div class="record-heading">
+              <h3 class="record-title">
+                <a href="https://tianchi.aliyun.com/competition/entrance/532353">AFAC2025 — Compression of Long Chain-of-Thought in the Financial Field</a>
+              </h3>
+              <time class="record-date" datetime="2025-08">2025.08</time>
+            </div>
+            <div class="record-meta">
+              <p class="record-details competition-details"><span><span aria-hidden="true">🏅</span>Rookie Award</span><span><span aria-hidden="true">📈</span>8th of 1,056 · Top 0.76%</span><span><span aria-hidden="true">💰</span>CNY 5,000</span></p>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="record-row competition-row "
+          data-highlight="false"
+
+        >
+          <a class="record-logo" href="https://www.kaggle.com/competitions/ai-mathematical-olympiad-progress-prize-2" aria-label="AI Mathematical Olympiad — Progress Prize 2">
+            <img src="assets/images/logos/AIMO.png" alt="" loading="lazy">
+          </a>
+          <div class="record-content">
+            <div class="record-heading">
+              <h3 class="record-title">
+                <a href="https://www.kaggle.com/competitions/ai-mathematical-olympiad-progress-prize-2">AI Mathematical Olympiad — Progress Prize 2</a>
+              </h3>
+              <time class="record-date" datetime="2025-04">2025.04</time>
+            </div>
+            <div class="record-meta">
+              <p class="record-details competition-details"><span><span aria-hidden="true">🥉</span>Bronze Medal</span><span><span aria-hidden="true">📈</span>182nd of 2,212 · Top 8.23%</span></p>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="record-row competition-row highlight-paper"
+          data-highlight="true"
+
+        >
+          <a class="record-logo" href="https://competition.ai4s.com.cn/" aria-label="The 2nd World AI4S Prize — Market Game and Price Prediction">
+            <img src="assets/images/logos/SAIS.webp" alt="" loading="lazy">
+          </a>
+          <div class="record-content">
+            <div class="record-heading">
+              <h3 class="record-title">
+                <a href="https://competition.ai4s.com.cn/">The 2nd World AI4S Prize — Market Game and Price Prediction</a>
+              </h3>
+              <time class="record-date" datetime="2024-11">2024.11</time>
+            </div>
+            <div class="record-meta">
+              <p class="record-details competition-details"><span><span aria-hidden="true">🏅</span>Honorable Mention</span><span><span aria-hidden="true">📈</span>8th of 2,551 · Top 0.31%</span><span><span aria-hidden="true">💰</span>CNY 2,500</span></p>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="record-row competition-row highlight-paper"
+          data-highlight="true"
+
+        >
+          <a class="record-logo" href="https://tianchi.aliyun.com/competition/entrance/532155" aria-label="Global Intelligent Vehicle AI Challenge — Intelligent Driving Vehicle Virtual Simulation Video Data Understanding">
+            <img src="assets/images/logos/吉利汽车集团.svg" alt="" loading="lazy">
+          </a>
+          <div class="record-content">
+            <div class="record-heading">
+              <h3 class="record-title">
+                <a href="https://tianchi.aliyun.com/competition/entrance/532155">Global Intelligent Vehicle AI Challenge — Intelligent Driving Vehicle Virtual Simulation Video Data Understanding</a>
+              </h3>
+              <time class="record-date" datetime="2023-12">2023.12</time>
+            </div>
+            <div class="record-meta">
+              <p class="record-details competition-details"><span><span aria-hidden="true">🏅</span>Merit Award</span><span><span aria-hidden="true">📈</span>7th of 1,843 · Top 0.38%</span><span><span aria-hidden="true">💰</span>CNY 5,000</span></p>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="record-row competition-row highlight-paper"
+          data-highlight="true"
+
+        >
+          <a class="record-logo" href="https://tianchi.aliyun.com/competition/entrance/532116" aria-label="CFFF Prize — Metal-Organic Framework Materials Synthesis Conditions Prediction">
+            <img src="assets/images/logos/复旦大学.svg" alt="" loading="lazy">
+          </a>
+          <div class="record-content">
+            <div class="record-heading">
+              <h3 class="record-title">
+                <a href="https://tianchi.aliyun.com/competition/entrance/532116">CFFF Prize — Metal-Organic Framework Materials Synthesis Conditions Prediction</a>
+              </h3>
+              <time class="record-date" datetime="2023-12">2023.12</time>
+            </div>
+            <div class="record-meta">
+              <p class="record-details competition-details"><span><span aria-hidden="true">🏅</span>Honorable Mention</span><span><span aria-hidden="true">📈</span>10th of 2,117 · Top 0.47%</span><span><span aria-hidden="true">💰</span>CNY 2,500</span></p>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="record-row competition-row "
+          data-highlight="false"
+
+        >
+          <a class="record-logo" href="https://www.mcm.edu.cn/html_cn/node/495b16715673eaee3a770d99aaf9d857.html" aria-label="Contemporary Undergraduate Mathematical Contest in Modeling">
+            <img src="assets/images/logos/CUMCM.png" alt="" loading="lazy">
+          </a>
+          <div class="record-content">
+            <div class="record-heading">
+              <h3 class="record-title">
+                <a href="https://www.mcm.edu.cn/html_cn/node/495b16715673eaee3a770d99aaf9d857.html">Contemporary Undergraduate Mathematical Contest in Modeling</a>
+              </h3>
+              <time class="record-date" datetime="2023-11">2023.11</time>
+            </div>
+            <div class="record-meta">
+              <p class="record-details competition-details"><span><span aria-hidden="true">🥈</span>Second Prize</span></p>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="record-row competition-row highlight-paper"
+          data-highlight="true"
+
+        >
+          <a class="record-logo" href="assets/certificates/2023_ICPC_Xian_Regional_Bronze.pdf" aria-label="ICPC Asia Xi’an Regional Contest">
+            <img src="assets/images/logos/icpc_foundation.png" alt="" loading="lazy">
+          </a>
+          <div class="record-content">
+            <div class="record-heading">
+              <h3 class="record-title">
+                <a href="assets/certificates/2023_ICPC_Xian_Regional_Bronze.pdf">ICPC Asia Xi’an Regional Contest</a>
+              </h3>
+              <time class="record-date" datetime="2023-10">2023.10</time>
+            </div>
+            <div class="record-meta">
+              <p class="record-details competition-details"><span><span aria-hidden="true">🥉</span>Bronze Medal</span></p>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="record-row competition-row "
+          data-highlight="false"
+
+        >
+          <a class="record-logo" href="assets/certificates/2023_ICPC_Sichuan_Provincial_Gold.png" aria-label="ICPC China Sichuan Provincial Programming Contest">
+            <img src="assets/images/logos/icpc_foundation.png" alt="" loading="lazy">
+          </a>
+          <div class="record-content">
+            <div class="record-heading">
+              <h3 class="record-title">
+                <a href="assets/certificates/2023_ICPC_Sichuan_Provincial_Gold.png">ICPC China Sichuan Provincial Programming Contest</a>
+              </h3>
+              <time class="record-date" datetime="2023-06">2023.06</time>
+            </div>
+            <div class="record-meta">
+              <p class="record-details competition-details"><span><span aria-hidden="true">🥇</span>Gold Medal</span></p>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="record-row competition-row "
+          data-highlight="false"
+
+        >
+          <a class="record-logo" href="assets/certificates/CCCC2023GPLT05374-个人三等奖-西南财经大学-西南财大1队-侯爵.pdf" aria-label="Group Programming Ladder Tournament">
+            <img src="assets/images/logos/GPLT.png" alt="" loading="lazy">
+          </a>
+          <div class="record-content">
+            <div class="record-heading">
+              <h3 class="record-title">
+                <a href="assets/certificates/CCCC2023GPLT05374-个人三等奖-西南财经大学-西南财大1队-侯爵.pdf">Group Programming Ladder Tournament</a>
+              </h3>
+              <time class="record-date" datetime="2023-05">2023.05</time>
+            </div>
+            <div class="record-meta">
+              <p class="record-details competition-details"><span><span aria-hidden="true">🥉</span>Individual Third Prize in National Finals</span></p>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="record-row competition-row "
+          data-highlight="false"
+
+        >
+          <a class="record-logo" href="assets/certificates/2023_MCM_H.pdf" aria-label="Mathematical Contest in Modeling">
+            <img src="assets/images/logos/COMAP-logo-EF3340.svg" alt="" loading="lazy">
+          </a>
+          <div class="record-content">
+            <div class="record-heading">
+              <h3 class="record-title">
+                <a href="assets/certificates/2023_MCM_H.pdf">Mathematical Contest in Modeling</a>
+              </h3>
+              <time class="record-date" datetime="2023-05">2023.05</time>
+            </div>
+            <div class="record-meta">
+              <p class="record-details competition-details"><span><span aria-hidden="true">🏅</span>Honorable Mention</span></p>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="record-row competition-row "
+          data-highlight="false"
+
+        >
+          <a class="record-logo" href="https://ac.nowcoder.com/acm/contest/42105" aria-label="ICPC China Sichuan Provincial Programming Contest">
+            <img src="assets/images/logos/icpc_foundation.png" alt="" loading="lazy">
+          </a>
+          <div class="record-content">
+            <div class="record-heading">
+              <h3 class="record-title">
+                <a href="https://ac.nowcoder.com/acm/contest/42105">ICPC China Sichuan Provincial Programming Contest</a>
+              </h3>
+              <time class="record-date" datetime="2022-10">2022.10</time>
+            </div>
+            <div class="record-meta">
+              <p class="record-details competition-details"><span><span aria-hidden="true">🥉</span>Bronze Medal</span></p>
+            </div>
+          </div>
+        </article>
+      </div>
+      <!-- STATIC-CONTENT:competitions:END -->
     </section>
 
     <footer class="site-footer">
