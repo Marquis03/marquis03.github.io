@@ -59,8 +59,14 @@ node scripts/check-site.cjs
 
 ## Deployment
 
-The GitHub Actions workflow in `.github/workflows/deploy-pages.yml` regenerates
-`index.html`, assembles the static site, and deploys it to GitHub Pages whenever
-the `main` branch is pushed. It can also be run manually from the Actions tab.
+GitHub Pages publishes the repository root directly from the `main` branch.
+Before committing changes to `data/`, regenerate and validate the committed
+static HTML:
 
-In the repository's **Settings → Pages**, set **Source** to **GitHub Actions**.
+```powershell
+node scripts/build-static.cjs
+node scripts/check-site.cjs
+```
+
+In the repository's **Settings → Pages**, set **Source** to **Deploy from a
+branch**, then select **main** and **/(root)**.
