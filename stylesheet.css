@@ -184,7 +184,6 @@ strong { font-weight: 600; }
   to { opacity: 1; transform: translateY(0); }
 }
 .paper-row { display: grid; grid-template-columns: 225px minmax(0, 1fr); gap: 27px; align-items: center; padding: 23px 18px; }
-.highlight-paper { box-shadow: inset 2px 0 0 var(--accent-blue); }
 .paper-figure { display: block; min-width: 0; }
 .paper-figure img { width: 100%; height: auto; max-height: 215px; object-fit: contain; transition: transform var(--motion-medium) var(--ease-out); }
 @media (hover: hover) and (pointer: fine) {
