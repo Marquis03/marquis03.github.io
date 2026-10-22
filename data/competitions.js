@@ -77,7 +77,7 @@ window.HOMEPAGE_DATA.competitions = [
     {
         logo: "icpc_foundation.png",
         name: "ICPC Asia Xi’an Regional Contest",
-        url: "assets/files/competitions/2023_ICPC_Xian_Regional_Bronze.pdf",
+        url: "assets/certificates/2023_ICPC_Xian_Regional_Bronze.pdf",
         medal: "🥉",
         result: "Bronze Medal",
         date: "2023.10",
@@ -86,7 +86,7 @@ window.HOMEPAGE_DATA.competitions = [
     {
         logo: "icpc_foundation.png",
         name: "ICPC China Sichuan Provincial Programming Contest",
-        url: "assets/files/competitions/2023_ICPC_Sichuan_Provincial_Gold.png",
+        url: "assets/certificates/2023_ICPC_Sichuan_Provincial_Gold.png",
         medal: "🥇",
         result: "Gold Medal",
         date: "2023.06",
@@ -95,7 +95,7 @@ window.HOMEPAGE_DATA.competitions = [
     {
         logo: "GPLT.png",
         name: "Group Programming Ladder Tournament",
-        url: "assets/files/competitions/CCCC2023GPLT05374-个人三等奖-西南财经大学-西南财大1队-侯爵.pdf",
+        url: "assets/certificates/CCCC2023GPLT05374-个人三等奖-西南财经大学-西南财大1队-侯爵.pdf",
         medal: "🥉",
         result: "Individual Third Prize in National Finals",
         date: "2023.05",
@@ -104,7 +104,7 @@ window.HOMEPAGE_DATA.competitions = [
     {
         logo: "COMAP-logo-EF3340.svg",
         name: "Mathematical Contest in Modeling",
-        url: "assets/files/competitions/2023_MCM_H.pdf",
+        url: "assets/certificates/2023_MCM_H.pdf",
         medal: "🏅",
         result: "Honorable Mention",
         date: "2023.05",
