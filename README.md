@@ -22,6 +22,7 @@ External paper, project, code, and profile links require an internet connection.
 ## Editing
 
 - `data/profile.js`: name, biography, avatar, profile links, and generated page metadata.
+- `data/organizations.js`: shared names, abbreviations, links, and logos for institutions used across sections.
 - `data/news.js`: news entries and the number shown before folding.
 - `data/research.js`: papers, authors, links, and selected status. Papers appear on the page in the same order as they are listed in this file.
 - `data/competitions.js`: competition results, ranks, awards, and bonuses.
@@ -31,6 +32,7 @@ External paper, project, code, and profile links require an internet connection.
 - `render-content.js`: converts the structured data into page markup.
 - `render-templates.js`: shared markup templates used by both the browser and the static generator.
 - `scripts/build-static.cjs`: regenerates the static content stored in `index.html`.
+- `scripts/runtime-version.cjs`: generates a shared content hash for the runtime scripts so browsers do not reuse stale data after deployment.
 - `stylesheet.css`: layout, typography, colors, and responsive styles.
 - `navigation.js`: section navigation.
 - `interactions.js`: selection toggles and figure preview.
@@ -44,6 +46,10 @@ After editing a file in `data/`, regenerate the committed static HTML:
 ```powershell
 node scripts/build-static.cjs
 ```
+
+The build also updates the `?v=...` suffix on every data and rendering script.
+The suffix is derived from their contents, so related files refresh together on
+GitHub Pages while direct `file://` viewing continues to use the same files.
 
 To verify that `index.html` matches the current data without changing files:
 

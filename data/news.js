@@ -1,11 +1,16 @@
 window.HOMEPAGE_DATA = window.HOMEPAGE_DATA || {};
+{
+const organizations = window.HOMEPAGE_DATA.organizations;
+const organizationLink = (organization, label = organization.name) =>
+    `<a class="affiliation-link" href="${organization.url}"${label === organization.name ? "" : ` aria-label="${organization.name}"`}><img src="assets/images/logos/${organization.logo}" alt="" aria-hidden="true" width="${organization.logoWidth}" height="${organization.logoHeight}">${label}</a>`;
+
 window.HOMEPAGE_DATA.news = {
     visibleCount: 3,
     entries: [
         {
             date: "2026.05",
             content:
-                'Started my internship at <a class="affiliation-link" href="https://www.unisound.com/"><img src="assets/images/logos/unisound.svg" alt="" aria-hidden="true" width="106" height="103">Unisound</a> in Xiamen, working on Code Agent optimization.',
+                `Started my internship at ${organizationLink(organizations.unisound, organizations.unisound.shortName)} in Xiamen, working on Code Agent optimization.`,
         },
         {
             date: "2025.11",
@@ -15,7 +20,7 @@ window.HOMEPAGE_DATA.news = {
         {
             date: "2025.09",
             content:
-                'Started my M.Eng. in Electronic Information, specializing in Artificial Intelligence at <a class="affiliation-link" href="https://www.xmu.edu.cn/" aria-label="Xiamen University"><img src="assets/images/logos/xmu.svg" alt="" aria-hidden="true" width="1067" height="1067">XMU</a>.',
+                `Started my M.Eng. in Electronic Information, specializing in Artificial Intelligence at ${organizationLink(organizations.xmu, organizations.xmu.shortName)}.`,
         },
         {
             date: "2025.08",
@@ -25,7 +30,7 @@ window.HOMEPAGE_DATA.news = {
         {
             date: "2025.06",
             content:
-                'Graduated from <a class="affiliation-link" href="https://www.swufe.edu.cn/" aria-label="Southwestern University of Finance and Economics"><img src="assets/images/logos/swufe.svg" alt="" aria-hidden="true" width="500" height="500">SWUFE</a> with a B.Eng. in Artificial Intelligence.',
+                `Graduated from ${organizationLink(organizations.swufe, organizations.swufe.shortName)} with a B.Eng. in Artificial Intelligence.`,
         },
         {
             date: "2025.02",
@@ -54,3 +59,4 @@ window.HOMEPAGE_DATA.news = {
         },
     ],
 };
+}

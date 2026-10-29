@@ -1,11 +1,14 @@
 window.HOMEPAGE_DATA = window.HOMEPAGE_DATA || {};
+{
+const unisound = window.HOMEPAGE_DATA.organizations.unisound;
+
 window.HOMEPAGE_DATA.experience = [
     {
-        logo: "Unisound.png",
-        logoWidth: 1246,
-        logoHeight: 389,
-        institution: "Unisound AI Technology Co., Ltd.",
-        url: "https://www.unisound.com/",
+        logo: unisound.recordLogo,
+        logoWidth: unisound.recordLogoWidth,
+        logoHeight: unisound.recordLogoHeight,
+        institution: unisound.name,
+        url: unisound.url,
         detail: "Model Optimization Intern (Code Agent)",
         location: "Xiamen",
         period: "2026.05 – Present",
@@ -21,3 +24,4 @@ window.HOMEPAGE_DATA.experience = [
         period: "2025.02 – 2026.05",
     },
 ];
+}

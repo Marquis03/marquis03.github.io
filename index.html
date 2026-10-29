@@ -53,18 +53,21 @@
   <meta name="theme-color" content="#ffffff">
   <script>document.documentElement.classList.add("js");</script>
   <link rel="icon" href="assets/images/favicon.ico">
+  <link rel="preload" href="assets/fonts/outfit-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/images/avatar.jpg" as="image" type="image/jpeg" fetchpriority="high">
   <link rel="stylesheet" href="stylesheet.css">
 
-  <script src="data/profile.js" defer></script>
-  <script src="data/news.js" defer></script>
-  <script src="data/research.js" defer></script>
-  <script src="data/competitions.js" defer></script>
-  <script src="data/education.js" defer></script>
-  <script src="data/experience.js" defer></script>
-  <script src="render-templates.js" defer></script>
-  <script src="render-content.js" defer></script>
-  <script src="navigation.js" defer></script>
-  <script src="interactions.js" defer></script>
+  <script src="data/organizations.js?v=c86e173f1480" defer></script>
+  <script src="data/profile.js?v=c86e173f1480" defer></script>
+  <script src="data/news.js?v=c86e173f1480" defer></script>
+  <script src="data/research.js?v=c86e173f1480" defer></script>
+  <script src="data/competitions.js?v=c86e173f1480" defer></script>
+  <script src="data/education.js?v=c86e173f1480" defer></script>
+  <script src="data/experience.js?v=c86e173f1480" defer></script>
+  <script src="render-templates.js?v=c86e173f1480" defer></script>
+  <script src="render-content.js?v=c86e173f1480" defer></script>
+  <script src="navigation.js?v=c86e173f1480" defer></script>
+  <script src="interactions.js?v=c86e173f1480" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#about">Skip to content</a>
@@ -95,7 +98,7 @@
           <span class="name-divider">/</span>
           <span class="chinese-name" lang="zh-CN">侯爵</span>
         </h1>
-        <p class="profile-intro">I am an M.Eng. student in Electronic Information, specializing in Artificial Intelligence at <a class="affiliation-link" href="https://www.xmu.edu.cn/"><img src="assets/images/logos/xmu.svg" alt="" aria-hidden="true" width="1067" height="1067">Xiamen University</a>, advised by <a href="https://scholar.google.com/citations?user=w6qCk3sAAAAJ">Prof. Jinsong Su</a>. I am currently a Model Optimization Intern at <a class="affiliation-link" href="https://www.unisound.com/"><img src="assets/images/logos/unisound.svg" alt="" aria-hidden="true" width="106" height="103">Unisound</a>, working on Code Agent optimization.</p><p class="profile-intro">My research focuses on <strong>LLM reasoning and agentic reinforcement learning</strong>. I welcome research collaborations and opportunities to work on challenging AI projects.</p>
+        <p class="profile-intro">I am an M.Eng. student in Electronic Information, specializing in Artificial Intelligence at <a class="affiliation-link" href="https://www.xmu.edu.cn/"><img src="assets/images/logos/xmu.svg" alt="" aria-hidden="true" width="1067" height="1067">Xiamen University</a>, advised by <a href="https://scholar.google.com/citations?user=w6qCk3sAAAAJ">Prof. Jinsong Su</a>. I am currently a Model Optimization Intern at <a class="affiliation-link" href="https://www.unisound.com/" aria-label="Unisound AI Technology Co., Ltd."><img src="assets/images/logos/unisound.svg" alt="" aria-hidden="true" width="106" height="103">Unisound</a>, working on Code Agent optimization.</p><p class="profile-intro">My research focuses on <strong>LLM reasoning and agentic reinforcement learning</strong>. I welcome research collaborations and opportunities to work on challenging AI projects.</p>
         <div class="profile-links">
 
             <a class="profile-link" href="mailto:marquis03@qq.com">
@@ -121,7 +124,7 @@
         </div>
       </div>
       <figure class="profile-portrait">
-        <img class="avatar" src="assets/images/avatar.jpg" alt="Portrait of Jue Hou" width="1080" height="1080">
+        <img class="avatar" src="assets/images/avatar.jpg" alt="Portrait of Jue Hou" width="1080" height="1080" fetchpriority="high">
         <figcaption class="portrait-caption">Photographed in<br>Dujiangyan City, Sichuan, China</figcaption>
       </figure>
       <!-- STATIC-CONTENT:about:END -->
@@ -135,7 +138,7 @@
         <ul class="news-list" id="news-list">
         <li data-reveal-item>
           <time datetime="2026-05">2026.05</time>
-          <p>Started my internship at <a class="affiliation-link" href="https://www.unisound.com/"><img src="assets/images/logos/unisound.svg" alt="" aria-hidden="true" width="106" height="103">Unisound</a> in Xiamen, working on Code Agent optimization.</p>
+          <p>Started my internship at <a class="affiliation-link" href="https://www.unisound.com/" aria-label="Unisound AI Technology Co., Ltd."><img src="assets/images/logos/unisound.svg" alt="" aria-hidden="true" width="106" height="103">Unisound</a> in Xiamen, working on Code Agent optimization.</p>
         </li>
 
         <li data-reveal-item>
@@ -206,7 +209,7 @@
 
         >
           <a class="paper-figure" href="assets/images/publications/PBAgent.png" data-figure data-caption="ProgramGym: Scaling Training Environments for Long-Horizon Program Reproduction Agents" aria-label="Preview figure for ProgramGym: Scaling Training Environments for Long-Horizon Program Reproduction Agents">
-            <img src="assets/images/publications/PBAgent.png" alt="" aria-hidden="true" width="2130" height="1110" loading="lazy">
+            <img src="assets/images/publications/PBAgent.png" alt="" aria-hidden="true" width="2130" height="1110" loading="lazy" decoding="async">
           </a>
           <div>
             <h3 class="papertitle"><a href="https://arxiv.org/abs/2610.13395">ProgramGym: Scaling Training Environments for Long-Horizon Program Reproduction Agents</a></h3>
@@ -238,7 +241,7 @@
 
         >
           <a class="paper-figure" href="assets/images/publications/AirVLN-R1.png" data-figure data-caption="AirNav: A Large-Scale UAV Vision-and-Language Navigation Dataset with Natural and Diverse Instructions" aria-label="Preview figure for AirNav: A Large-Scale UAV Vision-and-Language Navigation Dataset with Natural and Diverse Instructions">
-            <img src="assets/images/publications/AirVLN-R1.png" alt="" aria-hidden="true" width="1920" height="1080" loading="lazy">
+            <img src="assets/images/publications/AirVLN-R1.png" alt="" aria-hidden="true" width="1920" height="1080" loading="lazy" decoding="async">
           </a>
           <div>
             <h3 class="papertitle"><a href="https://arxiv.org/abs/2601.03707">AirNav: A Large-Scale UAV Vision-and-Language Navigation Dataset with Natural and Diverse Instructions</a></h3>
@@ -270,7 +273,7 @@
 
         >
           <a class="paper-figure" href="assets/images/publications/MPPReasoner.png" data-figure data-caption="MppReasoner: Reasoning-Enhanced Large Language Models for Molecular Property Prediction" aria-label="Preview figure for MppReasoner: Reasoning-Enhanced Large Language Models for Molecular Property Prediction">
-            <img src="assets/images/publications/MPPReasoner.png" alt="" aria-hidden="true" width="1222" height="828" loading="lazy">
+            <img src="assets/images/publications/MPPReasoner.png" alt="" aria-hidden="true" width="1222" height="828" loading="lazy" decoding="async">
           </a>
           <div>
             <h3 class="papertitle"><a href="https://aclanthology.org/2026.findings-emnlp.1796/">MppReasoner: Reasoning-Enhanced Large Language Models for Molecular Property Prediction</a></h3>
@@ -297,7 +300,7 @@
 
         >
           <a class="paper-figure" href="assets/images/publications/MM-R5.png" data-figure data-caption="MM-R5: MultiModal Reasoning-Enhanced ReRanker via Reinforcement Learning for Document Retrieval" aria-label="Preview figure for MM-R5: MultiModal Reasoning-Enhanced ReRanker via Reinforcement Learning for Document Retrieval">
-            <img src="assets/images/publications/MM-R5.png" alt="" aria-hidden="true" width="2083" height="716" loading="lazy">
+            <img src="assets/images/publications/MM-R5.png" alt="" aria-hidden="true" width="2083" height="716" loading="lazy" decoding="async">
           </a>
           <div>
             <h3 class="papertitle"><a href="https://arxiv.org/abs/2506.12364">MM-R5: MultiModal Reasoning-Enhanced ReRanker via Reinforcement Learning for Document Retrieval</a></h3>
@@ -329,7 +332,7 @@
 
         >
           <a class="paper-figure" href="assets/images/publications/Doc2SAR.png" data-figure data-caption="Doc2SAR: A Synergistic Framework for High-Fidelity Extraction of Structure-Activity Relationships from Scientific Documents" aria-label="Preview figure for Doc2SAR: A Synergistic Framework for High-Fidelity Extraction of Structure-Activity Relationships from Scientific Documents">
-            <img src="assets/images/publications/Doc2SAR.png" alt="" aria-hidden="true" width="1344" height="588" loading="lazy">
+            <img src="assets/images/publications/Doc2SAR.png" alt="" aria-hidden="true" width="1344" height="588" loading="lazy" decoding="async">
           </a>
           <div>
             <h3 class="papertitle"><a href="https://arxiv.org/abs/2506.21625">Doc2SAR: A Synergistic Framework for High-Fidelity Extraction of Structure-Activity Relationships from Scientific Documents</a></h3>
@@ -368,7 +371,7 @@
         >
 
           <a class="record-logo" href="https://www.xmu.edu.cn/" aria-label="Xiamen University">
-            <img src="assets/images/logos/xmu.svg" alt="" width="1067" height="1067" loading="lazy">
+            <img src="assets/images/logos/xmu.svg" alt="" width="1067" height="1067" loading="lazy" decoding="async">
           </a>
 
           <div class="record-content">
@@ -391,7 +394,7 @@
         >
 
           <a class="record-logo" href="https://www.swufe.edu.cn/" aria-label="Southwestern University of Finance and Economics">
-            <img src="assets/images/logos/swufe.svg" alt="" width="500" height="500" loading="lazy">
+            <img src="assets/images/logos/swufe.svg" alt="" width="500" height="500" loading="lazy" decoding="async">
           </a>
 
           <div class="record-content">
@@ -414,7 +417,7 @@
         >
 
           <div class="record-logo">
-            <img src="assets/images/logos/HZMHS.png" alt="Hunan Zixing Municipal High School" width="512" height="512" loading="lazy">
+            <img src="assets/images/logos/HZMHS.png" alt="Hunan Zixing Municipal High School" width="512" height="512" loading="lazy" decoding="async">
           </div>
 
           <div class="record-content">
@@ -448,7 +451,7 @@
         >
 
           <a class="record-logo" href="https://www.unisound.com/" aria-label="Unisound AI Technology Co., Ltd.">
-            <img src="assets/images/logos/Unisound.png" alt="" width="1246" height="389" loading="lazy">
+            <img src="assets/images/logos/Unisound.png" alt="" width="1246" height="389" loading="lazy" decoding="async">
           </a>
 
           <div class="record-content">
@@ -471,7 +474,7 @@
         >
 
           <a class="record-logo" href="https://www.dp.tech/" aria-label="DP Technology">
-            <img src="assets/images/logos/DPTechnology.png" alt="" width="806" height="221" loading="lazy">
+            <img src="assets/images/logos/DPTechnology.png" alt="" width="806" height="221" loading="lazy" decoding="async">
           </a>
 
           <div class="record-content">
@@ -504,7 +507,7 @@
 
         >
           <a class="record-logo" href="https://challenge.xfyun.cn/topic/info?type=domain-term-translation" aria-label="iFLYTEK AI Developer Competition — Domain Term Translation Challenge">
-            <img src="assets/images/logos/科大讯飞.svg" alt="" width="548" height="200" loading="lazy">
+            <img src="assets/images/logos/科大讯飞.svg" alt="" width="548" height="200" loading="lazy" decoding="async">
           </a>
           <div class="record-content">
             <div class="record-heading">
@@ -526,7 +529,7 @@
 
         >
           <a class="record-logo" href="https://tianchi.aliyun.com/competition/entrance/532353" aria-label="AFAC2025 — Compression of Long Chain-of-Thought in the Financial Field">
-            <img src="assets/images/logos/蚂蚁集团.svg" alt="" width="504" height="200" loading="lazy">
+            <img src="assets/images/logos/蚂蚁集团.svg" alt="" width="504" height="200" loading="lazy" decoding="async">
           </a>
           <div class="record-content">
             <div class="record-heading">
@@ -548,7 +551,7 @@
 
         >
           <a class="record-logo" href="https://www.kaggle.com/competitions/ai-mathematical-olympiad-progress-prize-2" aria-label="AI Mathematical Olympiad — Progress Prize 2">
-            <img src="assets/images/logos/AIMO.png" alt="" width="570" height="244" loading="lazy">
+            <img src="assets/images/logos/AIMO.png" alt="" width="570" height="244" loading="lazy" decoding="async">
           </a>
           <div class="record-content">
             <div class="record-heading">
@@ -570,7 +573,7 @@
 
         >
           <a class="record-logo" href="https://competition.ai4s.com.cn/" aria-label="The 2nd World AI4S Prize — Market Game and Price Prediction">
-            <img src="assets/images/logos/SAIS.webp" alt="" width="400" height="127" loading="lazy">
+            <img src="assets/images/logos/SAIS.webp" alt="" width="400" height="127" loading="lazy" decoding="async">
           </a>
           <div class="record-content">
             <div class="record-heading">
@@ -592,7 +595,7 @@
 
         >
           <a class="record-logo" href="https://tianchi.aliyun.com/competition/entrance/532155" aria-label="Global Intelligent Vehicle AI Challenge — Intelligent Driving Vehicle Virtual Simulation Video Data Understanding">
-            <img src="assets/images/logos/吉利汽车集团.svg" alt="" width="1624" height="529" loading="lazy">
+            <img src="assets/images/logos/吉利汽车集团.svg" alt="" width="1624" height="529" loading="lazy" decoding="async">
           </a>
           <div class="record-content">
             <div class="record-heading">
@@ -614,7 +617,7 @@
 
         >
           <a class="record-logo" href="https://tianchi.aliyun.com/competition/entrance/532116" aria-label="CFFF Prize — Metal-Organic Framework Materials Synthesis Conditions Prediction">
-            <img src="assets/images/logos/复旦大学.svg" alt="" width="228" height="73" loading="lazy">
+            <img src="assets/images/logos/复旦大学.svg" alt="" width="228" height="73" loading="lazy" decoding="async">
           </a>
           <div class="record-content">
             <div class="record-heading">
@@ -636,7 +639,7 @@
 
         >
           <a class="record-logo" href="https://www.mcm.edu.cn/html_cn/node/495b16715673eaee3a770d99aaf9d857.html" aria-label="Contemporary Undergraduate Mathematical Contest in Modeling">
-            <img src="assets/images/logos/CUMCM.png" alt="" width="512" height="512" loading="lazy">
+            <img src="assets/images/logos/CUMCM.png" alt="" width="512" height="512" loading="lazy" decoding="async">
           </a>
           <div class="record-content">
             <div class="record-heading">
@@ -658,7 +661,7 @@
 
         >
           <a class="record-logo" href="assets/certificates/2023_ICPC_Xian_Regional_Bronze.pdf" aria-label="ICPC Asia Xi’an Regional Contest">
-            <img src="assets/images/logos/icpc_foundation.png" alt="" width="910" height="646" loading="lazy">
+            <img src="assets/images/logos/icpc_foundation.png" alt="" width="910" height="646" loading="lazy" decoding="async">
           </a>
           <div class="record-content">
             <div class="record-heading">
@@ -680,7 +683,7 @@
 
         >
           <a class="record-logo" href="assets/certificates/2023_ICPC_Sichuan_Provincial_Gold.png" aria-label="ICPC China Sichuan Provincial Programming Contest">
-            <img src="assets/images/logos/icpc_foundation.png" alt="" width="910" height="646" loading="lazy">
+            <img src="assets/images/logos/icpc_foundation.png" alt="" width="910" height="646" loading="lazy" decoding="async">
           </a>
           <div class="record-content">
             <div class="record-heading">
@@ -702,7 +705,7 @@
 
         >
           <a class="record-logo" href="assets/certificates/CCCC2023GPLT05374-个人三等奖-西南财经大学-西南财大1队-侯爵.pdf" aria-label="Group Programming Ladder Tournament">
-            <img src="assets/images/logos/GPLT.png" alt="" width="351" height="508" loading="lazy">
+            <img src="assets/images/logos/GPLT.png" alt="" width="351" height="508" loading="lazy" decoding="async">
           </a>
           <div class="record-content">
             <div class="record-heading">
@@ -724,7 +727,7 @@
 
         >
           <a class="record-logo" href="assets/certificates/2023_MCM_H.pdf" aria-label="Mathematical Contest in Modeling">
-            <img src="assets/images/logos/COMAP-logo-EF3340.svg" alt="" width="2917" height="1875" loading="lazy">
+            <img src="assets/images/logos/COMAP-logo-EF3340.svg" alt="" width="2917" height="1875" loading="lazy" decoding="async">
           </a>
           <div class="record-content">
             <div class="record-heading">
@@ -746,7 +749,7 @@
 
         >
           <a class="record-logo" href="https://ac.nowcoder.com/acm/contest/42105" aria-label="ICPC China Sichuan Provincial Programming Contest">
-            <img src="assets/images/logos/icpc_foundation.png" alt="" width="910" height="646" loading="lazy">
+            <img src="assets/images/logos/icpc_foundation.png" alt="" width="910" height="646" loading="lazy" decoding="async">
           </a>
           <div class="record-content">
             <div class="record-heading">

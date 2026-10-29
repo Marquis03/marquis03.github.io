@@ -1,6 +1,10 @@
 const fs = require("node:fs");
 const path = require("node:path");
 const vm = require("node:vm");
+const {
+    calculateRuntimeVersion,
+    runtimeFiles,
+} = require("./runtime-version.cjs");
 
 const projectRoot = path.resolve(__dirname, "..");
 const indexPath = path.join(projectRoot, "index.html");
@@ -9,6 +13,7 @@ const html = fs.readFileSync(indexPath, "utf8");
 const stylesheet = fs.readFileSync(stylesheetPath, "utf8");
 const errors = [];
 const dataFiles = [
+    "organizations.js",
     "profile.js",
     "news.js",
     "research.js",
@@ -77,6 +82,22 @@ function validateInstitution(item, label, options = {}) {
 }
 
 function validateData(data) {
+    const organizations = data.organizations;
+    for (const [key, organization] of Object.entries(organizations)) {
+        const label = `organizations.${key}`;
+        requireString(organization.name, `${label}.name`);
+        requireString(organization.shortName, `${label}.shortName`);
+        requireString(organization.url, `${label}.url`);
+        requireString(organization.logo, `${label}.logo`);
+        requirePositiveInteger(organization.logoWidth, `${label}.logoWidth`);
+        requirePositiveInteger(organization.logoHeight, `${label}.logoHeight`);
+        if (organization.recordLogo !== undefined) {
+            requireString(organization.recordLogo, `${label}.recordLogo`);
+            requirePositiveInteger(organization.recordLogoWidth, `${label}.recordLogoWidth`);
+            requirePositiveInteger(organization.recordLogoHeight, `${label}.recordLogoHeight`);
+        }
+    }
+
     const profile = data.profile;
     requireString(profile.name, "profile.name");
     requireString(profile.chineseName, "profile.chineseName");
@@ -162,6 +183,19 @@ const localReferences = references.filter(
         !reference.startsWith("//") &&
         !/^[a-z][a-z0-9+.-]*:/i.test(reference),
 );
+
+const runtimeVersion = calculateRuntimeVersion(projectRoot);
+for (const relativePath of runtimeFiles) {
+    const expectedReference = `${relativePath}?v=${runtimeVersion}`;
+    const occurrences = references.filter(
+        (reference) => reference === expectedReference,
+    ).length;
+    if (occurrences !== 1) {
+        errors.push(
+            `expected one current runtime reference ${expectedReference}, found ${occurrences}`,
+        );
+    }
+}
 
 for (const reference of new Set(localReferences)) {
     const cleanReference = decodeURIComponent(reference.split(/[?#]/, 1)[0]);

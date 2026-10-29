@@ -1,10 +1,12 @@
 const fs = require("node:fs");
 const path = require("node:path");
 const vm = require("node:vm");
+const { versionRuntimeReferences } = require("./runtime-version.cjs");
 
 const projectRoot = path.resolve(__dirname, "..");
 const indexPath = path.join(projectRoot, "index.html");
 const dataFiles = [
+    "organizations.js",
     "profile.js",
     "news.js",
     "research.js",
@@ -167,10 +169,14 @@ function build() {
         original,
         renderMetadata(data.profile),
     );
-    const generated = Object.entries(blocks).reduce(
+    const withContent = Object.entries(blocks).reduce(
         (document, [sectionId, html]) =>
             replaceGeneratedBlock(document, sectionId, html),
         withMetadata,
+    );
+    const { document: generated, version } = versionRuntimeReferences(
+        withContent,
+        projectRoot,
     );
 
     if (process.argv.includes("--check")) {
@@ -181,7 +187,9 @@ function build() {
             process.exitCode = 1;
             return;
         }
-        console.log("index.html static content is up to date.");
+        console.log(
+            `index.html static content and runtime version ${version} are up to date.`,
+        );
         return;
     }
 
@@ -191,7 +199,9 @@ function build() {
     }
 
     fs.writeFileSync(indexPath, generated, "utf8");
-    console.log("Generated static homepage content in index.html.");
+    console.log(
+        `Generated static homepage content with runtime version ${version} in index.html.`,
+    );
 }
 
 build();

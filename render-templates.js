@@ -36,7 +36,7 @@
         </div>
       </div>
       <figure class="profile-portrait">
-        <img class="avatar" src="${profileData.avatar}" alt="${profileData.avatarAlt}" width="${profileData.avatarWidth}" height="${profileData.avatarHeight}">
+        <img class="avatar" src="${profileData.avatar}" alt="${profileData.avatarAlt}" width="${profileData.avatarWidth}" height="${profileData.avatarHeight}" fetchpriority="high">
         <figcaption class="portrait-caption">${profileData.caption}</figcaption>
       </figure>
     `;
@@ -96,7 +96,7 @@
         ${enhanced && !paper.selected ? "hidden" : ""}
       >
         <a class="paper-figure" href="${paper.image}" data-figure data-caption="${paper.title}" aria-label="Preview figure for ${paper.title}">
-          <img src="${paper.image}" alt="" aria-hidden="true" width="${paper.imageWidth}" height="${paper.imageHeight}" loading="lazy">
+          <img src="${paper.image}" alt="" aria-hidden="true" width="${paper.imageWidth}" height="${paper.imageHeight}" loading="lazy" decoding="async">
         </a>
         <div>
           <h3 class="papertitle"><a href="${paper.url}">${paper.title}</a></h3>
@@ -149,7 +149,7 @@
         ${enhanced && !item.selected ? "hidden" : ""}
       >
         <a class="record-logo" href="${item.url}" aria-label="${item.name}">
-          <img src="assets/images/logos/${item.logo}" alt="" width="${item.logoWidth}" height="${item.logoHeight}" loading="lazy">
+          <img src="assets/images/logos/${item.logo}" alt="" width="${item.logoWidth}" height="${item.logoHeight}" loading="lazy" decoding="async">
         </a>
         <div class="record-content">
           <div class="record-heading">
@@ -199,12 +199,12 @@
                 const logo = item.url
                     ? `
           <a class="record-logo" href="${item.url}" aria-label="${item.institution}">
-            <img src="assets/images/logos/${item.logo}" alt="" width="${item.logoWidth}" height="${item.logoHeight}" loading="lazy">
+            <img src="assets/images/logos/${item.logo}" alt="" width="${item.logoWidth}" height="${item.logoHeight}" loading="lazy" decoding="async">
           </a>
         `
                     : `
           <div class="record-logo">
-            <img src="assets/images/logos/${item.logo}" alt="${item.institution}" width="${item.logoWidth}" height="${item.logoHeight}" loading="lazy">
+            <img src="assets/images/logos/${item.logo}" alt="${item.institution}" width="${item.logoWidth}" height="${item.logoHeight}" loading="lazy" decoding="async">
           </div>
         `;
                 const name = item.url

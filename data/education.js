@@ -1,22 +1,25 @@
 window.HOMEPAGE_DATA = window.HOMEPAGE_DATA || {};
+{
+const organizations = window.HOMEPAGE_DATA.organizations;
+
 window.HOMEPAGE_DATA.education = [
     {
-        logo: "xmu.svg",
-        logoWidth: 1067,
-        logoHeight: 1067,
-        institution: "Xiamen University",
-        url: "https://www.xmu.edu.cn/",
+        logo: organizations.xmu.logo,
+        logoWidth: organizations.xmu.logoWidth,
+        logoHeight: organizations.xmu.logoHeight,
+        institution: organizations.xmu.name,
+        url: organizations.xmu.url,
         detail: "M.Eng. in Electronic Information (Artificial Intelligence)",
         location: "Xiamen",
         period: "2025.09 – Present",
         selected: true,
     },
     {
-        logo: "swufe.svg",
-        logoWidth: 500,
-        logoHeight: 500,
-        institution: "Southwestern University of Finance and Economics",
-        url: "https://www.swufe.edu.cn/",
+        logo: organizations.swufe.logo,
+        logoWidth: organizations.swufe.logoWidth,
+        logoHeight: organizations.swufe.logoHeight,
+        institution: organizations.swufe.name,
+        url: organizations.swufe.url,
         detail: "B.Eng. in Artificial Intelligence (Guanghua Experimental Class in Intelligent Finance)",
         location: "Chengdu",
         period: "2021.09 – 2025.06",
@@ -33,3 +36,4 @@ window.HOMEPAGE_DATA.education = [
         selected: false,
     },
 ];
+}

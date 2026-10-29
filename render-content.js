@@ -27,6 +27,9 @@
     }
 
     function configureLinkTargets() {
+        const descriptionId = "new-tab-description";
+        let description = document.getElementById(descriptionId);
+
         document.querySelectorAll("a[href]").forEach((link) => {
             const href = link.getAttribute("href").trim();
             const staysInCurrentContext =
@@ -38,6 +41,22 @@
             if (staysInCurrentContext) return;
             link.target = "_blank";
             link.rel = "noopener noreferrer";
+
+            if (!description) {
+                description = document.createElement("span");
+                description.id = descriptionId;
+                description.className = "sr-only";
+                description.textContent = "Opens in a new tab.";
+                document.body.append(description);
+            }
+
+            const descriptions = new Set(
+                (link.getAttribute("aria-describedby") || "")
+                    .split(/\s+/)
+                    .filter(Boolean),
+            );
+            descriptions.add(descriptionId);
+            link.setAttribute("aria-describedby", Array.from(descriptions).join(" "));
         });
     }
 

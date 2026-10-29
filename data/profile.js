@@ -1,4 +1,12 @@
 window.HOMEPAGE_DATA = window.HOMEPAGE_DATA || {};
+{
+const organizations = window.HOMEPAGE_DATA.organizations;
+const xmu = organizations.xmu;
+const swufe = organizations.swufe;
+const unisound = organizations.unisound;
+const organizationLink = (organization, label = organization.name) =>
+    `<a class="affiliation-link" href="${organization.url}"${label === organization.name ? "" : ` aria-label="${organization.name}"`}><img src="assets/images/logos/${organization.logo}" alt="" aria-hidden="true" width="${organization.logoWidth}" height="${organization.logoHeight}">${label}</a>`;
+
 window.HOMEPAGE_DATA.profile = {
     name: "Jue Hou",
     chineseName: "侯爵",
@@ -14,16 +22,16 @@ window.HOMEPAGE_DATA.profile = {
         jobTitle:
             "M.Eng. Student in Electronic Information, specializing in Artificial Intelligence",
         affiliation: {
-            name: "Xiamen University",
-            url: "https://www.xmu.edu.cn/",
+            name: xmu.name,
+            url: xmu.url,
         },
         alumniOf: {
-            name: "Southwestern University of Finance and Economics",
-            url: "https://www.swufe.edu.cn/",
+            name: swufe.name,
+            url: swufe.url,
         },
     },
     bio: [
-        'I am an M.Eng. student in Electronic Information, specializing in Artificial Intelligence at <a class="affiliation-link" href="https://www.xmu.edu.cn/"><img src="assets/images/logos/xmu.svg" alt="" aria-hidden="true" width="1067" height="1067">Xiamen University</a>, advised by <a href="https://scholar.google.com/citations?user=w6qCk3sAAAAJ">Prof. Jinsong Su</a>. I am currently a Model Optimization Intern at <a class="affiliation-link" href="https://www.unisound.com/"><img src="assets/images/logos/unisound.svg" alt="" aria-hidden="true" width="106" height="103">Unisound</a>, working on Code Agent optimization.',
+        `I am an M.Eng. student in Electronic Information, specializing in Artificial Intelligence at ${organizationLink(xmu)}, advised by <a href="https://scholar.google.com/citations?user=w6qCk3sAAAAJ">Prof. Jinsong Su</a>. I am currently a Model Optimization Intern at ${organizationLink(unisound, unisound.shortName)}, working on Code Agent optimization.`,
         "My research focuses on <strong>LLM reasoning and agentic reinforcement learning</strong>. I welcome research collaborations and opportunities to work on challenging AI projects.",
     ],
     links: [
@@ -45,3 +53,4 @@ window.HOMEPAGE_DATA.profile = {
         },
     ],
 };
+}
