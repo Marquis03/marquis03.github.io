@@ -5,7 +5,7 @@ window.HOMEPAGE_DATA.news = {
         {
             date: "2026.05",
             content:
-                'Started my internship at <a href="https://www.unisound.com/">Unisound</a> in Xiamen, working on Code Agent optimization.',
+                'Started my internship at <a class="affiliation-link" href="https://www.unisound.com/"><img src="assets/images/logos/unisound.svg" alt="" aria-hidden="true" width="106" height="103">Unisound</a> in Xiamen, working on Code Agent optimization.',
         },
         {
             date: "2025.11",
@@ -15,7 +15,7 @@ window.HOMEPAGE_DATA.news = {
         {
             date: "2025.09",
             content:
-                'Started my master\'s program in Electronic Information, specializing in Artificial Intelligence, at <a href="https://www.xmu.edu.cn/">Xiamen University</a>.',
+                'Started my M.Eng. in Electronic Information, specializing in Artificial Intelligence at <a class="affiliation-link" href="https://www.xmu.edu.cn/" aria-label="Xiamen University"><img src="assets/images/logos/xmu.svg" alt="" aria-hidden="true" width="1067" height="1067">XMU</a>.',
         },
         {
             date: "2025.08",
@@ -25,7 +25,7 @@ window.HOMEPAGE_DATA.news = {
         {
             date: "2025.06",
             content:
-                'Graduated from <a href="https://www.swufe.edu.cn/">Southwestern University of Finance and Economics</a> with a B.E. in Artificial Intelligence.',
+                'Graduated from <a class="affiliation-link" href="https://www.swufe.edu.cn/" aria-label="Southwestern University of Finance and Economics"><img src="assets/images/logos/swufe.svg" alt="" aria-hidden="true" width="500" height="500">SWUFE</a> with a B.Eng. in Artificial Intelligence.',
         },
         {
             date: "2025.02",

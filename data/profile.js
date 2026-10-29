@@ -4,11 +4,27 @@ window.HOMEPAGE_DATA.profile = {
     chineseName: "侯爵",
     avatar: "assets/images/avatar.jpg",
     avatarAlt: "Portrait of Jue Hou",
+    avatarWidth: 1080,
+    avatarHeight: 1080,
     caption: "Photographed in<br>Dujiangyan City, Sichuan, China",
+    metadata: {
+        siteUrl: "https://marquis03.github.io/",
+        description:
+            "Jue Hou — M.Eng. student in Electronic Information, specializing in Artificial Intelligence at Xiamen University, researching LLM reasoning and agentic reinforcement learning.",
+        jobTitle:
+            "M.Eng. Student in Electronic Information, specializing in Artificial Intelligence",
+        affiliation: {
+            name: "Xiamen University",
+            url: "https://www.xmu.edu.cn/",
+        },
+        alumniOf: {
+            name: "Southwestern University of Finance and Economics",
+            url: "https://www.swufe.edu.cn/",
+        },
+    },
     bio: [
-        'I am pursuing a master\'s degree in Electronic Information, specializing in Artificial Intelligence, at <a href="https://www.xmu.edu.cn/">Xiamen University</a> under the supervision of <a href="https://scholar.google.com/citations?user=w6qCk3sAAAAJ">Prof. Jinsong Su</a>.',
-        'I received my B.E. in Artificial Intelligence from <a href="https://www.swufe.edu.cn/">Southwestern University of Finance and Economics</a> in 2025 as a member of the Intelligent Finance Guanghua Experimental Class.',
-        "My research interests include <strong>LLM reasoning and agentic reinforcement learning</strong>. I welcome research collaborations and opportunities to work on challenging AI projects.",
+        'I am an M.Eng. student in Electronic Information, specializing in Artificial Intelligence at <a class="affiliation-link" href="https://www.xmu.edu.cn/"><img src="assets/images/logos/xmu.svg" alt="" aria-hidden="true" width="1067" height="1067">Xiamen University</a>, advised by <a href="https://scholar.google.com/citations?user=w6qCk3sAAAAJ">Prof. Jinsong Su</a>. I am currently a Model Optimization Intern at <a class="affiliation-link" href="https://www.unisound.com/"><img src="assets/images/logos/unisound.svg" alt="" aria-hidden="true" width="106" height="103">Unisound</a>, working on Code Agent optimization.',
+        "My research focuses on <strong>LLM reasoning and agentic reinforcement learning</strong>. I welcome research collaborations and opportunities to work on challenging AI projects.",
     ],
     links: [
         { label: "Email", url: "mailto:marquis03@qq.com", icon: "email.svg" },

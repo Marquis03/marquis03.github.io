@@ -36,7 +36,7 @@
         </div>
       </div>
       <figure class="profile-portrait">
-        <img class="avatar" src="${profileData.avatar}" alt="${profileData.avatarAlt}" width="1080" height="1080">
+        <img class="avatar" src="${profileData.avatar}" alt="${profileData.avatarAlt}" width="${profileData.avatarWidth}" height="${profileData.avatarHeight}">
         <figcaption class="portrait-caption">${profileData.caption}</figcaption>
       </figure>
     `;
@@ -86,21 +86,17 @@
 
     function research(entries, options) {
         const enhanced = options && options.enhanced;
-        const orderedResearch = entries
-            .slice()
-            .sort((a, b) => b.date.localeCompare(a.date));
-
-        const papers = orderedResearch
+        const papers = entries
             .map(
                 (paper) => `
       <article
-        class="paper-row ${paper.highlight ? "highlight-paper" : ""}"
-        data-highlight="${paper.highlight}"
+        class="paper-row"
+        data-selected="${paper.selected}"
         data-reveal-item
-        ${enhanced && !paper.highlight ? "hidden" : ""}
+        ${enhanced && !paper.selected ? "hidden" : ""}
       >
-        <a class="paper-figure" href="${paper.image}" data-figure data-caption="${paper.title}">
-          <img src="${paper.image}" alt="${paper.title}" loading="lazy">
+        <a class="paper-figure" href="${paper.image}" data-figure data-caption="${paper.title}" aria-label="Preview figure for ${paper.title}">
+          <img src="${paper.image}" alt="" aria-hidden="true" width="${paper.imageWidth}" height="${paper.imageHeight}" loading="lazy">
         </a>
         <div>
           <h3 class="papertitle"><a href="${paper.url}">${paper.title}</a></h3>
@@ -115,8 +111,8 @@
 
         return `
       <header class="section-heading research-heading" data-reveal-item>
-        <h2 class="section-title" id="research-heading">${enhanced ? "Highlight" : "All"} Research</h2>
-        <button class="research-toggle" id="research-toggle" aria-controls="research-papers" hidden>All Research</button>
+        <h2 class="section-title" id="research-heading">${enhanced ? "Research" : "All Research"}</h2>
+        <button class="research-toggle" id="research-toggle" type="button" aria-controls="research-papers" hidden>View all</button>
       </header>
       <p class="paper-meta-note" data-reveal-item>* Equal contribution &nbsp; † Corresponding author</p>
       <p class="sr-only" id="research-status" role="status" aria-live="polite"></p>
@@ -147,13 +143,13 @@
             .map(
                 (item) => `
       <article
-        class="record-row competition-row ${item.highlight ? "highlight-paper" : ""}"
-        data-highlight="${item.highlight}"
+        class="record-row competition-row"
+        data-selected="${item.selected}"
         data-reveal-item
-        ${enhanced && !item.highlight ? "hidden" : ""}
+        ${enhanced && !item.selected ? "hidden" : ""}
       >
         <a class="record-logo" href="${item.url}" aria-label="${item.name}">
-          <img src="assets/images/logos/${item.logo}" alt="" loading="lazy">
+          <img src="assets/images/logos/${item.logo}" alt="" width="${item.logoWidth}" height="${item.logoHeight}" loading="lazy">
         </a>
         <div class="record-content">
           <div class="record-heading">
@@ -173,8 +169,8 @@
 
         return `
       <header class="section-heading research-heading" data-reveal-item>
-        <h2 class="section-title" id="competition-heading">${enhanced ? "Highlight" : "All"} Competition</h2>
-        <button class="research-toggle" id="competition-toggle" aria-controls="competition-list" hidden>All Competition</button>
+        <h2 class="section-title" id="competition-heading">${enhanced ? "Competition" : "All Competition"}</h2>
+        <button class="research-toggle" id="competition-toggle" type="button" aria-controls="competition-list" hidden>View all</button>
       </header>
       <p class="sr-only" id="competition-status" role="status" aria-live="polite"></p>
       <div id="competition-list">${records}</div>
@@ -195,18 +191,20 @@
         return `${startMarkup} – ${endMarkup}`;
     }
 
-    function institutionRows(entries) {
+    function institutionRows(entries, options) {
+        const filterable = options && options.filterable;
+        const enhanced = options && options.enhanced;
         return entries
             .map((item) => {
                 const logo = item.url
                     ? `
           <a class="record-logo" href="${item.url}" aria-label="${item.institution}">
-            <img src="assets/images/logos/${item.logo}" alt="" loading="lazy">
+            <img src="assets/images/logos/${item.logo}" alt="" width="${item.logoWidth}" height="${item.logoHeight}" loading="lazy">
           </a>
         `
                     : `
           <div class="record-logo">
-            <img src="assets/images/logos/${item.logo}" alt="${item.institution}" loading="lazy">
+            <img src="assets/images/logos/${item.logo}" alt="${item.institution}" width="${item.logoWidth}" height="${item.logoHeight}" loading="lazy">
           </div>
         `;
                 const name = item.url
@@ -214,7 +212,12 @@
                     : item.institution;
 
                 return `
-        <div class="record-row" data-reveal-item>
+        <div
+          class="record-row"
+          data-reveal-item
+          ${filterable ? `data-selected="${item.selected}"` : ""}
+          ${filterable && enhanced && !item.selected ? "hidden" : ""}
+        >
           ${logo}
           <div class="record-content">
             <div class="record-heading">
@@ -232,12 +235,18 @@
             .join("");
     }
 
-    function institutions(entries, title, listId) {
+    function institutions(entries, title, listId, options) {
+        const filterable = options && options.filterable;
+        const enhanced = options && options.enhanced;
+        const headingId = filterable ? `${listId}-heading` : "";
+        const statusId = filterable ? `${listId}-status` : "";
         return `
-      <header class="section-heading" data-reveal-item>
-        <h2 class="section-title">${title}</h2>
+      <header class="section-heading${filterable ? " research-heading" : ""}" data-reveal-item>
+        <h2 class="section-title"${headingId ? ` id="${headingId}"` : ""}>${filterable && !enhanced ? `All ${title}` : title}</h2>
+        ${filterable ? `<button class="research-toggle" id="${listId}-toggle" type="button" aria-controls="${listId}" hidden>View all</button>` : ""}
       </header>
-      <div id="${listId}">${institutionRows(entries)}</div>
+      ${filterable ? `<p class="sr-only" id="${statusId}" role="status" aria-live="polite"></p>` : ""}
+      <div id="${listId}">${institutionRows(entries, options)}</div>
     `;
     }
 

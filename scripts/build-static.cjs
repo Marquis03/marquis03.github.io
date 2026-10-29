@@ -59,6 +59,86 @@ function replaceGeneratedBlock(document, sectionId, html) {
     return document.slice(0, contentStart) + generated + document.slice(end);
 }
 
+function escapeAttribute(value) {
+    return String(value)
+        .replaceAll("&", "&amp;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;");
+}
+
+function renderMetadata(profileData) {
+    const metadata = profileData.metadata;
+    const title = `${profileData.name} | ${profileData.chineseName}`;
+    const imageUrl = new URL(profileData.avatar, metadata.siteUrl).href;
+    const email = profileData.links.find((link) =>
+        link.url.startsWith("mailto:"),
+    );
+    const sameAs = profileData.links
+        .map((link) => link.url)
+        .filter((url) => /^https?:\/\//i.test(url));
+    const person = {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        name: profileData.name,
+        alternateName: profileData.chineseName,
+        url: metadata.siteUrl,
+        image: imageUrl,
+        ...(email ? { email: email.url } : {}),
+        jobTitle: metadata.jobTitle,
+        affiliation: {
+            "@type": "CollegeOrUniversity",
+            ...metadata.affiliation,
+        },
+        alumniOf: {
+            "@type": "CollegeOrUniversity",
+            ...metadata.alumniOf,
+        },
+        sameAs,
+    };
+    const structuredData = JSON.stringify(person, null, 2).replaceAll(
+        "<",
+        "\\u003c",
+    );
+
+    return `<meta name="author" content="${escapeAttribute(title)}">
+<meta name="description" content="${escapeAttribute(metadata.description)}">
+<title>${escapeAttribute(title)}</title>
+<link rel="canonical" href="${escapeAttribute(metadata.siteUrl)}">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="${escapeAttribute(title)}">
+<meta property="og:description" content="${escapeAttribute(metadata.description)}">
+<meta property="og:url" content="${escapeAttribute(metadata.siteUrl)}">
+<meta property="og:image" content="${escapeAttribute(imageUrl)}">
+<meta property="og:image:width" content="${profileData.avatarWidth}">
+<meta property="og:image:height" content="${profileData.avatarHeight}">
+<meta property="og:image:alt" content="${escapeAttribute(profileData.avatarAlt)}">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="${escapeAttribute(title)}">
+<meta name="twitter:description" content="${escapeAttribute(metadata.description)}">
+<meta name="twitter:image" content="${escapeAttribute(imageUrl)}">
+<meta name="twitter:image:alt" content="${escapeAttribute(profileData.avatarAlt)}">
+<script type="application/ld+json">
+${structuredData}
+</script>`;
+}
+
+function replaceMetadataBlock(document, html) {
+    const startMarker = "<!-- STATIC-METADATA:START -->";
+    const endMarker = "<!-- STATIC-METADATA:END -->";
+    const start = document.indexOf(startMarker);
+    const end = document.indexOf(endMarker);
+
+    if (start === -1 || end === -1 || end < start) {
+        throw new Error("Missing static metadata markers.");
+    }
+
+    const contentStart = start + startMarker.length;
+    const generated = `\n${indentBlock(html, "  ")}\n  `;
+    return document.slice(0, contentStart) + generated + document.slice(end);
+}
+
 function build() {
     const data = loadHomepageData();
     const renderers = require(path.join(projectRoot, "render-templates.js"));
@@ -70,6 +150,7 @@ function build() {
             data.education,
             "Education",
             "education-list",
+            { filterable: true, enhanced: false },
         ),
         experience: renderers.institutions(
             data.experience,
@@ -82,10 +163,14 @@ function build() {
     };
 
     const original = fs.readFileSync(indexPath, "utf8");
+    const withMetadata = replaceMetadataBlock(
+        original,
+        renderMetadata(data.profile),
+    );
     const generated = Object.entries(blocks).reduce(
         (document, [sectionId, html]) =>
             replaceGeneratedBlock(document, sectionId, html),
-        original,
+        withMetadata,
     );
 
     if (process.argv.includes("--check")) {

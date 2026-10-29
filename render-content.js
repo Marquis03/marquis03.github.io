@@ -50,7 +50,10 @@
         renderers.competitions(entries, { enhanced: true }),
     );
     renderSafely("education", "education", (entries) =>
-        renderers.institutions(entries, "Education", "education-list"),
+        renderers.institutions(entries, "Education", "education-list", {
+            filterable: true,
+            enhanced: true,
+        }),
     );
     renderSafely("experience", "experience", (entries) =>
         renderers.institutions(entries, "Experience", "experience-list"),

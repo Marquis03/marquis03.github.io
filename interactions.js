@@ -1,4 +1,4 @@
-(function initHighlightToggles() {
+(function initSelectionToggles() {
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
   function createToggle(config) {
@@ -13,7 +13,7 @@
       const enteringItems = [];
       items.forEach(function (item) {
         const wasHidden = item.hidden;
-        const shouldHide = !showAll && item.dataset.highlight !== "true";
+        const shouldHide = !showAll && item.dataset.selected !== "true";
         item.hidden = shouldHide;
         item.classList.remove("is-last-visible", "filter-item-enter");
         item.style.removeProperty("--filter-enter-delay");
@@ -23,12 +23,15 @@
       });
       const visibleItems = items.filter(function (item) { return !item.hidden; });
       if (visibleItems.length) visibleItems[visibleItems.length - 1].classList.add("is-last-visible");
-      heading.textContent = showAll ? "All " + config.label : "Highlight " + config.label;
-      button.textContent = showAll ? "Highlight " + config.label : "All " + config.label;
+      heading.textContent = showAll ? "All " + config.label : config.label;
+      button.textContent = showAll ? "Show selected" : "View all";
+      button.setAttribute("aria-label", (showAll ? "Show selected " : "View all ") + config.label.toLowerCase());
       button.setAttribute("aria-expanded", String(showAll));
       if (announce && status) {
         const count = visibleItems.length;
-        status.textContent = "Showing " + count + (showAll ? " total " : " highlighted ") + config.label.toLowerCase() + ".";
+        status.textContent = showAll
+          ? "Showing all " + count + " " + config.itemLabel + "."
+          : "Showing " + count + " selected " + config.itemLabel + ".";
       }
       enteringItems.forEach(function (item, index) {
         item.style.setProperty("--filter-enter-delay", Math.min(index * 25, 125) + "ms");
@@ -36,15 +39,21 @@
       });
     }
     button.addEventListener("click", function () {
+      const headingTop = heading.getBoundingClientRect().top;
       showAll = !showAll;
       update(true);
+      window.requestAnimationFrame(function preserveTogglePosition() {
+        const offset = heading.getBoundingClientRect().top - headingTop;
+        if (Math.abs(offset) > 1) window.scrollBy(0, offset);
+      });
     });
     update(false);
     button.hidden = false;
   }
 
-  createToggle({ buttonId: "research-toggle", headingId: "research-heading", statusId: "research-status", itemSelector: "#research-papers .paper-row", label: "Research" });
-  createToggle({ buttonId: "competition-toggle", headingId: "competition-heading", statusId: "competition-status", itemSelector: "#competition-list .competition-row", label: "Competition" });
+  createToggle({ buttonId: "research-toggle", headingId: "research-heading", statusId: "research-status", itemSelector: "#research-papers .paper-row", label: "Research", itemLabel: "research items" });
+  createToggle({ buttonId: "competition-toggle", headingId: "competition-heading", statusId: "competition-status", itemSelector: "#competition-list .competition-row", label: "Competition", itemLabel: "competition entries" });
+  createToggle({ buttonId: "education-list-toggle", headingId: "education-list-heading", statusId: "education-list-status", itemSelector: "#education-list .record-row", label: "Education", itemLabel: "education entries" });
 })();
 
 (function initFigurePreview() {
@@ -60,7 +69,7 @@
       event.preventDefault();
       trigger = link;
       image.src = link.href;
-      image.alt = link.querySelector("img").alt;
+      image.alt = link.dataset.caption;
       caption.textContent = link.dataset.caption;
       dialog.showModal();
     });

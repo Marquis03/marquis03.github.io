@@ -21,11 +21,11 @@ External paper, project, code, and profile links require an internet connection.
 
 ## Editing
 
-- `data/profile.js`: name, biography, avatar, and profile links.
+- `data/profile.js`: name, biography, avatar, profile links, and generated page metadata.
 - `data/news.js`: news entries and the number shown before folding.
-- `data/research.js`: papers, authors, links, and highlighted status.
+- `data/research.js`: papers, authors, links, and selected status. Papers appear on the page in the same order as they are listed in this file.
 - `data/competitions.js`: competition results, ranks, awards, and bonuses.
-- `data/education.js`: education history.
+- `data/education.js`: education history and selected status; entries with `selected: false` are folded by default.
 - `data/experience.js`: internships and work experience.
 - `index.html`: page structure and section order only.
 - `render-content.js`: converts the structured data into page markup.
@@ -33,7 +33,7 @@ External paper, project, code, and profile links require an internet connection.
 - `scripts/build-static.cjs`: regenerates the static content stored in `index.html`.
 - `stylesheet.css`: layout, typography, colors, and responsive styles.
 - `navigation.js`: section navigation.
-- `interactions.js`: highlight toggles and figure preview.
+- `interactions.js`: selection toggles and figure preview.
 - `assets/`: local fonts, icons, images, logos, and competition certificates.
 
 The data files use plain JavaScript objects instead of fetched JSON so the site
@@ -51,7 +51,7 @@ To verify that `index.html` matches the current data without changing files:
 node scripts/build-static.cjs --check
 ```
 
-To verify generated sections and local asset links:
+To validate metadata, local references, IDs, dates, and image dimensions:
 
 ```powershell
 node scripts/check-site.cjs
