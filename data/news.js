@@ -35,7 +35,7 @@ window.HOMEPAGE_DATA.news = {
         {
             date: "2025.02",
             content:
-                'Started as an LLM Algorithm Intern at <a href="https://www.dp.tech/">DP Technology</a>.',
+                `Started as an LLM Algorithm Intern at ${organizationLink(organizations.dp)}.`,
         },
         {
             date: "2024.11",

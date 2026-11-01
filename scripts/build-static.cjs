@@ -6,11 +6,11 @@ const { versionRuntimeReferences } = require("./runtime-version.cjs");
 const projectRoot = path.resolve(__dirname, "..");
 const indexPath = path.join(projectRoot, "index.html");
 const dataFiles = [
-    "organizations.js",
+    "organization.js",
     "profile.js",
     "news.js",
     "research.js",
-    "competitions.js",
+    "competition.js",
     "education.js",
     "experience.js",
 ];
@@ -152,7 +152,6 @@ function build() {
             data.education,
             "Education",
             "education-list",
-            { filterable: true, enhanced: false },
         ),
         experience: renderers.institutions(
             data.experience,

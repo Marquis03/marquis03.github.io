@@ -3,11 +3,11 @@ const fs = require("node:fs");
 const path = require("node:path");
 
 const runtimeFiles = [
-    "data/organizations.js",
+    "data/organization.js",
     "data/profile.js",
     "data/news.js",
     "data/research.js",
-    "data/competitions.js",
+    "data/competition.js",
     "data/education.js",
     "data/experience.js",
     "render-templates.js",

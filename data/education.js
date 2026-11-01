@@ -12,7 +12,6 @@ window.HOMEPAGE_DATA.education = [
         detail: "M.Eng. in Electronic Information (Artificial Intelligence)",
         location: "Xiamen",
         period: "2025.09 – Present",
-        selected: true,
     },
     {
         logo: organizations.swufe.logo,
@@ -23,17 +22,6 @@ window.HOMEPAGE_DATA.education = [
         detail: "B.Eng. in Artificial Intelligence (Guanghua Experimental Class in Intelligent Finance)",
         location: "Chengdu",
         period: "2021.09 – 2025.06",
-        selected: true,
-    },
-    {
-        logo: "HZMHS.png",
-        logoWidth: 512,
-        logoHeight: 512,
-        institution: "Hunan Zixing Municipal High School",
-        detail: "High School Diploma",
-        location: "Chenzhou",
-        period: "2018.09 – 2021.06",
-        selected: false,
     },
 ];
 }

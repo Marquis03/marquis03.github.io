@@ -13,11 +13,11 @@ const html = fs.readFileSync(indexPath, "utf8");
 const stylesheet = fs.readFileSync(stylesheetPath, "utf8");
 const errors = [];
 const dataFiles = [
-    "organizations.js",
+    "organization.js",
     "profile.js",
     "news.js",
     "research.js",
-    "competitions.js",
+    "competition.js",
     "education.js",
     "experience.js",
 ];
@@ -164,7 +164,7 @@ function validateData(data) {
     requireDescending(data.competitions, "competitions");
 
     data.education.forEach((item, index) =>
-        validateInstitution(item, `education[${index}]`, { selected: true }),
+        validateInstitution(item, `education[${index}]`),
     );
     data.experience.forEach((item, index) =>
         validateInstitution(item, `experience[${index}]`),

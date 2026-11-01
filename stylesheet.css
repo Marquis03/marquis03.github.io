@@ -115,7 +115,7 @@ strong { font-weight: 600; }
 .portrait-caption { margin-top: 12px; text-align: center; color: var(--text-secondary); font-size: var(--font-size-xs); line-height: 1.55; }
 .avatar { width: 100%; height: auto; object-fit: contain; object-position: center; border-radius: 48px; box-shadow: 0 4px 16px color-mix(in srgb, var(--text-primary) 5%, transparent); }
 .affiliation-link { display: inline-flex; align-items: center; gap: 4px; white-space: nowrap; vertical-align: -.2em; }
-.affiliation-link img { width: 1.25em; height: 1.25em; flex: 0 0 auto; object-fit: contain; transition: transform var(--motion-medium) var(--ease-out); }
+.affiliation-link img { width: auto; height: 1.25em; max-width: 2em; flex: 0 0 auto; object-fit: contain; transition: transform var(--motion-medium) var(--ease-out); }
 @media (hover: hover) and (pointer: fine) {
   .affiliation-link:hover img { transform: scale(1.08); }
 }
@@ -189,7 +189,7 @@ strong { font-weight: 600; }
 .research-toggle { border: 0; border-bottom: 1px solid var(--line); padding: 2px 0; background: transparent; color: var(--link-color); font-size: var(--font-size-sm); cursor: pointer; }
 .research-toggle:hover { color: var(--accent-orange); }
 .paper-meta-note { margin: 0 0 18px; color: var(--text-tertiary); font-size: var(--font-size-base); }
-#research-papers, #education-list, #competition-list { overflow-anchor: none; }
+#research-papers, #competition-list { overflow-anchor: none; }
 .filter-item-enter { animation: filter-item-enter var(--motion-medium) var(--ease-out) var(--filter-enter-delay, 0ms) both; }
 
 @keyframes filter-item-enter {

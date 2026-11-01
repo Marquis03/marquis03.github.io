@@ -27,7 +27,7 @@ window.HOMEPAGE_DATA.competitions = [
         selected: true,
     },
     {
-        logo: "AIMO.png",
+        logo: "AIMO.svg",
         logoWidth: 570,
         logoHeight: 244,
         name: "AI Mathematical Olympiad — Progress Prize 2",
@@ -39,7 +39,7 @@ window.HOMEPAGE_DATA.competitions = [
         selected: false,
     },
     {
-        logo: "SAIS.webp",
+        logo: "SAIS.svg",
         logoWidth: 400,
         logoHeight: 127,
         name: "The 2nd World AI4S Prize — Market Game and Price Prediction",
@@ -89,7 +89,7 @@ window.HOMEPAGE_DATA.competitions = [
         selected: false,
     },
     {
-        logo: "icpc_foundation.png",
+        logo: "icpc_foundation.svg",
         logoWidth: 910,
         logoHeight: 646,
         name: "ICPC Asia Xi’an Regional Contest",
@@ -100,7 +100,7 @@ window.HOMEPAGE_DATA.competitions = [
         selected: true,
     },
     {
-        logo: "icpc_foundation.png",
+        logo: "icpc_foundation.svg",
         logoWidth: 910,
         logoHeight: 646,
         name: "ICPC China Sichuan Provincial Programming Contest",
@@ -133,7 +133,7 @@ window.HOMEPAGE_DATA.competitions = [
         selected: false,
     },
     {
-        logo: "icpc_foundation.png",
+        logo: "icpc_foundation.svg",
         logoWidth: 910,
         logoHeight: 646,
         name: "ICPC China Sichuan Provincial Programming Contest",

@@ -96,7 +96,7 @@
         ${enhanced && !paper.selected ? "hidden" : ""}
       >
         <a class="paper-figure" href="${paper.image}" data-figure data-caption="${paper.title}" aria-label="Preview figure for ${paper.title}">
-          <img src="${paper.image}" alt="" aria-hidden="true" width="${paper.imageWidth}" height="${paper.imageHeight}" loading="lazy" decoding="async">
+          <img src="${paper.image}" alt="" aria-hidden="true" width="${paper.imageWidth}" height="${paper.imageHeight}" decoding="async">
         </a>
         <div>
           <h3 class="papertitle"><a href="${paper.url}">${paper.title}</a></h3>
@@ -149,7 +149,7 @@
         ${enhanced && !item.selected ? "hidden" : ""}
       >
         <a class="record-logo" href="${item.url}" aria-label="${item.name}">
-          <img src="assets/images/logos/${item.logo}" alt="" width="${item.logoWidth}" height="${item.logoHeight}" loading="lazy" decoding="async">
+          <img src="assets/images/logos/${item.logo}" alt="" width="${item.logoWidth}" height="${item.logoHeight}" decoding="async">
         </a>
         <div class="record-content">
           <div class="record-heading">
@@ -191,20 +191,18 @@
         return `${startMarkup} – ${endMarkup}`;
     }
 
-    function institutionRows(entries, options) {
-        const filterable = options && options.filterable;
-        const enhanced = options && options.enhanced;
+    function institutionRows(entries) {
         return entries
             .map((item) => {
                 const logo = item.url
                     ? `
           <a class="record-logo" href="${item.url}" aria-label="${item.institution}">
-            <img src="assets/images/logos/${item.logo}" alt="" width="${item.logoWidth}" height="${item.logoHeight}" loading="lazy" decoding="async">
+            <img src="assets/images/logos/${item.logo}" alt="" width="${item.logoWidth}" height="${item.logoHeight}" decoding="async">
           </a>
         `
                     : `
           <div class="record-logo">
-            <img src="assets/images/logos/${item.logo}" alt="${item.institution}" width="${item.logoWidth}" height="${item.logoHeight}" loading="lazy" decoding="async">
+            <img src="assets/images/logos/${item.logo}" alt="${item.institution}" width="${item.logoWidth}" height="${item.logoHeight}" decoding="async">
           </div>
         `;
                 const name = item.url
@@ -215,8 +213,6 @@
         <div
           class="record-row"
           data-reveal-item
-          ${filterable ? `data-selected="${item.selected}"` : ""}
-          ${filterable && enhanced && !item.selected ? "hidden" : ""}
         >
           ${logo}
           <div class="record-content">
@@ -235,18 +231,12 @@
             .join("");
     }
 
-    function institutions(entries, title, listId, options) {
-        const filterable = options && options.filterable;
-        const enhanced = options && options.enhanced;
-        const headingId = filterable ? `${listId}-heading` : "";
-        const statusId = filterable ? `${listId}-status` : "";
+    function institutions(entries, title, listId) {
         return `
-      <header class="section-heading${filterable ? " research-heading" : ""}" data-reveal-item>
-        <h2 class="section-title"${headingId ? ` id="${headingId}"` : ""}>${filterable && !enhanced ? `All ${title}` : title}</h2>
-        ${filterable ? `<button class="research-toggle" id="${listId}-toggle" type="button" aria-controls="${listId}" hidden>View all</button>` : ""}
+      <header class="section-heading" data-reveal-item>
+        <h2 class="section-title">${title}</h2>
       </header>
-      ${filterable ? `<p class="sr-only" id="${statusId}" role="status" aria-live="polite"></p>` : ""}
-      <div id="${listId}">${institutionRows(entries, options)}</div>
+      <div id="${listId}">${institutionRows(entries)}</div>
     `;
     }
 

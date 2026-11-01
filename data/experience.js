@@ -1,6 +1,7 @@
 window.HOMEPAGE_DATA = window.HOMEPAGE_DATA || {};
 {
 const unisound = window.HOMEPAGE_DATA.organizations.unisound;
+const dp = window.HOMEPAGE_DATA.organizations.dp;
 
 window.HOMEPAGE_DATA.experience = [
     {
@@ -14,11 +15,11 @@ window.HOMEPAGE_DATA.experience = [
         period: "2026.05 – Present",
     },
     {
-        logo: "DPTechnology.png",
-        logoWidth: 806,
-        logoHeight: 221,
-        institution: "DP Technology",
-        url: "https://www.dp.tech/",
+        logo: dp.recordLogo,
+        logoWidth: dp.recordLogoWidth,
+        logoHeight: dp.recordLogoHeight,
+        institution: dp.name,
+        url: dp.url,
         detail: "LLM Algorithm Intern",
         location: "Beijing / Remote",
         period: "2025.02 – 2026.05",

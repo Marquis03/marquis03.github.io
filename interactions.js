@@ -53,7 +53,6 @@
 
   createToggle({ buttonId: "research-toggle", headingId: "research-heading", statusId: "research-status", itemSelector: "#research-papers .paper-row", label: "Research", itemLabel: "research items" });
   createToggle({ buttonId: "competition-toggle", headingId: "competition-heading", statusId: "competition-status", itemSelector: "#competition-list .competition-row", label: "Competition", itemLabel: "competition entries" });
-  createToggle({ buttonId: "education-list-toggle", headingId: "education-list-heading", statusId: "education-list-status", itemSelector: "#education-list .record-row", label: "Education", itemLabel: "education entries" });
 })();
 
 (function initFigurePreview() {

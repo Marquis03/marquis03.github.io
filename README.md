@@ -22,10 +22,10 @@ External paper, project, code, and profile links require an internet connection.
 ## Editing
 
 - `data/profile.js`: name, biography, avatar, profile links, and generated page metadata.
-- `data/organizations.js`: shared names, abbreviations, links, and logos for institutions used across sections.
+- `data/organization.js`: shared names, abbreviations, links, and logos for institutions used across sections.
 - `data/news.js`: news entries and the number shown before folding.
 - `data/research.js`: papers, authors, links, and selected status. Papers appear on the page in the same order as they are listed in this file.
-- `data/competitions.js`: competition results, ranks, awards, and bonuses.
+- `data/competition.js`: competition results, ranks, awards, and bonuses.
 - `data/education.js`: education history and selected status; entries with `selected: false` are folded by default.
 - `data/experience.js`: internships and work experience.
 - `index.html`: page structure and section order only.
