@@ -20,7 +20,7 @@
   --text-tertiary: #657080;
   --bg-primary: #ffffff;
   --accent-blue: #235caf;
-  --accent-orange: #b76b20;
+  --accent-orange: #a45c18;
   --line: #e5eaf0;
   --highlight-yellow: #fff176;
   --link-color: var(--accent-blue);
@@ -281,6 +281,18 @@ body:has(.figure-dialog[open]) { overflow: hidden; }
   .section-nav__inner { display: flex; align-items: center; gap: 15px; max-width: 1004px; margin: 0 auto; padding: 0 28px; }
   .section-nav__label { margin: 0; flex-shrink: 0; }
   .section-nav__track { flex: 1; min-width: 0; overflow-x: auto; scrollbar-width: none; }
+  .section-nav.can-scroll-next .section-nav__track {
+    -webkit-mask-image: linear-gradient(to right, #000 0, #000 calc(100% - 30px), transparent 100%);
+    mask-image: linear-gradient(to right, #000 0, #000 calc(100% - 30px), transparent 100%);
+  }
+  .section-nav.can-scroll-prev:not(.can-scroll-next) .section-nav__track {
+    -webkit-mask-image: linear-gradient(to right, transparent 0, #000 30px, #000 100%);
+    mask-image: linear-gradient(to right, transparent 0, #000 30px, #000 100%);
+  }
+  .section-nav.can-scroll-prev.can-scroll-next .section-nav__track {
+    -webkit-mask-image: linear-gradient(to right, transparent 0, #000 30px, #000 calc(100% - 30px), transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0, #000 30px, #000 calc(100% - 30px), transparent 100%);
+  }
   .section-nav__track::-webkit-scrollbar { display: none; }
   .section-nav__track::before { display: none; }
   .section-nav__list { display: flex; width: max-content; }

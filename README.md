@@ -17,7 +17,7 @@ The page includes:
 - Competition results, education, and experience.
 - Responsive navigation and enlarged publication figures.
 
-External paper, project, code, and profile links require an internet connection. The local page requires JavaScript but has no installation or build step.
+External paper, project, code, and profile links require an internet connection. The local page does not require JavaScript for its content; JavaScript progressively adds filtering, navigation, animation, and figure previews.
 
 ## Editing
 
@@ -26,7 +26,7 @@ External paper, project, code, and profile links require an internet connection.
 - `data/news.js`: news entries and the number shown before folding.
 - `data/research.js`: papers, authors, links, and selected status. Papers appear on the page in the same order as they are listed in this file.
 - `data/competition.js`: competition results, ranks, awards, and bonuses.
-- `data/education.js`: education history and selected status; entries with `selected: false` are folded by default.
+- `data/education.js`: education history.
 - `data/experience.js`: internships and work experience.
 - `index.html`: page structure and section order only.
 - `render-content.js`: converts the structured data into page markup.
@@ -35,7 +35,7 @@ External paper, project, code, and profile links require an internet connection.
 - `scripts/runtime-version.cjs`: generates a shared content hash for the runtime scripts so browsers do not reuse stale data after deployment.
 - `stylesheet.css`: layout, typography, colors, and responsive styles.
 - `navigation.js`: section navigation.
-- `interactions.js`: selection toggles and figure preview.
+- `interactions.js`: research and competition selection toggles, scroll reveal, and figure preview.
 - `assets/`: local fonts, icons, images, logos, and competition certificates.
 
 The data files use plain JavaScript objects instead of fetched JSON so the site

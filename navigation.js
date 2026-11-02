@@ -30,6 +30,17 @@
     nav.style.setProperty("--indicator-width", item.offsetWidth + "px");
   }
 
+  function updateCompactOverflowCue() {
+    if (!compactLayout.matches) {
+      nav.classList.remove("can-scroll-prev", "can-scroll-next");
+      return;
+    }
+
+    const maxScrollLeft = Math.max(0, track.scrollWidth - track.clientWidth);
+    nav.classList.toggle("can-scroll-prev", track.scrollLeft > 2);
+    nav.classList.toggle("can-scroll-next", track.scrollLeft < maxScrollLeft - 2);
+  }
+
   function revealCompactLink(item) {
     if (!compactLayout.matches) return;
 
@@ -38,6 +49,7 @@
       left: Math.max(0, targetLeft),
       behavior: reducedMotion.matches ? "auto" : "smooth"
     });
+    window.requestAnimationFrame(updateCompactOverflowCue);
   }
 
   function setActive(entry) {
@@ -81,6 +93,7 @@
     } else {
       positionIndicator(current.item);
     }
+    updateCompactOverflowCue();
     scrollTicking = false;
   }
 
@@ -127,6 +140,7 @@
   window.addEventListener("hashchange", clearNavigationTarget);
   window.addEventListener("popstate", clearNavigationTarget);
   window.addEventListener("scroll", scheduleSync, { passive: true });
+  track.addEventListener("scroll", updateCompactOverflowCue, { passive: true });
   window.addEventListener("resize", scheduleSync, { passive: true });
   window.addEventListener("pageshow", scheduleSync);
   compactLayout.addEventListener("change", scheduleSync);

@@ -92,6 +92,18 @@ function renderMetadata(profileData) {
             "@type": "CollegeOrUniversity",
             ...metadata.affiliation,
         },
+        worksFor: {
+            "@type": "Organization",
+            ...metadata.worksFor,
+        },
+        hasOccupation: {
+            "@type": "Occupation",
+            name: metadata.occupation.name,
+            occupationLocation: {
+                "@type": "City",
+                name: metadata.occupation.location,
+            },
+        },
         alumniOf: {
             "@type": "CollegeOrUniversity",
             ...metadata.alumniOf,

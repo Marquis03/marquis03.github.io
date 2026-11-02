@@ -110,6 +110,10 @@ function validateData(data) {
     requireString(profile.metadata?.jobTitle, "profile.metadata.jobTitle");
     requireString(profile.metadata?.affiliation?.name, "profile.metadata.affiliation.name");
     requireString(profile.metadata?.affiliation?.url, "profile.metadata.affiliation.url");
+    requireString(profile.metadata?.worksFor?.name, "profile.metadata.worksFor.name");
+    requireString(profile.metadata?.worksFor?.url, "profile.metadata.worksFor.url");
+    requireString(profile.metadata?.occupation?.name, "profile.metadata.occupation.name");
+    requireString(profile.metadata?.occupation?.location, "profile.metadata.occupation.location");
     requireString(profile.metadata?.alumniOf?.name, "profile.metadata.alumniOf.name");
     requireString(profile.metadata?.alumniOf?.url, "profile.metadata.alumniOf.url");
     if (!Array.isArray(profile.bio) || profile.bio.length === 0) {

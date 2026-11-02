@@ -25,6 +25,14 @@ window.HOMEPAGE_DATA.profile = {
             name: xmu.name,
             url: xmu.url,
         },
+        worksFor: {
+            name: unisound.name,
+            url: unisound.url,
+        },
+        occupation: {
+            name: "Model Optimization Intern (Code Agent)",
+            location: "Xiamen",
+        },
         alumniOf: {
             name: swufe.name,
             url: swufe.url,
