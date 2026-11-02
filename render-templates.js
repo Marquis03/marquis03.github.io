@@ -1,5 +1,5 @@
 (function exposeHomepageRenderers(root, factory) {
-    const renderers = factory();
+    const renderers = factory(root);
 
     if (typeof module === "object" && module.exports) {
         module.exports = renderers;
@@ -8,27 +8,74 @@
     if (root) {
         root.HOMEPAGE_RENDERERS = renderers;
     }
-})(typeof window !== "undefined" ? window : null, function createRenderers() {
+})(typeof window !== "undefined" ? window : null, function createRenderers(root) {
+    let assetVersion = "";
+
+    if (root && root.document && root.document.currentScript) {
+        try {
+            assetVersion = new URL(root.document.currentScript.src).searchParams.get("v") || "";
+        } catch (_) {
+            assetVersion = "";
+        }
+    }
+
+    function setAssetVersion(value) {
+        assetVersion = String(value || "");
+    }
+
+    function escapeText(value) {
+        return String(value)
+            .replaceAll("&", "&amp;")
+            .replaceAll("<", "&lt;")
+            .replaceAll(">", "&gt;")
+            .replaceAll('"', "&quot;")
+            .replaceAll("'", "&#39;");
+    }
+
+    function escapeAttribute(value) {
+        return escapeText(value);
+    }
+
+    function assetUrl(value) {
+        const url = String(value);
+        if (!assetVersion || !url.startsWith("assets/")) return url;
+        return `${url.split("?", 1)[0]}?v=${encodeURIComponent(assetVersion)}`;
+    }
+
+    function assetAttribute(value) {
+        return escapeAttribute(assetUrl(value));
+    }
+
+    // Rich HTML fields are authored in data files. Only their local asset URLs
+    // are rewritten here; all other values use the escaping helpers above.
+    function trustedHtml(value) {
+        return String(value).replace(
+            /(\b(?:href|src)=")(assets\/[^"?#]+)(?:\?v=[^"#]*)?(")/g,
+            (_match, prefix, url, suffix) =>
+                `${prefix}${assetAttribute(url)}${suffix}`,
+        );
+    }
+
     function dateTime(value) {
-        return String(value).replace(".", "-");
+        return escapeAttribute(String(value).replace(".", "-"));
     }
 
     function profile(profileData) {
         return `
       <div>
         <h1 class="name">
-          ${profileData.name}
+          ${escapeText(profileData.name)}
           <span class="name-divider">/</span>
-          <span class="chinese-name" lang="zh-CN">${profileData.chineseName}</span>
+          <span class="chinese-name" lang="zh-CN">${escapeText(profileData.chineseName)}</span>
         </h1>
-        ${profileData.bio.map((text) => `<p class="profile-intro">${text}</p>`).join("")}
+        ${profileData.bio.map((text) => `<p class="profile-intro">${trustedHtml(text)}</p>`).join("")}
         <div class="profile-links">
           ${profileData.links
               .map(
                   (link) => `
-            <a class="profile-link" href="${link.url}">
-              <img class="profile-link-icon" src="assets/icons/${link.icon}" alt="" aria-hidden="true">
-              ${link.label}
+            <a class="profile-link" href="${assetAttribute(link.url)}">
+              <img class="profile-link-icon" src="${assetAttribute(`assets/icons/${link.icon}`)}" alt="" aria-hidden="true">
+              ${escapeText(link.label)}
             </a>
           `,
               )
@@ -36,8 +83,8 @@
         </div>
       </div>
       <figure class="profile-portrait">
-        <img class="avatar" src="${profileData.avatar}" alt="${profileData.avatarAlt}" width="${profileData.avatarWidth}" height="${profileData.avatarHeight}" fetchpriority="high">
-        <figcaption class="portrait-caption">${profileData.caption}</figcaption>
+        <img class="avatar" src="${assetAttribute(profileData.avatar)}" alt="${escapeAttribute(profileData.avatarAlt)}" width="${profileData.avatarWidth}" height="${profileData.avatarHeight}" fetchpriority="high">
+        <figcaption class="portrait-caption">${trustedHtml(profileData.caption)}</figcaption>
       </figure>
     `;
     }
@@ -47,8 +94,8 @@
             .map(
                 (item) => `
       <li data-reveal-item>
-        <time datetime="${dateTime(item.date)}">${item.date}</time>
-        <p>${item.content}</p>
+        <time datetime="${dateTime(item.date)}">${escapeText(item.date)}</time>
+        <p>${trustedHtml(item.content)}</p>
       </li>
     `,
             )
@@ -75,9 +122,9 @@
         return links
             .map(
                 (link) => `
-      <a class="link-with-icon" href="${link.url}">
-        <img src="assets/icons/${link.icon}" alt="" aria-hidden="true">
-        ${link.label}
+      <a class="link-with-icon" href="${assetAttribute(link.url)}">
+        <img src="${assetAttribute(`assets/icons/${link.icon}`)}" alt="" aria-hidden="true">
+        ${escapeText(link.label)}
       </a>
     `,
             )
@@ -95,13 +142,13 @@
         data-reveal-item
         ${enhanced && !paper.selected ? "hidden" : ""}
       >
-        <a class="paper-figure" href="${paper.image}" data-figure data-caption="${paper.title}" aria-label="Preview figure for ${paper.title}">
-          <img src="${paper.image}" alt="" aria-hidden="true" width="${paper.imageWidth}" height="${paper.imageHeight}" decoding="async">
+        <a class="paper-figure" href="${assetAttribute(paper.image)}" data-figure data-caption="${escapeAttribute(paper.title)}" aria-label="Preview figure for ${escapeAttribute(paper.title)}">
+          <img src="${assetAttribute(paper.image)}" alt="" aria-hidden="true" width="${paper.imageWidth}" height="${paper.imageHeight}" decoding="async">
         </a>
         <div>
-          <h3 class="papertitle"><a href="${paper.url}">${paper.title}</a></h3>
-          <p class="authors">${paper.authors}</p>
-          <p class="venue-full">${paper.venue}</p>
+          <h3 class="papertitle"><a href="${assetAttribute(paper.url)}">${escapeText(paper.title)}</a></h3>
+          <p class="authors">${trustedHtml(paper.authors)}</p>
+          <p class="venue-full">${escapeText(paper.venue)}</p>
           <div class="paper-links-group">${researchLinks(paper.links)}</div>
         </div>
       </article>
@@ -123,11 +170,11 @@
     function competitionDetails(item) {
         return [
             item.result &&
-                `<span><span aria-hidden="true">${item.medal || "🏅"}</span>${item.result}</span>`,
+                `<span><span aria-hidden="true">${escapeText(item.medal || "🏅")}</span>${escapeText(item.result)}</span>`,
             item.rank &&
-                `<span><span aria-hidden="true">📈</span>${item.rank}</span>`,
+                `<span><span aria-hidden="true">📈</span>${escapeText(item.rank)}</span>`,
             item.bonus &&
-                `<span><span aria-hidden="true">💰</span>${item.bonus}</span>`,
+                `<span><span aria-hidden="true">💰</span>${escapeText(item.bonus)}</span>`,
         ]
             .filter(Boolean)
             .join("");
@@ -148,15 +195,15 @@
         data-reveal-item
         ${enhanced && !item.selected ? "hidden" : ""}
       >
-        <a class="record-logo" href="${item.url}" aria-label="${item.name}">
-          <img src="assets/images/logos/${item.logo}" alt="" width="${item.logoWidth}" height="${item.logoHeight}" decoding="async">
+        <a class="record-logo" href="${assetAttribute(item.url)}" aria-label="${escapeAttribute(item.name)}">
+          <img src="${assetAttribute(`assets/images/logos/${item.logo}`)}" alt="" width="${item.logoWidth}" height="${item.logoHeight}" decoding="async">
         </a>
         <div class="record-content">
           <div class="record-heading">
             <h3 class="record-title">
-              <a href="${item.url}">${item.name}</a>
+              <a href="${assetAttribute(item.url)}">${escapeText(item.name)}</a>
             </h3>
-            <time class="record-date" datetime="${dateTime(item.date)}">${item.date}</time>
+            <time class="record-date" datetime="${dateTime(item.date)}">${escapeText(item.date)}</time>
           </div>
           <div class="record-meta">
             <p class="record-details competition-details">${competitionDetails(item)}</p>
@@ -181,13 +228,13 @@
         const parts = period.split(" – ");
         const start = parts[0];
         const end = parts[1];
-        const startMarkup = `<time datetime="${dateTime(start)}">${start}</time>`;
+        const startMarkup = `<time datetime="${dateTime(start)}">${escapeText(start)}</time>`;
 
         if (!end) return startMarkup;
         const endMarkup =
             end === "Present"
-                ? end
-                : `<time datetime="${dateTime(end)}">${end}</time>`;
+                ? escapeText(end)
+                : `<time datetime="${dateTime(end)}">${escapeText(end)}</time>`;
         return `${startMarkup} – ${endMarkup}`;
     }
 
@@ -196,18 +243,18 @@
             .map((item) => {
                 const logo = item.url
                     ? `
-          <a class="record-logo" href="${item.url}" aria-label="${item.institution}">
-            <img src="assets/images/logos/${item.logo}" alt="" width="${item.logoWidth}" height="${item.logoHeight}" decoding="async">
+          <a class="record-logo" href="${assetAttribute(item.url)}" aria-label="${escapeAttribute(item.institution)}">
+            <img src="${assetAttribute(`assets/images/logos/${item.logo}`)}" alt="" width="${item.logoWidth}" height="${item.logoHeight}" decoding="async">
           </a>
         `
                     : `
           <div class="record-logo">
-            <img src="assets/images/logos/${item.logo}" alt="${item.institution}" width="${item.logoWidth}" height="${item.logoHeight}" decoding="async">
+            <img src="${assetAttribute(`assets/images/logos/${item.logo}`)}" alt="${escapeAttribute(item.institution)}" width="${item.logoWidth}" height="${item.logoHeight}" decoding="async">
           </div>
         `;
                 const name = item.url
-                    ? `<a href="${item.url}">${item.institution}</a>`
-                    : item.institution;
+                    ? `<a href="${assetAttribute(item.url)}">${escapeText(item.institution)}</a>`
+                    : escapeText(item.institution);
 
                 return `
         <div
@@ -221,8 +268,8 @@
               <p class="record-date">${periodMarkup(item.period)}</p>
             </div>
             <div class="record-meta">
-              <p class="record-details">${item.detail}</p>
-              <p class="record-location">${item.location}</p>
+              <p class="record-details">${escapeText(item.detail)}</p>
+              <p class="record-location">${escapeText(item.location)}</p>
             </div>
           </div>
         </div>
@@ -234,9 +281,9 @@
     function institutions(entries, title, listId) {
         return `
       <header class="section-heading" data-reveal-item>
-        <h2 class="section-title">${title}</h2>
+        <h2 class="section-title">${escapeText(title)}</h2>
       </header>
-      <div id="${listId}">${institutionRows(entries)}</div>
+      <div id="${escapeAttribute(listId)}">${institutionRows(entries)}</div>
     `;
     }
 
@@ -246,5 +293,6 @@
         news,
         profile,
         research,
+        setAssetVersion,
     };
 });

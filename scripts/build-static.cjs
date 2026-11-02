@@ -1,10 +1,14 @@
 const fs = require("node:fs");
 const path = require("node:path");
 const vm = require("node:vm");
-const { versionRuntimeReferences } = require("./runtime-version.cjs");
+const {
+    calculateRuntimeVersion,
+    versionRuntimeReferences,
+} = require("./runtime-version.cjs");
 
 const projectRoot = path.resolve(__dirname, "..");
 const indexPath = path.join(projectRoot, "index.html");
+const sitemapPath = path.join(projectRoot, "sitemap.xml");
 const dataFiles = [
     "organization.js",
     "profile.js",
@@ -69,10 +73,11 @@ function escapeAttribute(value) {
         .replaceAll(">", "&gt;");
 }
 
-function renderMetadata(profileData) {
+function renderMetadata(profileData, version) {
     const metadata = profileData.metadata;
     const title = `${profileData.name} | ${profileData.chineseName}`;
-    const imageUrl = new URL(profileData.avatar, metadata.siteUrl).href;
+    const imageUrl = new URL(profileData.avatar, metadata.siteUrl);
+    imageUrl.searchParams.set("v", version);
     const email = profileData.links.find((link) =>
         link.url.startsWith("mailto:"),
     );
@@ -85,7 +90,7 @@ function renderMetadata(profileData) {
         name: profileData.name,
         alternateName: profileData.chineseName,
         url: metadata.siteUrl,
-        image: imageUrl,
+        image: imageUrl.href,
         ...(email ? { email: email.url } : {}),
         jobTitle: metadata.jobTitle,
         affiliation: {
@@ -123,7 +128,7 @@ function renderMetadata(profileData) {
 <meta property="og:title" content="${escapeAttribute(title)}">
 <meta property="og:description" content="${escapeAttribute(metadata.description)}">
 <meta property="og:url" content="${escapeAttribute(metadata.siteUrl)}">
-<meta property="og:image" content="${escapeAttribute(imageUrl)}">
+<meta property="og:image" content="${escapeAttribute(imageUrl.href)}">
 <meta property="og:image:width" content="${profileData.avatarWidth}">
 <meta property="og:image:height" content="${profileData.avatarHeight}">
 <meta property="og:image:alt" content="${escapeAttribute(profileData.avatarAlt)}">
@@ -131,11 +136,22 @@ function renderMetadata(profileData) {
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="${escapeAttribute(title)}">
 <meta name="twitter:description" content="${escapeAttribute(metadata.description)}">
-<meta name="twitter:image" content="${escapeAttribute(imageUrl)}">
+<meta name="twitter:image" content="${escapeAttribute(imageUrl.href)}">
 <meta name="twitter:image:alt" content="${escapeAttribute(profileData.avatarAlt)}">
 <script type="application/ld+json">
 ${structuredData}
 </script>`;
+}
+
+function renderSitemap(siteUrl) {
+    const homepageUrl = new URL(siteUrl).href;
+    return `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>${escapeAttribute(homepageUrl)}</loc>
+  </url>
+</urlset>
+`;
 }
 
 function replaceMetadataBlock(document, html) {
@@ -156,6 +172,8 @@ function replaceMetadataBlock(document, html) {
 function build() {
     const data = loadHomepageData();
     const renderers = require(path.join(projectRoot, "render-templates.js"));
+    const currentVersion = calculateRuntimeVersion(projectRoot);
+    renderers.setAssetVersion(currentVersion);
     const blocks = {
         about: renderers.profile(data.profile),
         news: renderers.news(data.news),
@@ -178,7 +196,7 @@ function build() {
     const original = fs.readFileSync(indexPath, "utf8");
     const withMetadata = replaceMetadataBlock(
         original,
-        renderMetadata(data.profile),
+        renderMetadata(data.profile, currentVersion),
     );
     const withContent = Object.entries(blocks).reduce(
         (document, [sectionId, html]) =>
@@ -189,29 +207,36 @@ function build() {
         withContent,
         projectRoot,
     );
+    const generatedSitemap = renderSitemap(data.profile.metadata.siteUrl);
+    const originalSitemap = fs.existsSync(sitemapPath)
+        ? fs.readFileSync(sitemapPath, "utf8")
+        : "";
 
     if (process.argv.includes("--check")) {
-        if (generated !== original) {
+        if (generated !== original || generatedSitemap !== originalSitemap) {
             console.error(
-                "index.html is out of date. Run: node scripts/build-static.cjs",
+                "Generated site files are out of date. Run: node scripts/build-static.cjs",
             );
             process.exitCode = 1;
             return;
         }
         console.log(
-            `index.html static content and runtime version ${version} are up to date.`,
+            `index.html, sitemap.xml, and site version ${version} are up to date.`,
         );
         return;
     }
 
-    if (generated === original) {
-        console.log("index.html static content is already up to date.");
+    if (generated === original && generatedSitemap === originalSitemap) {
+        console.log("Generated site files are already up to date.");
         return;
     }
 
-    fs.writeFileSync(indexPath, generated, "utf8");
+    if (generated !== original) fs.writeFileSync(indexPath, generated, "utf8");
+    if (generatedSitemap !== originalSitemap) {
+        fs.writeFileSync(sitemapPath, generatedSitemap, "utf8");
+    }
     console.log(
-        `Generated static homepage content with runtime version ${version} in index.html.`,
+        `Generated static homepage content and sitemap with site version ${version}.`,
     );
 }
 

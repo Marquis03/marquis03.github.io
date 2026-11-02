@@ -9,8 +9,12 @@ const {
 const projectRoot = path.resolve(__dirname, "..");
 const indexPath = path.join(projectRoot, "index.html");
 const stylesheetPath = path.join(projectRoot, "stylesheet.css");
+const sitemapPath = path.join(projectRoot, "sitemap.xml");
 const html = fs.readFileSync(indexPath, "utf8");
 const stylesheet = fs.readFileSync(stylesheetPath, "utf8");
+const sitemap = fs.existsSync(sitemapPath)
+    ? fs.readFileSync(sitemapPath, "utf8")
+    : "";
 const errors = [];
 const dataFiles = [
     "organization.js",
@@ -175,10 +179,15 @@ function validateData(data) {
     );
 }
 
-const references = [
-    ...Array.from(html.matchAll(/(?:href|src)="([^"]+)"/g), (match) => match[1]),
-    ...Array.from(stylesheet.matchAll(/url\(["']?([^"')]+)["']?\)/g), (match) => match[1]),
-];
+const htmlReferences = Array.from(
+    html.matchAll(/(?:href|src)="([^"]+)"/g),
+    (match) => match[1],
+);
+const stylesheetReferences = Array.from(
+    stylesheet.matchAll(/url\(["']?([^"')]+)["']?\)/g),
+    (match) => match[1],
+);
+const references = [...htmlReferences, ...stylesheetReferences];
 
 const localReferences = references.filter(
     (reference) =>
@@ -198,6 +207,17 @@ for (const relativePath of runtimeFiles) {
         errors.push(
             `expected one current runtime reference ${expectedReference}, found ${occurrences}`,
         );
+    }
+}
+
+const stylesheetReference = `stylesheet.css?v=${runtimeVersion}`;
+if (references.filter((reference) => reference === stylesheetReference).length !== 1) {
+    errors.push(`expected one current stylesheet reference ${stylesheetReference}`);
+}
+
+for (const reference of htmlReferences.filter((value) => value.startsWith("assets/"))) {
+    if (!reference.endsWith(`?v=${runtimeVersion}`)) {
+        errors.push(`unversioned asset reference: ${reference}`);
     }
 }
 
@@ -240,6 +260,12 @@ const metadataContent = html
     ?.split("<!-- STATIC-METADATA:END -->")[0]
     ?.trim();
 if (!metadataContent) errors.push("missing generated metadata");
+
+if (!sitemap) {
+    errors.push("missing sitemap.xml");
+} else if (!sitemap.includes("<loc>https://marquis03.github.io/</loc>")) {
+    errors.push("sitemap.xml is missing the canonical homepage URL");
+}
 
 const structuredData = html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/);
 if (!structuredData) {

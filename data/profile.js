@@ -18,7 +18,7 @@ window.HOMEPAGE_DATA.profile = {
     metadata: {
         siteUrl: "https://marquis03.github.io/",
         description:
-            "Jue Hou — M.Eng. student in Electronic Information, specializing in Artificial Intelligence at Xiamen University, researching LLM reasoning and agentic reinforcement learning.",
+            "Jue Hou — M.Eng. student in Artificial Intelligence at Xiamen University and Model Optimization Intern at Unisound, researching LLM reasoning and agentic reinforcement learning.",
         jobTitle:
             "M.Eng. Student in Electronic Information, specializing in Artificial Intelligence",
         affiliation: {

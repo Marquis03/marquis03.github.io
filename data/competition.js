@@ -39,7 +39,7 @@ window.HOMEPAGE_DATA.competitions = [
         selected: false,
     },
     {
-        logo: "SAIS.svg",
+        logo: "SAIS.webp",
         logoWidth: 400,
         logoHeight: 127,
         name: "The 2nd World AI4S Prize — Market Game and Price Prediction",
